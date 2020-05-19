@@ -13,7 +13,7 @@ buildscript {
 
     ext.compilesdkversion = 28
     ext.targetsdkversion = 28
-    ext.minsdkversion = 19
+    ext.minsdkversion = 21
     ext.sdkSourceCompatibility = 1.8
     ext.sdkTargetCompatibility = 1.8
     ext.appSourceCompatibility = 1.8

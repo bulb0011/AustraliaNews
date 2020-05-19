@@ -19,17 +19,11 @@
             android:orientation="vertical"
             >
 
-            <com.ruanyun.australianews.widget.MyConvenientBanner
-                android:id="@+id/banner"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_size_px_608"
-                app:canLoop="true" />
-
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_size_px_120"
                 android:layout_marginLeft="@dimen/text_size_px_42"
-                android:layout_marginTop="-18dp"
+                android:layout_marginTop="26dp"
                 android:layout_marginRight="@dimen/text_size_px_42"
                 android:layout_marginBottom="3dp"
                 app:cardBackgroundColor="@color/white"
@@ -56,9 +50,96 @@
             </android.support.v7.widget.CardView>
 
 
+
+            <RelativeLayout
+                android:id="@+id/rl_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_111"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/tab_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/iv_subscribe_to"
+                    app:tl_textSelectColor="@color/theme_color"
+                    app:tl_textUnselectColor="@color/text_color_666"
+                    app:tl_tab_padding="11dp"
+                    app:tl_indicator_width_equal_title="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_subscribe_to"
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="12dp"
+                    android:background="@drawable/gradient_bg_transparent_shape"
+                    android:src="@drawable/home_btn_add" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_2"
+                    android:background="@color/color_gray_line"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+
+            <com.ruanyun.australianews.widget.MyConvenientBanner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_608"
+                app:canLoop="true" />
+
+            <RelativeLayout
+                android:id="@+id/rl_tip_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_85"
+                android:background="@color/theme_color"
+                android:paddingLeft="@dimen/text_size_px_43"
+                android:paddingRight="@dimen/text_size_px_21">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="登录后，接收新闻推荐，一键发帖更方便"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="@dimen/text_size_px_120"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/text_size_px_100"
+                    android:background="@drawable/corners_stroke_white_1dp_bg_shape"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/text_size_px_2"
+                    android:text="登录"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_sp_12" />
+
+                <ImageView
+                    android:id="@+id/iv_tip_login_close"
+                    android:layout_width="@dimen/text_size_px_72"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/text_size_px_18"
+                    android:src="@drawable/home_btn_close" />
+
+            </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_size_px_215">
+                android:layout_height="@dimen/text_size_px_215"
+                android:visibility="gone"
+                >
 
                 <TextView
                     android:id="@+id/tv_push_record"
@@ -154,46 +235,7 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/rl_tip_login"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_size_px_85"
-                android:background="@color/theme_color"
-                android:paddingLeft="@dimen/text_size_px_43"
-                android:paddingRight="@dimen/text_size_px_21">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="登录后，接收新闻推荐，一键发帖更方便"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_sp_12" />
-
-                <TextView
-                    android:id="@+id/tv_login"
-                    android:layout_width="@dimen/text_size_px_120"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/text_size_px_100"
-                    android:background="@drawable/corners_stroke_white_1dp_bg_shape"
-                    android:gravity="center"
-                    android:paddingBottom="@dimen/text_size_px_2"
-                    android:text="登录"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_sp_12" />
-
-                <ImageView
-                    android:id="@+id/iv_tip_login_close"
-                    android:layout_width="@dimen/text_size_px_72"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:padding="@dimen/text_size_px_18"
-                    android:src="@drawable/home_btn_close" />
-
-            </RelativeLayout>
 
             <View
                 android:id="@+id/view_tab_top_line"

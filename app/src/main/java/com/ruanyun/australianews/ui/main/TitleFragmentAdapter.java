@@ -7,8 +7,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.ruanyun.australianews.model.ChannelInfo;
-import com.ruanyun.australianews.util.C;
 import com.ruanyun.australianews.model.Event;
+import com.ruanyun.australianews.util.C;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -30,9 +30,12 @@ public class TitleFragmentAdapter extends FragmentPagerAdapter {
     List<String> preIds = new ArrayList<>();
     boolean isRefreshViewEnable = false;
 
+
+
     public TitleFragmentAdapter(FragmentManager fm, @NonNull List<ChannelInfo> channels) {
         super(fm);
         this.channels = channels;
+
     }
 
     public void setRefreshViewEnable(Boolean isRefreshViewEnable){
@@ -42,6 +45,7 @@ public class TitleFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+
         NewsListChildFragment fragment = new NewsListChildFragment();
         Bundle bundle = new Bundle();
         bundle.putParcelable(C.IntentKey.CHANNEL_INFO, channels.get(position));
@@ -87,6 +91,7 @@ public class TitleFragmentAdapter extends FragmentPagerAdapter {
         }
         return POSITION_NONE;
     }
+
 
     @Override
     public void notifyDataSetChanged() {

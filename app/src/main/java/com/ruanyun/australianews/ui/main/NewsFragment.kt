@@ -6,7 +6,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
 import android.support.design.widget.AppBarLayout
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
@@ -18,19 +17,17 @@ import com.ruanyun.australianews.base.ResultBase
 import com.ruanyun.australianews.data.ApiFailAction
 import com.ruanyun.australianews.data.ApiManger
 import com.ruanyun.australianews.data.ApiSuccessAction
-import com.ruanyun.australianews.ext.click
 import com.ruanyun.australianews.ext.clickWithTrigger
 import com.ruanyun.australianews.ext.getStr
 import com.ruanyun.australianews.ext.setStatusBarHeightPaddingTop
-import com.ruanyun.australianews.model.*
+import com.ruanyun.australianews.model.AdvertInfoBase
+import com.ruanyun.australianews.model.ChannelInfo
+import com.ruanyun.australianews.model.Event
+import com.ruanyun.australianews.model.HomeResultBase
 import com.ruanyun.australianews.ui.CityListActivity
 import com.ruanyun.australianews.ui.WebViewActivity
 import com.ruanyun.australianews.ui.adapter.AdverViewHolder
-import com.ruanyun.australianews.ui.life.HouseRentListActivity
-import com.ruanyun.australianews.ui.life.RecruitmentListActivity
-import com.ruanyun.australianews.ui.life.main.LifeMainActivity
 import com.ruanyun.australianews.ui.login.LoginActivity
-import com.ruanyun.australianews.ui.my.MyPushRecordNewListActivity
 import com.ruanyun.australianews.ui.news.ChannelManagerActivity
 import com.ruanyun.australianews.util.*
 import com.ruanyun.australianews.util.CommonUtil.dp2px
@@ -114,26 +111,35 @@ class NewsFragment : BaseFragment() {
         convenientBanner.setPageIndicatorAlign(MyConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
         convenientBanner.setPageIndicatorMargins(0,0,dp2px(10f),dp2px(25f))
 
-        adapter = TitleFragmentAdapter(childFragmentManager, DbHelper.getInstance().getSubscribedList(app.isLogin))
+        adapter = TitleFragmentAdapter(childFragmentManager, DbHelper.getInstance().getSubscribedList(app.isLogin) )
         adapter.notifyDataSetChanged()
         viewpager.adapter = adapter
         viewpager.offscreenPageLimit = 1
         tab.setViewPager(viewpager)
 
+        tab_to.setViewPager(viewpager)//头部的表单
+        tab_layout.visibility = View.GONE
+
+//        tab_to.setOnClickListener {  }
+
         app_bar_layout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
             if (height == Math.abs(verticalOffset)) {
                 return@OnOffsetChangedListener
             }
-            val appBarLayoutMaxSlidingDistance = appBarLayout.measuredHeight - minimumHeight - 3//减去1个偏移量
+            val appBarLayoutMaxSlidingDistance = appBarLayout.measuredHeight //减去1个偏移量
+
             height = Math.abs(verticalOffset)
+
             if (verticalOffset < -(appBarLayoutMaxSlidingDistance/2)) {
                 if (rl_topbar.visibility != View.VISIBLE) {
                     rl_topbar.visibility = View.VISIBLE
+                    tab_layout.visibility = View.VISIBLE
 //                    adapter.setRefreshViewEnable(false)
                 }
             } else {
                 if (rl_topbar.visibility != View.GONE) {
                     rl_topbar.visibility = View.GONE
+                    tab_layout.visibility = View.GONE
 //                    adapter.setRefreshViewEnable(false)
                 }
             }
@@ -213,7 +219,16 @@ class NewsFragment : BaseFragment() {
         val tipLoginHeight = if (rl_tip_login.visibility == View.VISIBLE){
             rl_tip_login.layoutParams.height + view_tab_top_line.layoutParams.height
         } else 0
-        minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height + tipLoginHeight
+
+        if (rl_tip_login.visibility == View.VISIBLE){
+            minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height + tipLoginHeight - rl_tip_login.layoutParams.height - view_tab_top_line.layoutParams.height
+        }else{
+
+        }
+
+
+
+
         collapsing_toolbar_layout.minimumHeight = minimumHeight
     }
 
