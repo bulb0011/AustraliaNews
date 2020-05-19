@@ -223,7 +223,7 @@ class NewsFragment : BaseFragment() {
         if (rl_tip_login.visibility == View.VISIBLE){
             minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height + tipLoginHeight - rl_tip_login.layoutParams.height - view_tab_top_line.layoutParams.height
         }else{
-
+            minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height
         }
 
 
