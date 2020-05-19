@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="@dimen/text_size_px_16"
+        android:layout_height="0dp" />
+
+    <ImageView
+        android:id="@+id/iv_select"
+        android:layout_width="@dimen/text_size_px_60"
+        android:layout_height="@dimen/text_size_px_60"
+        android:layout_marginLeft="@dimen/text_size_px_27"
+        android:layout_marginTop="@dimen/text_size_px_73"
+        android:layout_toRightOf="@+id/view"
+        android:src="@drawable/comment_icon_selector"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_select"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_px_40"
+            android:layout_marginBottom="@dimen/text_size_px_20"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.1"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/text_size_px_27"
+            android:paddingRight="@dimen/text_size_px_43"
+            android:text="舒服舒服是否舒服舒服舒服舒一舒服是否舒服舒服舒服舒服舒服是否舒服舒服舒服"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_sp_15" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_px_226"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/text_size_px_27"
+            android:paddingRight="@dimen/text_size_px_43">
+
+            <ImageView
+                android:id="@+id/iv_pic_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_img" />
+
+            <ImageView
+                android:id="@+id/iv_pic_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/text_size_px_8"
+                android:layout_marginRight="@dimen/text_size_px_8"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_img" />
+
+            <ImageView
+                android:id="@+id/iv_pic_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_img" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_px_20"
+            android:layout_marginBottom="@dimen/text_size_px_20"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/text_size_px_2">
+
+            <TextView
+                android:id="@+id/tv_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_size_px_25"
+                android:background="@drawable/corners_hot_bg_shape"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/text_size_px_8"
+                android:paddingTop="@dimen/text_size_px_2"
+                android:paddingRight="@dimen/text_size_px_8"
+                android:text="热门"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_sp_10" />
+
+            <TextView
+                android:id="@+id/tv_source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/text_size_px_25"
+                android:paddingRight="@dimen/text_size_px_25"
+                android:text="央视网  1w+浏览  2200评论  1小时前"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_size_sp_11" />
+
+            <TextView
+                android:id="@+id/tv_unread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corners_hot_bg_shape"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/text_size_px_8"
+                android:paddingTop="@dimen/text_size_px_2"
+                android:paddingRight="@dimen/text_size_px_8"
+                android:text="已读"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_sp_10"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        style="@style/DividerHorizontal"
+        android:layout_below="@+id/ll_content"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:layout_marginRight="@dimen/text_size_px_43" />
+
+</RelativeLayout>

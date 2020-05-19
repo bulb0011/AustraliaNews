@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="39dp">
+
+    <TextView
+        android:textColor="@android:color/black"
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="4.5dp"
+        android:text="@string/my_cahnnel"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@id/tv"
+        android:text="@string/tip_drag_default"
+        android:textColor="@color/tip"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tv_btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="4.5dp"
+        android:gravity="center"
+        android:text="@string/edit"
+        android:layout_alignParentRight="true"
+        android:textColor="#4071ff"
+        android:textSize="14sp" />
+
+    <!--<View-->
+        <!--android:visibility="invisible"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.3dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@color/tip" />-->
+
+</RelativeLayout>

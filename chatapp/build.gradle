@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+android {
+    compileSdkVersion rootProject.ext.compilesdkversion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minsdkversion
+        targetSdkVersion rootProject.ext.targetsdkversion
+    }
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+    api("com.android.support:recyclerview-v7:$V7_APPCOMPAT_VERSION", {
+        exclude group: 'com.android.support', module: 'support-v4'
+    })
+    api("com.android.support:design:$V7_APPCOMPAT_VERSION", {
+        exclude group: 'com.android.support', module: 'support-v4'
+    })
+//    api("com.github.w446108264:AndroidEmoji:1.0.0", {
+//        exclude group: 'com.android.support', module: 'support-v4'
+//    })
+    api("com.github.chrisbanes.photoview:library:1.2.4", {
+        exclude group: 'com.android.support', module: 'support-v4'
+    })
+//    implementation project(':reclib-qq')
+//    implementation project(':reclib-testemoticons')
+    api project(':imagepicker')
+//    api project(':autolayout')
+    api 'com.android.support:multidex:1.0.3'
+//    implementation  'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+    api 'com.lijun.library:activeandroid:1.0.0'
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    api "com.github.bumptech.glide:glide:$GLIDE"
+    api 'com.facebook.fresco:fresco:1.7.1'
+    api 'org.greenrobot:eventbus:3.1.1'
+    api 'io.reactivex:rxandroid:1.2.1'
+    api 'com.contrarywind:Android-PickerView:3.2.4'
+    api 'com.belerweb:pinyin4j:2.5.1'
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'com.google.zxing:core:3.3.2'
+    api 'cn.jiguang.sdk:jmessage:2.7.0'
+    api 'cn.jiguang.sdk:jcore:1.2.3'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarTitleText="我的消息"
+        app:topBarViewLineEnable="false" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_111">
+
+        <com.flyco.tablayout.CommonTabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tl_indicator_color="@color/theme_color"
+            app:tl_indicator_corner_radius="@dimen/text_size_px_9"
+            app:tl_indicator_gravity="BOTTOM"
+            app:tl_indicator_height="@dimen/text_size_px_8"
+            app:tl_indicator_margin_bottom="@dimen/text_size_px_2"
+            app:tl_indicator_width="@dimen/text_size_px_50"
+            app:tl_tab_padding="@dimen/text_size_px_24"
+            app:tl_tab_space_equal="true"
+            app:tl_textSelectColor="@color/text_black"
+            app:tl_textUnselectColor="@color/text_color_666"
+            app:tl_textsize="@dimen/text_size_sp_15"
+            app:tl_underline_color="#DDDDDD"
+            app:tl_underline_height="@dimen/text_size_px_2" />
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--style="@style/jmui_record_voice_dialog"/>-->
+
+        <TextView
+            android:id="@+id/tv_unread_count"
+            style="@style/red_dot_style"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/text_size_px_20"
+            android:layout_marginRight="@dimen/text_size_px_150"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+    <include layout="@layout/layout_refresh_rv_common" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</LinearLayout>

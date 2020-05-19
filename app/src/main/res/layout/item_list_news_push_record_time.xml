@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_25"
+        android:background="@color/bg_white"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_94"
+        android:paddingLeft="@dimen/text_size_px_43"
+        android:paddingTop="@dimen/text_size_px_30"
+        android:text="2019-4-23"
+        android:textColor="@color/theme_color"
+        android:textSize="@dimen/text_size_sp_14" />
+
+</LinearLayout>

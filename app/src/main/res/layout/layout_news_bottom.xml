@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/text_size_px_126"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white"
+    tools:showIn="@layout/activity_news_web_view">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/text_size_px_146"
+        android:layout_height="match_parent"
+        android:scaleType="center"
+        android:src="@drawable/nav_btn_back"/>
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/text_size_px_24"
+        android:layout_marginBottom="@dimen/text_size_px_24"
+        android:layout_toRightOf="@+id/iv_back"
+        android:gravity="center_vertical"
+        android:text="评一下"
+        android:textColor="@color/text_gray"
+        android:textSize="12.5sp"
+        android:layout_toLeftOf="@+id/iv_comment"
+        android:layout_marginRight="@dimen/text_size_px_30"
+        android:paddingLeft="@dimen/text_size_px_37"
+        android:background="@drawable/bg_bgwhite_corners_39px"/>
+
+    <ImageView
+        android:id="@+id/iv_comment"
+        android:layout_width="@dimen/text_size_px_140"
+        android:layout_height="match_parent"
+        android:src="@drawable/news_btn_comment"
+        android:padding="@dimen/text_size_px_28"
+        android:layout_toLeftOf="@+id/iv_collect"/>
+
+    <TextView
+        android:id="@+id/tv_comment_count"
+        style="@style/red_dot_style"
+        android:layout_alignLeft="@+id/iv_comment"
+        android:layout_marginTop="@dimen/text_size_px_16"
+        android:layout_marginLeft="@dimen/text_size_px_75"
+        android:text="999+"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_collect"
+        android:layout_width="@dimen/text_size_px_140"
+        android:layout_height="match_parent"
+        android:src="@drawable/news_btn_collection_selector"
+        android:padding="@dimen/text_size_px_30"
+        android:layout_toLeftOf="@+id/iv_share"/>
+
+    <ImageView
+        android:id="@+id/iv_share"
+        android:layout_width="@dimen/text_size_px_140"
+        android:layout_height="match_parent"
+        android:src="@drawable/news_btn_share"
+        android:padding="@dimen/text_size_px_30"
+        android:layout_marginRight="@dimen/text_size_px_20"
+        android:layout_alignParentRight="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_1"
+        android:background="@color/color_gray_line"/>
+
+</RelativeLayout>

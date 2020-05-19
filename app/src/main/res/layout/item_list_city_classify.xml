@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_city_classify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/text_size_px_27"
+        android:paddingTop="@dimen/text_size_px_8"
+        android:paddingBottom="@dimen/text_size_px_8"
+        android:gravity="center_vertical"
+        android:text="当前定位城市"
+        android:background="@color/bg_white"
+        android:textColor="@color/theme_color"
+        android:textSize="@dimen/text_size_sp_14"/>
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/text_size_px_2"-->
+        <!--android:background="#e2e2e2"/>-->
+
+</LinearLayout>

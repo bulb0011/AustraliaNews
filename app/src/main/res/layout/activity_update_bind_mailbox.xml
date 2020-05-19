@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.my.UpdateBindPhoneActivity">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarTitleText="绑定邮箱" />
+
+    <RelativeLayout
+        android:id="@+id/rl_vcode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_150"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/text_size_px_300"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/text_size_px_40"
+            android:text="邮箱"
+            android:textColor="@color/text_default"
+            android:textSize="@dimen/text_size_sp_15" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/text_size_px_300"
+            android:background="@null"
+            android:hint="请输入邮箱地址"
+            android:digits="@string/mailbox_digits"
+            android:inputType="textEmailAddress"
+            android:maxLength="40"
+            android:singleLine="true"
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/text_size_sp_15" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/text_size_px_40" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/corners_registered_bg_shape"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+</LinearLayout>

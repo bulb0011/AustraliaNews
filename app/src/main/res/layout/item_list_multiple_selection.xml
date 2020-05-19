@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/text_size_px_135"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="多选选项"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/text_size_px_33"
+        android:paddingRight="@dimen/text_size_px_33"
+        android:textColor="@color/black"
+        android:drawableRight="@drawable/item_multiple_selection_selector"
+        android:textSize="@dimen/text_size_sp_15"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_2"
+        android:background="@color/color_gray_line"
+        android:layout_gravity="bottom"/>
+
+</FrameLayout>

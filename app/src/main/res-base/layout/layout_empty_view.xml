@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="android.widget.RelativeLayout">
+    
+    <ImageView
+        android:id="@+id/emptyview_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/emptyview_tv_tip"
+        tools:visibility="visible"
+        android:layout_marginBottom="@dimen/text_size_px_40"
+        android:src="@drawable/img_empty"/>
+    
+    <TextView
+        android:id="@+id/emptyview_tv_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:text="暂无数据"
+        android:padding="@dimen/text_size_px_30"
+        android:textSize="@dimen/text_size_sp_14"/>
+    
+    <ProgressBar
+        tools:visibility="invisible"
+        android:layout_above="@id/emptyview_tv_tip"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/emptyview_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+    
+    <Button
+        android:id="@+id/emptyview_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/text_size_px_106"
+        android:layout_below="@+id/emptyview_tv_tip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/text_size_px_60"
+        android:visibility="invisible"
+        android:minWidth="@dimen/text_size_px_260"
+        android:paddingLeft="@dimen/text_size_px_45"
+        android:paddingRight="@dimen/text_size_px_45"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_sp_14"
+        android:background="@drawable/refresh_btn_bg"
+        tools:text="刷新"/>
+</merge>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.ruanyun.australianews.widget.TopBar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:topBarRightImageEnable="true"
+            app:topBarRightImageSrc="@drawable/life_btn_add"
+            app:topBarTitleText="黄页类型"
+            app:topBarViewLineEnable="false"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_px_104"
+            android:background="@color/white">
+
+        <FrameLayout
+                android:id="@+id/fl_area"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            <TextView
+                    android:id="@+id/tv_area"
+                    style="@style/life_filter_text_style"
+                    android:text="区域筛选"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <View style="@style/DividerHorizontal"
+          android:id="@+id/pop_view_line"/>
+
+    <include layout="@layout/layout_refresh_rv_common"/>
+
+</LinearLayout>

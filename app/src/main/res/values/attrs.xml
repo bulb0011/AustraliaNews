@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TopBar">
+        <attr name="topBarAdaptationStatusBar" format="boolean" />
+        <attr name="topBarTitleText" format="reference|string" />
+        <attr name="topBarTitleEnable" format="boolean" />
+        <attr name="topBarTitleTextColor" format="color" />
+        <attr name="topBarLeftImageEnable" format="boolean" />
+        <attr name="topBarLeftImageSrc" format="reference" />
+        <attr name="topBarRightImageEnable" format="boolean" />
+        <attr name="topBarRightImageSrc" format="reference" />
+        <attr name="topBarBgColor" format="reference" />
+        <attr name="topBarRightText" format="reference|string" />
+        <attr name="topBarRightTextEnable" format="boolean" />
+        <attr name="topBarViewLineEnable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="rivRadius" />
+        <attr name="type" />
+    </declare-styleable>
+    <attr name="rivRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+
+    <declare-styleable name="SwitchView">
+        <attr format="color|reference" name="bgColor" />
+        <attr format="color|reference" name="leftColor" />
+        <attr format="color|reference" name="rightColor" />
+        <attr format="color" name="textLeftColor" />
+        <attr format="color" name="textRightColor" />
+        <attr format="color" name="textLeftClickColor" />
+        <attr format="color" name="textRightClickColor" />
+        <attr format="string" name="textLeft" />
+        <attr format="string" name="textRight" />
+        <attr format="boolean" name="setChecked" />
+        <attr format="dimension" name="padding" />
+        <attr format="integer" name="time" />
+    </declare-styleable>
+
+    <declare-styleable name="EaseSidebar">
+        <attr name="ease_sidebar_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="MyConvenientBanner"><attr format="boolean" name="canLoop"/></declare-styleable>
+
+</resources>

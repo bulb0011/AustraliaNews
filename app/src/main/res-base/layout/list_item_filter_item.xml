@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="item"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:textColor="@color/filter_selector_text"
+        android:textSize="@dimen/text_size_sp_14" />
+
+    <!--<View-->
+        <!--style="@style/DividerHorizontal"-->
+        <!--android:layout_height="@dimen/text_size_px_2"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginLeft="14dp"-->
+        <!--android:layout_marginRight="14dp" />-->
+</RelativeLayout>

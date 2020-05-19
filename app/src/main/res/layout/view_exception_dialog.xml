@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_corners_15"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_120"
+        android:gravity="center"
+        android:text="提示"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_sp_16"
+        android:textStyle="bold" />
+
+    <View
+        style="@style/DividerHorizontal"
+        android:layout_height="1px" />
+
+    <TextView
+        android:id="@+id/tv_hot_line_number"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_270"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.2"
+        android:text="您的账号已在其他设备登录"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_sp_15"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_determine"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_120"
+        android:background="@drawable/bg_red_corners_bottom_left_right"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_sp_15" />
+</LinearLayout>

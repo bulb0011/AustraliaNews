@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 白色 背景 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_selected="true" android:drawable="@drawable/release_icon_selected">
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/transparent"/>
+            <size android:width="@dimen/text_size_px_43"
+                android:height="@dimen/text_size_px_37"/>
+        </shape>
+    </item>
+
+</selector>

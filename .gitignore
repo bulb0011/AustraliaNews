@@ -1,0 +1,13 @@
+*.iml
+.gradle
+/local.properties
+/build
+/.idea/
+/app/build/
+/imagepicker/build/
+/chatapp/build/
+/app/release/
+/app/debug/
+/release/
+/debug/
+/app/map.txt

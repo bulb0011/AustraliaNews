@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:text="城市"
+    android:paddingLeft="@dimen/text_size_px_30"
+    android:paddingRight="@dimen/text_size_px_30"
+    app:layout_alignSelf="auto"
+    android:gravity="center"
+    android:background="@drawable/corners_stroke_gray_bg_white_1dp_shape"
+    android:textSize="@dimen/text_size_sp_14"
+    android:textColor="@color/text_black"
+    android:layout_width="wrap_content"
+    android:minWidth="@dimen/text_size_px_330"
+    android:minHeight="@dimen/text_size_px_80"
+    android:layout_height="wrap_content"/>

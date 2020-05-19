@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  emptyview -->
+    <item  type="id" name="emptyview_img"/>
+    <item  type="id" name="emptyview_progress"/>
+    <item  type="id" name="emptyview_tv_tip"/>
+    <item  type="id" name="emptyview_btn"/>
+
+    <item  type="id" name="floating_header"/>
+</resources>

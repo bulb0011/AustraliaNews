@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/text_size_px_1167"
+    android:layout_height="@dimen/text_size_px_160"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="@dimen/text_size_px_16"
+        android:layout_height="0dp" />
+
+    <ImageView
+        android:id="@+id/iv_select"
+        android:layout_width="@dimen/text_size_px_103"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/text_size_px_27"
+        android:paddingRight="@dimen/text_size_px_16"
+        android:layout_toRightOf="@+id/view"
+        android:src="@drawable/comment_icon_selector"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_show_content"
+        android:layout_width="@dimen/text_size_px_1064"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/iv_select">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="@dimen/text_size_px_500"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/text_size_px_15"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
+            android:paddingRight="@dimen/text_size_px_33"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:text="三室一厅三室一厅三三室三"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_sp_15" />
+
+        <TextView
+            android:id="@+id/tv_net_worth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/text_size_px_350"
+            android:text="1.4562"
+            android:textColor="@color/text_black"/>
+
+        <TextView
+            android:id="@+id/tv_growth_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/text_size_px_40"
+            android:text="+2.99%"
+            android:textColor="@color/color_fund_red"/>
+
+    </RelativeLayout>
+</RelativeLayout>

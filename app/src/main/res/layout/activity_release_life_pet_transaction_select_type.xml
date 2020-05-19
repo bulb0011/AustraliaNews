@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarTitleText="发布宠物交易" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_106"
+        android:layout_marginTop="@dimen/text_size_px_20"
+        android:drawableLeft="@drawable/blue_dot_shape"
+        android:drawablePadding="@dimen/text_size_px_25"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/text_size_px_43"
+        android:text="发布您要交易的宠物类型"
+        android:textColor="@color/text_color_666"
+        android:textSize="@dimen/text_size_sp_14" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:layout_marginRight="@dimen/text_size_px_43"
+        android:background="@drawable/bg_white_corners_3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_pet_cat"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_px_130"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_sp_14"
+            android:text="宠物猫"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/text_size_px_38"
+            android:paddingRight="@dimen/text_size_px_57"
+            android:drawableRight="@drawable/icon_arrow_right"/>
+
+        <View style="@style/DividerHorizontal"/>
+
+        <TextView
+            android:id="@+id/tv_pet_dog"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_px_130"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_sp_14"
+            android:text="宠物狗"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/text_size_px_38"
+            android:paddingRight="@dimen/text_size_px_57"
+            android:drawableRight="@drawable/icon_arrow_right"/>
+
+        <View style="@style/DividerHorizontal"/>
+
+        <TextView
+            android:id="@+id/tv_flower_bird_fish_insect"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_px_130"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_sp_14"
+            android:text="花鸟鱼虫"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/text_size_px_38"
+            android:paddingRight="@dimen/text_size_px_57"
+            android:drawableRight="@drawable/icon_arrow_right"/>
+
+        <View style="@style/DividerHorizontal"/>
+
+        <TextView
+            android:id="@+id/tv_pet_supplies"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_px_130"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_sp_14"
+            android:text="宠物用品"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/text_size_px_38"
+            android:paddingRight="@dimen/text_size_px_57"
+            android:drawableRight="@drawable/icon_arrow_right"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <RelativeLayout
+        android:id="@+id/rl_release_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:layout_marginTop="@dimen/text_size_px_26"
+        android:layout_marginRight="@dimen/text_size_px_43"
+        android:background="@color/white"
+        android:minHeight="@dimen/text_size_px_522">
+
+        <com.ruanyun.imagepicker.widget.RYAddPictureView
+            android:id="@+id/ryPicView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:horizontalSpacing="@dimen/text_size_px_20"
+            android:numColumns="4"
+            android:padding="@dimen/text_size_px_20"
+            android:verticalSpacing="@dimen/text_size_px_10"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_add_photo"
+            android:layout_width="@dimen/text_size_px_226"
+            android:layout_height="@dimen/text_size_px_226"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_size_px_87"
+            android:src="@drawable/release_btn_uploadphotos" />
+
+        <TextView
+            android:id="@+id/tv_photo_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_add_photo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_size_px_75"
+            android:text="添加图片，最多9张"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_sp_13" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_106"
+        android:layout_marginTop="@dimen/text_size_px_20"
+        android:drawableLeft="@drawable/blue_dot_shape"
+        android:drawablePadding="@dimen/text_size_px_25"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/text_size_px_43"
+        android:text="分类信息标题"
+        android:textColor="@color/text_color_666"
+        android:textSize="@dimen/text_size_sp_14" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_130"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:layout_marginRight="@dimen/text_size_px_43"
+        android:background="@color/white">
+
+        <TextView
+            style="@style/life_release_tip_style"
+            android:text="标题" />
+
+        <EditText
+            android:id="@+id/et_title"
+            style="@style/life_release_padding_size_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical|end"
+            android:hint="请填写"
+            android:maxLength="100"
+            android:singleLine="true"
+            android:textColor="@color/text_black" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_106"
+        android:layout_marginTop="@dimen/text_size_px_20"
+        android:drawableLeft="@drawable/blue_dot_shape"
+        android:drawablePadding="@dimen/text_size_px_25"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/text_size_px_43"
+        android:text="详细信息"
+        android:textColor="@color/text_color_666"
+        android:textSize="@dimen/text_size_sp_14" />
+</merge>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarTitleText="我的" />
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/ptr_classic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topbar"
+        android:background="@color/bg_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <!--用户信息-->
+            <RelativeLayout
+                android:id="@+id/rl_user"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_400">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_350"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/text_size_px_42"
+                    android:layout_marginRight="@dimen/text_size_px_42"
+                    android:src="@drawable/gradient_fragment_life_my_user_bg_shape" />
+
+                <ImageView
+                    android:id="@+id/iv_user_avatar"
+                    android:layout_width="@dimen/text_size_px_200"
+                    android:layout_height="@dimen/text_size_px_200"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/text_size_px_85"
+                    android:layout_marginRight="@dimen/text_size_px_33"
+                    android:src="@drawable/default_user" />
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_user_avatar"
+                    android:layout_marginTop="@dimen/text_size_px_24"
+                    android:layout_marginBottom="@dimen/text_size_px_24"
+                    android:layout_toRightOf="@+id/iv_user_avatar"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_sp_17"
+                    tools:text="点击登录" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_user_name"
+                    android:layout_toRightOf="@+id/iv_user_avatar"
+                    tools:text="未填写签名"
+                    android:singleLine="true"
+                    android:layout_marginRight="@dimen/text_size_px_200"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_sp_14" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/text_size_px_126"
+                    android:src="@drawable/my_arrow_white" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_145">
+
+                <TextView
+                    android:id="@+id/tv_release"
+                    style="@style/my_fragment_text"
+                    android:drawableLeft="@drawable/life_my_icon_release"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:text="我的发布" />
+
+            </FrameLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_150" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_145">
+
+                <TextView
+                    android:id="@+id/tv_collection"
+                    style="@style/my_fragment_text"
+                    android:drawableLeft="@drawable/life_my_icon_collection"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:text="我的收藏" />
+
+            </FrameLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_150" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_145">
+
+                <TextView
+                    android:id="@+id/tv_footprint"
+                    style="@style/my_fragment_text"
+                    android:drawableLeft="@drawable/life_my_icon_history"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:text="我的足迹" />
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+</RelativeLayout>

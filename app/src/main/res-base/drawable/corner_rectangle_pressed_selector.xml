@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 白色 背景的圆角矩形 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true" >
+        <shape android:shape="rectangle" >
+            <solid android:color="#f0f4ff" />
+        </shape>
+    </item>
+
+</selector>

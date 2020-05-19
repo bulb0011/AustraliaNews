@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/jmui_chat_item_receive_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+        android:id="@+id/jmui_send_time_txt"
+        style="@style/jmui_chat_text_date_style"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/jmui_avatar_iv"
+            style="@style/jmui_chat_item_receiver_avatar_style"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="53dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/jmui_display_name_tv"
+                style="@style/jmui_chat_display_name_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:id="@+id/jmui_curriculum_vitae_rl"
+                android:layout_width="230dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/jmui_msg_custom_bg">
+
+                <TextView
+                    android:id="@+id/custom_position_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="37dp"
+                    android:gravity="center"
+                    android:paddingLeft="13dp"
+                    android:singleLine="true"
+                    tools:text="营业员"
+                    android:textColor="#333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="37dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:paddingRight="10dp"
+                    tools:text="面试"
+                    android:textColor="#de6920"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#aaa"
+                    android:layout_below="@+id/custom_position_name"/>
+
+                <TextView
+                    android:id="@+id/custom_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_1"
+                    android:drawableLeft="@drawable/icon_gongsi"
+                    android:drawablePadding="4dp"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="11dp"
+                    android:paddingTop="10dp"
+                    android:singleLine="true"
+                    tools:text="公司名称公司名称公司名称公司名称"
+                    android:textColor="#555555"
+                    android:textSize="15sp"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/custom_position_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/custom_company_name"
+                    android:drawableLeft="@drawable/icon_adress"
+                    android:drawablePadding="4dp"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="11dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="9dp"
+                    android:singleLine="true"
+                    tools:text="区域"
+                    android:textColor="#555555"
+                    android:textSize="15sp"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/custom_position_wage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/custom_position_area"
+                    android:layout_alignBottom="@+id/custom_position_area"
+                    android:layout_toRightOf="@+id/custom_position_area"
+                    android:gravity="center"
+                    android:paddingRight="10dp"
+                    tools:text="$ 3000"
+                    android:textColor="#de6920"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/custom_position_wowobi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/custom_position_area"
+                    android:layout_alignBottom="@+id/custom_position_area"
+                    android:layout_toRightOf="@+id/custom_position_wage"
+                    android:gravity="center"
+                    tools:text="返利200窝窝币"
+                    android:textColor="#de6920"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_businessCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="53dp"
+            android:background="@drawable/jmui_msg_receive_bg"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/business_head"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="12.33dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="13.33dp"
+                    android:background="@drawable/jmui_head_icon"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_nickUser"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11.33dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="#2C2C2C"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_userName"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11.33dp"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="#999999"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="183dp"
+                android:layout_height="0.33dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="16.67dp"
+                android:background="#DCDCDC"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:text="个人名片"
+                android:textColor="#989898"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

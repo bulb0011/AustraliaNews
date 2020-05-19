@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_take_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_rectangle_white_top_radius_selector"
+        android:gravity="center"
+        android:paddingTop="@dimen/text_size_px_38"
+        android:paddingBottom="@dimen/text_size_px_38"
+        android:text="拍照"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_sp_16" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_marginLeft="@dimen/text_size_px_35"
+            android:layout_marginRight="@dimen/text_size_px_35" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_album_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_rectangle_white_selector"
+        android:gravity="center"
+        android:paddingTop="@dimen/text_size_px_38"
+        android:paddingBottom="@dimen/text_size_px_38"
+        android:text="相册"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_sp_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_20"
+        android:background="@color/bg_white" />
+
+    <View style="@style/DividerHorizontal" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_rectangle_white_selector"
+        android:gravity="center"
+        android:paddingTop="@dimen/text_size_px_38"
+        android:paddingBottom="@dimen/text_size_px_38"
+        android:text="取消"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_sp_16" />
+
+</LinearLayout>

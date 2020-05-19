@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/text_size_px_325">
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="@dimen/text_size_px_326"
+        android:layout_height="@dimen/text_size_px_226"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/default_img"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="@dimen/text_size_px_43" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_size_px_40"
+        android:layout_toLeftOf="@+id/iv_photo"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.1"
+        android:maxLines="2"
+        android:paddingLeft="@dimen/text_size_px_43"
+        android:paddingRight="@dimen/text_size_px_43"
+        android:text="舒服舒服是否舒服舒服舒服舒一舒服是否舒服舒服舒服舒服舒服是否舒服舒服舒服"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_sp_16" />
+
+    <TextView
+        android:id="@+id/tv_advertise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_photo"
+        android:includeFontPadding="false"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:paddingLeft="@dimen/text_size_px_8"
+        android:paddingRight="@dimen/text_size_px_8"
+        android:paddingTop="@dimen/text_size_px_2"
+        android:paddingBottom="@dimen/text_size_px_3"
+        android:text="广告"
+        android:background="@drawable/corners_stroke_text_gray_2dp_shape"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/text_size_sp_10" />
+
+    <View
+        style="@style/DividerHorizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:layout_marginRight="@dimen/text_size_px_43" />
+
+</RelativeLayout>

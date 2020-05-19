@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarTitleText="发布黄页信息" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_life_release_photo" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="Suburb" />
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:drawablePadding="@dimen/text_size_px_20"
+                    android:gravity="center_vertical|end"
+                    style="@style/life_release_padding_size_style"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="公司名称" />
+
+                <EditText
+                    android:id="@+id/et_company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical|end"
+                    android:hint="请填写"
+                    android:maxLength="50"
+                    style="@style/life_release_padding_size_style"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="公司地址" />
+
+                <EditText
+                    android:id="@+id/et_company_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical|end"
+                    android:hint="请填写"
+                    android:maxLength="50"
+                    style="@style/life_release_padding_size_style"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="公司网址" />
+
+                <EditText
+                    android:id="@+id/et_company_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical|end"
+                    android:hint="请填写"
+                    android:maxLength="50"
+                    style="@style/life_release_padding_size_style"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="交易性质" />
+
+                <TextView
+                    android:id="@+id/tv_nature_transaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    style="@style/life_release_padding_size_style"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+
+            <include layout="@layout/layout_life_release_details_fill_in" />
+
+            <include layout="@layout/layout_life_release_contact" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

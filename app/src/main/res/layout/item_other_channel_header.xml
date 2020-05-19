@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="39dp">
+
+    <TextView
+        android:id="@+id/tv_other"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="4.5dp"
+        android:text="@string/other_channel"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_other"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@id/tv_other"
+        android:text="@string/click_to_subscribe"
+        android:textColor="@color/tip"
+        android:textSize="11sp" />
+
+    <!--<View-->
+        <!--android:visibility="invisible"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.3dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@color/tip" />-->
+</RelativeLayout>

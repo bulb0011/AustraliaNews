@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ruanyun.australianews">
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- //获取设备网络状态，禁用后无法获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- //网络权限，当禁用后，无法进行检索等相关业务 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- //读取设备硬件信息，统计数据 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- //读取系统信息，包含系统版本等信息，用作统计 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" /> <!-- //获取设备的网络状态，鉴权所需网络代理 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- //这个权限用于进行网络定位 -->
+    <!-- <uses-permission android:name="android.permission.WRITE_SETTINGS" /> -->
+    <!-- //这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- //获取统计数据 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:name=".App"
+        tools:replace="android:name,allowBackup"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="oQ1Dch3GSB5s4mAnXMlaD8dIOg38jjYL" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".ui.SplashActivity"
+            android:screenOrientation="portrait">
+
+            <!-- android:theme="@style/AppTheme.FullScreen"> -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.GuideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.main.LifeMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.login.RegisteredActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.login.CountryAreaCodeSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.ForgetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.ModifyPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ListSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CityListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MultipleSelectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.im.P2pChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseThemeWhite" />
+        <activity
+            android:name=".ui.im.MessageListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.news.ChannelManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.YellowPageListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.main.SelectReleaseTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.main.SelectReleaseLifeTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.HouseRentListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.HouseDemandListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.BusinessTransferListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.RecruitmentListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.CarSaleListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.PetTransactionListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.TransactionMarketListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.TextbookListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.ShopListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.FeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyMessageListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyMessageNotificationDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyEvaluationListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.PersonalInformationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.my.MyCollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyBrowseRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyReleaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyPushRecordNewListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.AboutUsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.UpdateBindPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.UpdateBindMailboxActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.UserHomePageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.news.NewsDetailsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.news.VideoNewsDetailsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.news.SecondaryCommentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.news.NewsCommentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.life.release.MapPointActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.life.release.ReleaseYellowPageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseBusinessTransferActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseCarSaleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseHouseDemandActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseHouseRentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleasePetTransactionActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleasePetTransactionSelectTypeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseRecruitmentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseTransactionMarketActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseTextbookActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseShopActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.life.release.ReleaseShopGoodsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" /><activity
+            android:name=".ui.wealth.WealthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.WealthMyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.WealthFundListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.WealthMyBrowseListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.ActivitysListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.ReleaseActivitysActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.HousingMarketListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.ReleaseHousingMarketActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.CivilEstateListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.ReleaseCivilEstateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.WealthMyCollectListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wealth.WealthMyReleaseListActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.login.RegisteredBindActivity" /> <!-- 极光推送  用户自定义的广播接收器 -->
+        <receiver
+            android:name=".ui.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+
+                <!-- <action android:name="cn.jpush.android.intent.REGISTRATION" /> &lt;!&ndash;Required  用户注册SDK的intent&ndash;&gt; -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+                <!-- <action android:name="cn.jpush.android.intent.CONNECTION" />&lt;!&ndash; 接收网络变化 连接/断开 since 1.6.3 &ndash;&gt; -->
+                <category android:name="com.ruanyun.australianews" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

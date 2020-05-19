@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion rootProject.ext.compilesdkversion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minsdkversion
+        targetSdkVersion rootProject.ext.targetsdkversion
+    }
+}
+
+
+dependencies {
+    implementation "com.android.support:support-annotations:$ANNOTATION_SUPPORT_VERSION"
+    implementation "com.android.support:support-v4:$V7_CARDVIEW_VERSION"
+}

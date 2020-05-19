@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarBgColor="@color/theme_color"
+        android:id="@+id/topbar"
+        app:topBarViewLineEnable="false"
+        app:topBarTitleText="财富"
+        app:topBarTitleTextColor="@color/white"
+        app:topBarLeftImageSrc="@drawable/arrow_white_left"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_170"
+        android:background="@color/theme_color">
+
+        <TextView
+            android:id="@+id/tv_financial_management"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_financial_management"
+            android:drawablePadding="@dimen/text_size_px_7"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/text_size_px_20"
+            android:text="理财"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_sp_13" />
+
+        <TextView
+            android:id="@+id/tv_housing_market"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_housing_market"
+            android:drawablePadding="@dimen/text_size_px_7"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/text_size_px_20"
+            android:text="房市"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_sp_13" />
+
+        <TextView
+            android:id="@+id/tv_business"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_business"
+            android:drawablePadding="@dimen/text_size_px_7"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/text_size_px_20"
+            android:text="生意"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_sp_13" />
+
+        <TextView
+            android:id="@+id/tv_my"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_wealth_my"
+            android:drawablePadding="@dimen/text_size_px_7"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/text_size_px_20"
+            android:text="我的"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_sp_13" />
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_refresh_rv_common"/>
+
+</LinearLayout>

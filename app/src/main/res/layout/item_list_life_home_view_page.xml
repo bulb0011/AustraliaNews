@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/text_size_px_290"
+    android:layout_marginTop="@dimen/text_size_px_20"
+    android:orientation="vertical">
+
+    <View style="@style/DividerHorizontal"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:layout_marginRight="@dimen/text_size_px_43"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/text_size_px_2"/>
+
+    <LinearLayout
+        android:id="@+id/ll_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/text_size_px_17"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal|bottom"/>
+
+</FrameLayout>

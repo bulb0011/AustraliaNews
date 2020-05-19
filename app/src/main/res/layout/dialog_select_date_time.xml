@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/text_size_px_994"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/corners_white_5dp_shape"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_130">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/corner_blue_white_selector"
+            android:gravity="center"
+            android:textColor="@color/text_black_blue_color"
+            tools:text="2019年09月09日" />
+
+        <View
+            style="@style/DividerVertical"
+            android:layout_marginTop="@dimen/text_size_px_20"
+            android:layout_marginBottom="@dimen/text_size_px_20" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/corner_blue_white_selector"
+            android:gravity="center"
+            android:textColor="@color/text_black_blue_color"
+            tools:text="11:23" />
+
+    </LinearLayout>
+
+    <View style="@style/DividerHorizontal" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_600">
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:visibility="visible" />
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:timePickerMode="spinner"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+
+    <View style="@style/DividerHorizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_130"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size_sp_14" />
+
+        <View
+            style="@style/DividerVertical"
+            android:layout_marginTop="@dimen/text_size_px_20"
+            android:layout_marginBottom="@dimen/text_size_px_20" />
+
+        <TextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="@color/theme_color"
+            android:textSize="@dimen/text_size_sp_14" />
+
+    </LinearLayout>
+
+</LinearLayout>

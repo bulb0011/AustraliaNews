@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarTitleText="发布宠物交易" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_white">
+
+        <LinearLayout
+            android:id="@+id/ll_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_life_release_photo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="身份" />
+
+                <TextView
+                    android:id="@+id/tv_identity"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="Suburb" />
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:drawablePadding="@dimen/text_size_px_20"
+                    android:gravity="center_vertical|end"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="品种" />
+
+                <TextView
+                    android:id="@+id/tv_variety"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_gender"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="性别" />
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_blood_certificate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="血统证明" />
+
+                <TextView
+                    android:id="@+id/tv_blood_certificate"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_vaccine_situation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="疫苗情况" />
+
+                <TextView
+                    android:id="@+id/tv_vaccine_situation"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_whether_deworming"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="是否驱虫" />
+
+                <TextView
+                    android:id="@+id/tv_whether_deworming"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_whether_sterilization"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="是否绝育" />
+
+                <TextView
+                    android:id="@+id/tv_whether_sterilization"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_number_of_pets"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="宠物数量" />
+
+                <EditText
+                    android:id="@+id/et_number_of_pets"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical|end"
+                    android:hint="请填写"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="发布类型" />
+
+                <TextView
+                    android:id="@+id/tv_release_type"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_provide_services"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="提供服务" />
+
+                <TextView
+                    android:id="@+id/tv_provide_services"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:drawablePadding="@dimen/text_size_px_20"
+                    android:gravity="center_vertical|end"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:text="出售价格" />
+
+                <EditText
+                    android:id="@+id/et_price"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical|end"
+                    android:hint="面议请填0"
+                    android:inputType="numberDecimal"
+                    android:maxLength="9"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_size_px_43"
+                android:layout_marginTop="@dimen/text_size_px_3"
+                android:layout_marginRight="@dimen/text_size_px_43"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/life_release_tip_style"
+                    android:layout_height="@dimen/text_size_px_130"
+                    android:text="描述" />
+
+                <EditText
+                    android:id="@+id/et_description"
+                    style="@style/life_release_padding_size_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:paddingBottom="@dimen/text_size_px_43"
+                    android:gravity="start"
+                    android:hint="请填写"
+                    android:minLines="5"
+                    android:maxLength="500"
+                    android:textColor="@color/text_black" />
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center_vertical|end"-->
+                <!--android:hint="600字以内"-->
+                <!--android:paddingTop="@dimen/text_size_px_40"-->
+                <!--android:paddingRight="@dimen/text_size_px_48"-->
+                <!--android:paddingBottom="@dimen/text_size_px_40" />-->
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_life_release_contact" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

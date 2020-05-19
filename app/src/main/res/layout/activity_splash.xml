@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.3"
+        android:text="澳\n洲\n财\n经"
+        android:textColor="@color/text_black"
+        android:textSize="50dp" />
+
+    <ImageView
+        android:id="@+id/ivAdvert"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/tv_jump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:text="5s跳过"
+        android:visibility="invisible"
+        android:textSize="@dimen/text_size_sp_14"
+        android:textColor="@color/white"
+        android:background="@drawable/advertising_page_time_bg"
+        android:paddingLeft="@dimen/text_size_px_28"
+        android:paddingRight="@dimen/text_size_px_28"
+        android:paddingTop="@dimen/text_size_px_10"
+        android:paddingBottom="@dimen/text_size_px_15"/>
+
+</FrameLayout>

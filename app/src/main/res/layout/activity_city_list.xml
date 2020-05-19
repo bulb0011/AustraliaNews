@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/text_size_px_140"
+            android:layout_height="@dimen/topbar_height"
+            android:padding="12dp"
+            android:src="@drawable/nav_btn_back" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_px_90"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/text_size_px_140"
+            android:layout_toRightOf="@+id/iv_back"
+            android:background="@drawable/city_search_bg_shape"
+            android:drawableLeft="@drawable/home_icon_search"
+            android:drawablePadding="@dimen/text_size_px_30"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:hint="请输入城市名"
+            android:paddingLeft="@dimen/text_size_px_40"
+            android:paddingRight="@dimen/text_size_px_30"
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/text_size_sp_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/topbar_title_textsize"
+            android:textColor="@color/text_black"
+            android:text="选择城市"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:fastScrollEnabled="false" />
+
+        <com.ruanyun.australianews.widget.EaseSidebar
+            android:id="@+id/sidebar"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/text_size_px_100"
+            android:layout_marginBottom="@dimen/text_size_px_300"
+            android:background="@android:color/transparent"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/floating_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:textColor="@color/theme_color"
+            android:textSize="40sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

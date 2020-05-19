@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
+                android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topbar_line"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/transparent_black" />
+
+        <TextView
+            android:id="@+id/topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/topbar_height"
+            android:layout_below="@+id/topbar_line"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="个人中心"
+            android:textColor="@color/black"
+            android:textSize="@dimen/topbar_title_textsize" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_size_px_2"
+            android:layout_alignBottom="@id/topbar_title"
+            android:background="@drawable/vertical_shadow_line_top_bottom" />
+
+    </RelativeLayout>
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/ptr_classic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_topbar"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--用户信息-->
+                <RelativeLayout
+                    android:id="@+id/rl_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_400">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_size_px_350"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/text_size_px_42"
+                        android:layout_marginRight="@dimen/text_size_px_42"
+                        android:src="@drawable/gradient_fragment_my_user_bg_3dp_shape" />
+
+                    <ImageView
+                        android:id="@+id/iv_user_avatar"
+                        android:layout_width="@dimen/text_size_px_200"
+                        android:layout_height="@dimen/text_size_px_200"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/text_size_px_85"
+                        android:layout_marginRight="@dimen/text_size_px_33"
+                        android:src="@drawable/default_user" />
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/iv_user_avatar"
+                        android:layout_marginTop="@dimen/text_size_px_24"
+                        android:layout_marginBottom="@dimen/text_size_px_24"
+                        android:layout_toRightOf="@+id/iv_user_avatar"
+                        android:text="点击登录"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_sp_17" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_user_name"
+                        android:layout_toRightOf="@+id/iv_user_avatar"
+                        tools:text="未填写签名"
+                        android:singleLine="true"
+                        android:layout_marginRight="@dimen/text_size_px_200"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_sp_14" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/text_size_px_126"
+                        android:src="@drawable/my_arrow_white" />
+
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_message"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_news"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="我的消息" />
+
+                    <TextView
+                        android:id="@+id/tv_unread_count_my"
+                        style="@style/red_dot_style"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/text_size_px_110"
+                        android:visibility="invisible"
+                        tools:visibility="visible" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_comment"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_comment"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="我的评论" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_collection"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_collection"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="我的收藏" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_push_record"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_record"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="推送记录" />
+
+                </FrameLayout>
+
+                <View style="@style/DividerHorizontal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_25"
+                    android:background="@color/bg_white" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_browsing_history"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_history"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="浏览历史" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_reminder_notice"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_notice"
+                        android:text="提醒通知" />
+
+                    <TextView
+                        android:id="@+id/tv_notice_switch_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="110dp"
+                        android:text="(接收新闻推送已关闭)"
+                        android:textSize="@dimen/text_size_sp_12"
+                        android:textColor="@color/color_grey_999999"/>
+
+                    <ImageView
+                        android:id="@+id/iv_notice_switch"
+                        android:layout_width="@dimen/text_size_px_150"
+                        android:layout_height="@dimen/text_size_px_90"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="@dimen/text_size_px_48"
+                        android:src="@drawable/notification_switch_selecter" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_feedback"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_fee"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="意见反馈" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_clear_cache"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_clean"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="清除缓存" />
+
+                    <TextView
+                        android:id="@+id/tv_cache"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="@dimen/text_size_px_113"
+                        android:text="12.62M"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/text_size_sp_12" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_rate_me"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_score"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="为我评分" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
+                        android:id="@+id/tv_about_us"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_aboutus"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="关于我们" />
+
+                </FrameLayout>
+
+                <View style="@style/DividerHorizontal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/bg_white"
+                    android:minHeight="@dimen/text_size_px_50" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+</RelativeLayout>

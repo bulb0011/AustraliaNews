@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/text_size_px_190">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:src="@drawable/mynews_icon_notice" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_size_px_197"
+        android:layout_marginTop="@dimen/text_size_px_39"
+        android:text="2018/11/16 12:23"
+        android:textSize="@dimen/text_size_sp_12" />
+
+    <View
+        android:id="@+id/unread"
+        android:layout_width="@dimen/text_size_px_15"
+        android:layout_height="@dimen/text_size_px_15"
+        android:layout_marginLeft="@dimen/text_size_px_10"
+        android:layout_marginTop="@dimen/text_size_px_58"
+        android:layout_toRightOf="@+id/tv_time"
+        android:background="@drawable/tag_bg_red_shape" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_size_px_197"
+        android:layout_marginTop="@dimen/text_size_px_105"
+        android:layout_marginRight="@dimen/text_size_px_41"
+        android:singleLine="true"
+        android:text="2019年4月22日系统更新通知"
+        android:textColor="@color/text_black" />
+
+    <View
+        style="@style/DividerHorizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/text_size_px_197" />
+
+
+</RelativeLayout>

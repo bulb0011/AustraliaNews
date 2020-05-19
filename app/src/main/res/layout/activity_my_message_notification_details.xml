@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarTitleText="公告详情"
+        android:id="@+id/topbar"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_content"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:paddingLeft="@dimen/text_size_px_43"-->
+        <!--android:paddingBottom="@dimen/text_size_px_43"-->
+        <!--android:padding="@dimen/text_size_px_43"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="为你提供房产、招聘、黄页、团购、交友、二手、宠物、车辆、周边游等海量分类信息，充分满足您免费查看/发布信息的需求。"-->
+        <!--android:textColor="@color/text_color_666"-->
+        <!--android:lineSpacingMultiplier="1.2"-->
+        <!--android:background="@color/white"-->
+        <!--android:textSize="14sp" />-->
+
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

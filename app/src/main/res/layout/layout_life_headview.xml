@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_130"
+        android:paddingTop="@dimen/text_size_px_18">
+
+        <TextView
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/text_size_px_43"
+            android:layout_marginRight="@dimen/text_size_px_43"
+            android:background="@drawable/corners_bgwhite_3dp_bg_shape"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="找工作、找房子、找二手"
+            android:imeOptions="actionSearch"
+            android:drawableLeft="@drawable/home_icon_search"
+            android:paddingLeft="@dimen/text_size_px_40"
+            android:paddingRight="@dimen/text_size_px_40"
+            android:singleLine="true"
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/text_size_sp_12" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_261"
+        android:paddingLeft="@dimen/text_size_px_43"
+        android:paddingTop="@dimen/text_size_px_33"
+        android:paddingRight="@dimen/text_size_px_43"
+        android:paddingBottom="@dimen/text_size_px_33">
+
+        <RelativeLayout
+            android:id="@+id/rl_release"
+            android:layout_width="@dimen/text_size_px_480"
+            android:layout_height="match_parent"
+            android:background="@drawable/life_bg_release">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我要发布"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/text_size_px_33"
+                android:layout_marginTop="@dimen/text_size_px_40"
+                android:textSize="@dimen/text_size_sp_15"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发布您的生活服务"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/text_size_px_33"
+                android:layout_marginTop="@dimen/text_size_px_116"
+                android:textSize="@dimen/text_size_sp_11"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_message"
+            android:layout_width="@dimen/text_size_px_480"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/life_bg_news">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的消息"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/text_size_px_33"
+                android:layout_marginTop="@dimen/text_size_px_40"
+                android:textSize="@dimen/text_size_sp_15"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看最新/历史消息"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/text_size_px_33"
+                android:layout_marginTop="@dimen/text_size_px_116"
+                android:textSize="@dimen/text_size_sp_11"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

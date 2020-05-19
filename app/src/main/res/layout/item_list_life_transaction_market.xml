@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/text_size_px_1167"
+    android:layout_height="@dimen/text_size_px_303"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="@dimen/text_size_px_16"
+        android:layout_height="0dp" />
+
+    <ImageView
+        android:id="@+id/iv_select"
+        android:layout_width="@dimen/text_size_px_103"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/text_size_px_27"
+        android:paddingRight="@dimen/text_size_px_16"
+        android:layout_toRightOf="@+id/view"
+        android:src="@drawable/comment_icon_selector"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_show_content"
+        android:layout_width="@dimen/text_size_px_1064"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/iv_select">
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="@dimen/text_size_px_326"
+            android:layout_height="@dimen/text_size_px_226"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/text_size_px_27"
+            android:layout_marginRight="@dimen/text_size_px_25"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_img" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_px_25"
+            android:layout_marginBottom="@dimen/text_size_px_30"
+            android:layout_toRightOf="@+id/iv_pic"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
+            android:paddingRight="@dimen/text_size_px_33"
+            android:text="私人2013顶配福特翼虎四驱20T柴油自动"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_sp_16" />
+
+        <TextView
+            android:id="@+id/tv_update_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_pic"
+            android:layout_marginTop="@dimen/text_size_px_16"
+            android:layout_toRightOf="@+id/iv_pic"
+            android:includeFontPadding="false"
+            android:text="更新于： 2018-12-23"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_sp_12" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_pic"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/text_size_px_20"
+            android:layout_marginRight="@dimen/text_size_px_33"
+            android:includeFontPadding="false"
+            android:text="$460/周"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_sp_12" />
+
+    </RelativeLayout>
+</RelativeLayout>

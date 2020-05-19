@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <TextView
+        android:id="@+id/text_classification_description"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_106"
+        android:layout_marginTop="@dimen/text_size_px_20"
+        android:drawableLeft="@drawable/blue_dot_shape"
+        android:drawablePadding="@dimen/text_size_px_25"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/text_size_px_43"
+        android:text="分类描述信息"
+        android:textColor="@color/text_color_666"
+        android:textSize="@dimen/text_size_sp_14" />
+
+    <LinearLayout
+        android:id="@+id/ll_details_write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:layout_marginRight="@dimen/text_size_px_43"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/text_details_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相关介绍"
+            android:paddingTop="@dimen/text_size_px_33"
+            style="@style/life_release_padding_size_style"
+            android:textColor="@color/text_black"/>
+
+        <EditText
+            android:id="@+id/et_details"
+            style="@style/life_release_padding_size_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请填写"
+            android:paddingTop="@dimen/text_size_px_35"
+            android:minLines="5"
+            android:gravity="start"
+            android:paddingBottom="@dimen/text_size_px_43"
+            android:maxLength="500"
+            android:lineSpacingMultiplier="1.2"/>
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingRight="@dimen/text_size_px_48"-->
+            <!--android:paddingTop="@dimen/text_size_px_40"-->
+            <!--android:paddingBottom="@dimen/text_size_px_40"-->
+            <!--android:hint="600字以内"-->
+            <!--android:gravity="center_vertical|end"/>-->
+
+    </LinearLayout>
+
+</merge>

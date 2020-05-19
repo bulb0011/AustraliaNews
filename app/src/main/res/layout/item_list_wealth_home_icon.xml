@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="@dimen/text_size_px_190"
+    android:paddingTop="@dimen/text_size_px_30">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/text_size_px_70"
+        android:layout_height="@dimen/text_size_px_70"
+        android:src="@drawable/icon_funding" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="房屋出租"
+        android:paddingTop="@dimen/text_size_px_15"
+        android:textSize="@dimen/text_size_sp_13"
+        android:textColor="@color/text_black"/>
+
+</LinearLayout>

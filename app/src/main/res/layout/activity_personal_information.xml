@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarRightText="保存"
+        app:topBarRightTextEnable="true"
+        app:topBarTitleText="个人资料" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_211">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:drawablePadding="@dimen/text_size_px_30"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:text="头像"
+                    android:textColor="@color/text_default"
+                    android:textSize="@dimen/text_size_sp_15" />
+
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="@dimen/text_size_px_132"
+                    android:layout_height="@dimen/text_size_px_132"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/text_size_px_90"
+                    android:src="@drawable/default_user" />
+
+            </RelativeLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_43" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_155">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:text="昵称"
+                    android:textColor="@color/text_default"
+                    android:textSize="@dimen/text_size_sp_15" />
+
+                <EditText
+                    android:id="@+id/et_nick_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/text_size_px_30"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入"
+                    android:maxLength="30"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_sp_14" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_43" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_155">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:text="性别"
+                    android:textColor="@color/text_default"
+                    android:textSize="@dimen/text_size_sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:drawablePadding="@dimen/text_size_px_30"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:maxLines="2"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_sp_14" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_43" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_155">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:text="出生日期"
+                    android:textColor="@color/text_default"
+                    android:textSize="@dimen/text_size_sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:drawablePadding="@dimen/text_size_px_30"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:maxLines="2"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_sp_14" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_43" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_155">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:text="手机号码"
+                    android:textColor="@color/text_default"
+                    android:textSize="@dimen/text_size_sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:drawablePadding="@dimen/text_size_px_30"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|right"
+                    android:hint="未绑定"
+                    android:maxLines="2"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_sp_14" />
+            </LinearLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_43" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_155">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:text="邮箱"
+                    android:textColor="@color/text_default"
+                    android:textSize="@dimen/text_size_sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_mailbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:drawablePadding="@dimen/text_size_px_30"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|right"
+                    android:hint="未绑定"
+                    android:maxLines="2"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_sp_14" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_43" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/text_size_px_100"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingTop="@dimen/text_size_px_48"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:paddingBottom="@dimen/text_size_px_48"
+                    android:text="签名"
+                    android:textColor="@color/text_default"
+                    android:textSize="@dimen/text_size_sp_15" />
+
+                <EditText
+                    android:id="@+id/et_signature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/text_size_px_30"
+                    android:ellipsize="end"
+                    android:gravity="right|top"
+                    android:hint="未填写签名"
+                    android:maxLength="50"
+                    android:paddingLeft="@dimen/text_size_px_43"
+                    android:paddingTop="@dimen/text_size_px_48"
+                    android:paddingRight="@dimen/text_size_px_43"
+                    android:paddingBottom="@dimen/text_size_px_48"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_size_sp_14" />
+            </LinearLayout>
+
+            <View
+                style="@style/DividerHorizontal"
+                android:layout_marginLeft="@dimen/text_size_px_43" />
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_122"
+                android:layout_marginLeft="@dimen/text_size_px_50"
+                android:layout_marginTop="@dimen/text_size_px_85"
+                android:layout_marginRight="@dimen/text_size_px_50"
+                android:layout_marginBottom="@dimen/text_size_px_85"
+                android:background="@drawable/corners_registered_bg_shape"
+                android:gravity="center"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_sp_15" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

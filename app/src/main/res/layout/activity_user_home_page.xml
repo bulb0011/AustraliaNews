@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_130"
+                app:tl_indicator_width="@dimen/text_size_px_70"
+                app:tl_indicator_height="@dimen/text_size_px_7"
+                app:tl_indicator_color="@color/theme_color"
+                app:tl_tab_space_equal="true"
+                app:tl_textSelectColor="@color/black"
+                app:tl_textUnselectColor="@color/text_color_666" />
+
+            <View style="@style/DividerHorizontal"
+                android:layout_below="@+id/tab"
+                android:id="@+id/view_line"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/view_line" />
+        </RelativeLayout>
+
+        <include layout="@layout/layout_user_home_page_header" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <com.ruanyun.australianews.widget.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:topBarAdaptationStatusBar="true"
+        app:topBarBgColor="@color/theme_color"
+        app:topBarLeftImageSrc="@drawable/arrow_white_left"
+        app:topBarTitleText="个人主页"
+        app:topBarTitleTextColor="@color/white"
+        app:topBarViewLineEnable="false" />
+
+</FrameLayout>
