@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
+import android.util.Log
 import android.view.View
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.ResultBase
@@ -43,6 +44,11 @@ open class NewsDetailsActivity : WebViewActivity() {
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
+
+            Log.e("dengpao","type"+type)
+            Log.e("dengpao","json"+json)
+            Log.e("dengpao","url"+url)
+
             context.startActivity(starter)
         }
 
