@@ -103,16 +103,14 @@
     <style name="wealth_item_list_label_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_alignRight">@+id/iv_pic</item>
         <item name="android:background">@color/theme_color</item>
         <item name="android:textSize">@dimen/text_size_sp_11</item>
-        <item name="android:paddingTop">@dimen/text_size_px_3</item>
         <item name="android:paddingBottom">@dimen/text_size_px_3</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:paddingLeft">@dimen/text_size_px_14</item>
         <item name="android:paddingRight">@dimen/text_size_px_14</item>
-        <item name="android:layout_alignTop">@+id/iv_pic</item>
-        <item name="android:visibility">gone</item>
+        <item name="android:layout_alignBottom">@id/iv_pic</item>
+        <item name="android:layout_alignLeft">@id/iv_pic</item>
     </style>
 
 </resources>

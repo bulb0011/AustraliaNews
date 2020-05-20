@@ -37,8 +37,10 @@
 
         <TextView
             android:id="@+id/tv_label"
+            style="@style/wealth_item_list_label_style"
             android:text="活动"
-            style="@style/wealth_item_list_label_style" />
+
+            />
 
         <TextView
             android:id="@+id/tv_title"

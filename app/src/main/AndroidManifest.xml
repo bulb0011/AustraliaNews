@@ -277,9 +277,17 @@
         <activity
             android:name=".ui.wealth.ReleaseHousingMarketActivity"
             android:screenOrientation="portrait" />
-        <activity
+
+
+       <activity
             android:name=".ui.wealth.CivilEstateListActivity"
             android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".ui.wealth.CivilEstateListActivityTo"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ui.wealth.ReleaseCivilEstateActivity"
             android:screenOrientation="portrait" />

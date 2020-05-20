@@ -4,16 +4,11 @@ import android.content.Context
 import android.graphics.Rect
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewPager
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.BaseActivity
 import com.ruanyun.australianews.base.PageInfoBase
@@ -31,9 +26,8 @@ import com.ruanyun.australianews.ext.toImgUrl
 import com.ruanyun.australianews.model.*
 import com.ruanyun.australianews.model.params.UserOidPageParams
 import com.ruanyun.australianews.ui.WebViewActivity
-import com.ruanyun.australianews.ui.adapter.LifeHomeIconAdapter
-import com.ruanyun.australianews.ui.adapter.LifeReleaseCommonAdapter
 import com.ruanyun.australianews.ui.life.BusinessTransferListActivity
+import com.ruanyun.australianews.ui.main.SearchActivity
 import com.ruanyun.australianews.ui.wealth.adapter.WealthBrowseCollectionLifeCommonAdapter
 import com.ruanyun.australianews.util.C
 import com.ruanyun.australianews.util.CommonUtil
@@ -42,7 +36,6 @@ import com.ruanyun.australianews.util.RxUtil
 import com.ruanyun.australianews.widget.filterpopwindow.FilterInfoUiModel
 import com.ruanyun.australianews.widget.filterpopwindow.FilterListPopupWindow
 import com.ruanyun.australianews.widget.filterpopwindow.OnFilterClickListener
-import com.ruanyun.widget.ViewPagerAdapter
 import com.zhy.adapter.recyclerview.base.ItemViewDelegate
 import com.zhy.adapter.recyclerview.base.ViewHolder
 import kotlinx.android.synthetic.main.activity_wealth.*
@@ -119,6 +112,46 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
     }
 
     private fun initView() {
+
+        //股票
+        tv_gupiao.clickWithTrigger { WebViewActivity.startHtml(mContext, "股票", "file:///android_asset/gupiao.html"); }
+
+        //基金
+        tv_jijin.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                WealthFundListActivity.start(mContext)
+            }
+        })
+
+        //汇率
+        tv_hunlv.clickWithTrigger { WebViewActivity.startHtml(mContext, "外汇", "file:///android_asset/waihui.html")}
+
+        //跳转搜索
+        tv_search2.clickWithTrigger { SearchActivity.start(mContext, SearchActivity.HOME_SEARCH) }
+
+        image_que.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                finish();
+            }
+        })
+
+
+        //不动产
+        tv_bgudong.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+
+//                showToast("dainji")
+//                val starter = Intent(context, CivilEstateListActivityTo::class.java)
+//                context.startActivity(starter)
+
+                CivilEstateListActivityTo.start(mContext, CivilEstateInfo.ESTATEINFO_TYPE4)
+//
+//                CivilEstateListActivity.start(mContext, CivilEstateInfo.ESTATEINFO_TYPE2)
+
+            }
+        })
+
+
         topbar.setTopBarClickListener(this)
         iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.基金, R.drawable.icon_funding))
         iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.股票, R.drawable.icon_stock))
@@ -153,18 +186,25 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
             }
         }
 
+//        tv_housing_market.clickWithTrigger {
+//                        HousingMarketListActivity.start(mContext)
+//        }
+
 
         adapter = WealthBrowseCollectionLifeCommonAdapter(mContext, arrayListOf())
         adapter.isShowLabel = true
         headerAdapter = RvHeaderFootViewAdapter(adapter, mContext)
         list.adapter = headerAdapter
         list.layoutManager = LinearLayoutManager(mContext)
+
         val headerView = layoutInflater.inflate(R.layout.layout_wealth_newest_header, list, false)
         recyclerView = headerView.findViewById(R.id.recyclerView)
+
         recyclerView.isNestedScrollingEnabled = false
-        recyclerView.adapter = lifeHomeIconAdapter
+//        recyclerView.adapter = lifeHomeIconAdapter
         val gm = GridLayoutManager(mContext, 5)
         recyclerView.layoutManager = gm
+        //去掉头部
         headerAdapter.addHeaderView(headerView)
         list.addItemDecoration(object : RecyclerView.ItemDecoration() {
             override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
@@ -188,13 +228,16 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
                 .createDataDelegate()
         delegate.setDataSource(dataSource).refreshWithLoading()
 
-        tv_financial_management.clickWithTrigger {
-            typeFilter.setData(typeList, -1)
-            typeFilter.show(tv_financial_management)
-        }
-        tv_housing_market.clickWithTrigger {
-            HousingMarketListActivity.start(mContext)
-        }
+
+//        tv_financial_management.clickWithTrigger {
+//            typeFilter.setData(typeList, -1)
+//            typeFilter.show(tv_financial_management)
+//        }
+
+//        tv_housing_market.clickWithTrigger {
+//            HousingMarketListActivity.start(mContext)
+//        }
+
         tv_business.clickWithTrigger {
             BusinessTransferListActivity.start(mContext)
         }
@@ -221,6 +264,7 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
     }
 
 }
+
 
 class WealthIconAdapter(context: Context, datas: List<IconInfo>) : RvMuiltItemAdapter<IconInfo>(context, datas) {
 

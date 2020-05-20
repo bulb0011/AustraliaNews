@@ -1,7 +1,5 @@
 package com.ruanyun.australianews.model
 
-import android.content.Context
-import android.content.Intent
 import com.ruanyun.australianews.ext.toImgUrl
 import com.ruanyun.australianews.model.uimodel.LifeReleaseCommonUiModel
 import com.ruanyun.australianews.model.uimodel.WealthCommonUiModel
@@ -16,6 +14,8 @@ class CivilEstateInfo : WealthBaseInfo(), WealthCommonUiModel{
         const val ESTATEINFO_TYPE1 = "ESTATEINFO_TYPE1"//民用地产
         const val ESTATEINFO_TYPE2 = "ESTATEINFO_TYPE2"//商业地产
         const val ESTATEINFO_TYPE3 = "ESTATEINFO_TYPE3"//农场
+
+        const val ESTATEINFO_TYPE4 = "ESTATEINFO_TYPE4"//居民楼
     }
     override val itemType: Int
         get() {
