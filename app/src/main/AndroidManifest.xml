@@ -284,6 +284,11 @@
             android:screenOrientation="portrait" />
 
 
+
+        <activity
+            android:name=".ui.TextActivi"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ui.wealth.CivilEstateListActivityTo"
             android:screenOrientation="portrait" />

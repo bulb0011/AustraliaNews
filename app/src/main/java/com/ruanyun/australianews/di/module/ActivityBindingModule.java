@@ -381,6 +381,10 @@ public abstract class ActivityBindingModule {
     @ContributesAndroidInjector
     abstract CivilEstateListActivityTo civilEstateListActivityTo();
 
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract TextActivi textActivi();
+
     @FragmentScoped
     @ContributesAndroidInjector
     abstract CivilEstateListFragment civilEstateListFragment();

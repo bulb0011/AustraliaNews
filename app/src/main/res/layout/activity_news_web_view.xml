@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
 
     <com.ruanyun.australianews.widget.TopBar
         android:id="@+id/topbar"
@@ -9,12 +11,185 @@
         android:layout_height="wrap_content"
         android:visibility="gone" />
 
-    <com.tencent.smtt.sdk.WebView
-        android:id="@+id/webview"
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:layout_width="9dp"
+            android:layout_height="17dp"
+            android:background="@drawable/nav_btn_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_en_zhong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="27dp"
+            >
+
+            <TextView
+                android:id="@+id/zhong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中"
+                android:textSize="19dp"
+                />
+
+            <TextView
+                android:id="@+id/fenge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textSize="18dp"
+                android:textColor="@color/text_black"
+                />
+
+            <TextView
+                android:id="@+id/en"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En"
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bofang"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_bofang"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/rl_head"
+        >
+        
+        <ImageView
+            android:id="@+id/head_bofang"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/bobao"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/head_zanting"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/bfzhong"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:text="语音播报"
+            android:textSize="15dp"
+            android:textColor="#9A9DAB"
+            />
+
+
+    </RelativeLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/rl_bottom"
-        android:layout_below="@+id/topbar" />
+        android:layout_below="@+id/rl_bofang"
+        >
+        <com.tencent.smtt.sdk.WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_xuanfu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/shape_button"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_kaishi"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/bofang"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_zanting"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/zanting"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                />
+
+
+            <ImageView
+                android:id="@+id/iv_guanbi"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/chahao"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                />
+
+
+            <ProgressBar
+                android:id="@+id/pb_progressbar"
+                style="@style/mProgressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:progressDrawable="@drawable/main_pb_bg"
+                android:max="100"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dp"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/iv_guanbi"
+                android:layout_marginLeft="45dp"
+                android:text="@string/release_agreement"
+                android:textColor="@color/white"
+                android:maxEms="15"
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
 
     <com.ruanyun.australianews.widget.RYEmptyView
         android:id="@+id/emptyview"

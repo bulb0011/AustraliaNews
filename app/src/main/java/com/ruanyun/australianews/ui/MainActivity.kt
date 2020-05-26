@@ -22,9 +22,12 @@ import com.ruanyun.australianews.ext.clickWithTrigger
 import com.ruanyun.australianews.ext.dp2px
 import com.ruanyun.australianews.model.TabEntity
 import com.ruanyun.australianews.ui.login.LoginActivity
-import com.ruanyun.australianews.ui.main.*
+import com.ruanyun.australianews.ui.main.MyFragment
+import com.ruanyun.australianews.ui.main.NewsFragment
 import com.ruanyun.australianews.ui.wealth.WealthActivity
-import com.ruanyun.australianews.util.*
+import com.ruanyun.australianews.util.CacheHelper
+import com.ruanyun.australianews.util.EventNotifier
+import com.ruanyun.australianews.util.LogX
 import com.tencent.bugly.beta.Beta
 import jiguang.chat.entity.EventNotifyUnread
 import jiguang.chat.utils.FileHelper
@@ -66,10 +69,14 @@ class MainActivity : BaseActivity() {
                 }
                 1 -> {
 //                    showActivity(LifeMainActivity::class.java)
+
                     showActivity(WealthActivity::class.java)
-                    Handler().postDelayed({
-                        bottom_tabLayout.currentTab = if(currentPosition==0) 0 else 2
-                    }, 300)
+
+//                    showActivity(TextActivi::class.java)
+
+//                    Handler().postDelayed({
+//                        bottom_tabLayout.currentTab = if(currentPosition==0) 0 else 2
+//                    }, 300)
                 }
                 2 -> {
                     setFragment(1)

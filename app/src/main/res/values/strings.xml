@@ -1,4 +1,7 @@
 <resources>
+    
+    <string name="iflytek">5ec5fbe3</string>
+    
     <string name="app_name">澳洲财经</string>
     <string name="password_digits" translatable="false">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ</string>
     <string name="mailbox_digits" translatable="false">_-.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ@</string>
@@ -17,5 +20,22 @@
     <string name="edit">编辑</string>
     <string name="finish">完成</string>
     <string name="release_agreement">若提交您的信息，则您承认您已阅读并同意《澳洲财经APP信息发布协议》并同意以上文方式使用您的信息</string>
+
+    <string-array name="stream_entries">
+        <item>通话</item>
+        <item>系统</item>
+        <item>铃声</item>
+        <item>音乐</item>
+        <item>闹铃</item>
+        <item>通知</item>
+    </string-array>
+    <string-array name="stream_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 
 </resources>

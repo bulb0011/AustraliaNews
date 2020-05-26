@@ -6,7 +6,6 @@ import android.net.Uri
 import android.os.Build
 import android.util.Log
 import android.view.View
-import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.ResultBase
 import com.ruanyun.australianews.data.ApiFailAction
 import com.ruanyun.australianews.data.ApiManger
@@ -19,6 +18,7 @@ import com.ruanyun.australianews.model.ShareJsonInfo
 import com.ruanyun.australianews.model.params.DeleteCollectionParams
 import com.ruanyun.australianews.model.params.NewsCommentParams
 import com.ruanyun.australianews.model.uimodel.LifeReleaseCommonUiModel
+import com.ruanyun.australianews.ui.TtsHolder
 import com.ruanyun.australianews.ui.WebViewActivity
 import com.ruanyun.australianews.util.*
 import com.ruanyun.australianews.widget.LeaveMessageDialogFragment
@@ -29,6 +29,10 @@ import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.android.synthetic.main.activity_news_web_view.*
 import kotlinx.android.synthetic.main.layout_news_bottom.*
+
+
+
+
 
 /**
  * @description 新闻详情
@@ -44,11 +48,6 @@ open class NewsDetailsActivity : WebViewActivity() {
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
-
-            Log.e("dengpao","type"+type)
-            Log.e("dengpao","json"+json)
-            Log.e("dengpao","url"+url)
-
             context.startActivity(starter)
         }
 
@@ -68,8 +67,33 @@ open class NewsDetailsActivity : WebViewActivity() {
     lateinit var leaveMessageDialogFragment: LeaveMessageDialogFragment
     lateinit var sharePopWindow: SharePopWindow
 
+    var isChina=true
+
+    var title=""
+
+
+    lateinit var ttsholder : TtsHolder
+
+    var English="Hooray! It's snowing! It's time to make a sn" +
+            "owman.James runs out. He makes a big pile of s" +
+            "now. He puts a big snowball on top. He adds a scarf " +
+            "and a hat. He adds an orange for the nose. He adds coal for the eyes and buttons.In " +
+            "the evening, James opens the door. What does he see? The snowman is moving! James invites him in. " +
+            "The snowman has never been inside a house. He says hello to the cat. He plays with paper towels.A" +
+            " moment later, the snowman takes James's hand and goes out.They go up, up, up into the air! They are" +
+            " flying! What a wonderful night!The next morning, James jumps out of bed. He runs to the door.He" +
+            " wants to thank the snowman. But he's gone."
+
+
+     var text="他看见了什么？雪人在移动！詹姆斯邀请它进来。雪人从来没有去过房间里面。它对猫咪打了个招呼。猫咪玩着纸巾。不久之后，雪人牵着詹姆斯的手出去了。他们一直向上升，一直升到空中！他们在飞翔！多么美妙的夜晚！第二天早上，詹姆斯从床上蹦了起来。他向门口跑去。他想感谢雪人，但是它已经消失了。"
+
+
     override fun initView() {
         super.initView()
+
+
+        ttsholder=TtsHolder(context,text)
+
 
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(webview: WebView?, url: String?): Boolean {
@@ -131,6 +155,7 @@ open class NewsDetailsActivity : WebViewActivity() {
         } else {
             val newsInfo = GsonUtil.parseJson(shareJson, ShareJsonInfo::class.java)
             sharePopWindow.share_title = newsInfo.share_title
+            title=newsInfo.share_title
             val shareText = newsInfo.share_text
             if (!shareText.isNullOrEmpty()) {
                 sharePopWindow.share_text = shareText
@@ -179,10 +204,260 @@ open class NewsDetailsActivity : WebViewActivity() {
             tv_comment_count.visibility = View.GONE
         }
         presenter.getNewsCommentCount()
+
+
+        if (isChina){
+            zhong.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.theme_color))
+            en.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.text_black))
+
+        }else{
+            zhong.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.text_black))
+            en.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.theme_color))
+        }
+
+        initEvent()
+
+        tv_title.setText(title)
+
+        rl_xuanfu.visibility=View.GONE
+        iv_kaishi.visibility=View.GONE
+        head_zanting.visibility=View.GONE
+
+
     }
 
+    private fun initEvent() {
+        /**
+         * 点击上面中英文切换
+         */
+        ll_en_zhong.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+
+                iv_kaishi.visibility = View.GONE
+                iv_zanting.visibility = View.VISIBLE
+
+                head_bofang.visibility = View.GONE
+
+                head_zanting.visibility = View.VISIBLE
+
+                ttsholder.stopSpeaking()
+
+                if (isChina) {
+                    ttsholder=TtsHolder(context,text)
+
+                    zhong.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.theme_color))
+                    en.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.text_black))
+                    isChina = false
+                } else {
+                    ttsholder=TtsHolder(context,English)
+
+                    zhong.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.text_black))
+                    en.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.theme_color))
+                    isChina = true
+                }
+
+                ttsholder.start()
+
+                setPercent()
+
+                rl_xuanfu.visibility = View.VISIBLE
+            }
+        })
+
+
+        /**
+         * 头部的播放
+         */
+        head_bofang.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+
+                head_bofang.visibility = View.GONE
+
+                head_zanting.visibility = View.VISIBLE
+
+                iv_kaishi.visibility = View.GONE
+
+                iv_zanting.visibility = View.VISIBLE
+
+                rl_xuanfu.visibility = View.VISIBLE
+
+                ttsholder.start()
+
+                setPercent()
+            }
+        })
+
+        /**
+         * 头部暂停
+         */
+        head_zanting.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+
+                head_bofang.visibility = View.VISIBLE
+
+                head_zanting.visibility = View.GONE
+
+                iv_kaishi.visibility = View.VISIBLE
+
+                iv_zanting.visibility = View.GONE
+
+                ttsholder.pauseSpeaking()
+            }
+        })
+
+        /**
+         *开始图片
+         */
+        iv_kaishi.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+
+                iv_kaishi.visibility = View.GONE
+                iv_zanting.visibility = View.VISIBLE
+
+                head_bofang.visibility = View.GONE
+
+                head_zanting.visibility = View.VISIBLE
+
+                ttsholder.resumeSpeaking()
+
+                setPercent()
+
+            }
+        })
+
+
+        /**
+         *暂停图片
+         */
+        iv_zanting.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+
+                iv_kaishi.visibility = View.VISIBLE
+
+                iv_zanting.visibility = View.GONE
+
+                head_bofang.visibility = View.VISIBLE
+
+                head_zanting.visibility = View.GONE
+
+                ttsholder.pauseSpeaking()
+
+            }
+        })
+
+        /**
+         * 关闭
+         */
+        iv_guanbi.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+
+                rl_xuanfu.visibility = View.GONE
+
+                head_bofang.visibility = View.VISIBLE
+
+                head_zanting.visibility = View.GONE
+
+                head_bofang.visibility = View.VISIBLE
+
+                ttsholder.pauseSpeaking()
+
+
+            }
+        })
+
+//        webView.setOnScrollChangeListener(object :View .OnScrollChangeListener{
+//            override fun onScrollChange(
+//                v: View,
+//                scrollX: Int,
+//                scrollY: Int,
+//                oldScrollX: Int,
+//                oldScrollY: Int
+//            ) {
+//
+//                val webcontent  =webView.getContentHeight() * webView.getScale();
+//
+//                val webnow = v.getHeight() + v.getScrollY()
+//
+//                if (Math.abs(webcontent - webnow) < 1) {
+//                    //处于底端
+//
+//                } else if (v.getScrollY() == 0) {
+//                    //处于顶端
+//
+//                    rl_bofang.visibility=View.VISIBLE
+//                } else {
+//                    rl_bofang.visibility=View.GONE
+//                }
+//
+//            }
+//        })
+
+
+
+
+        webView.setOnTouchListener(View.OnTouchListener { v, event ->
+
+            val webcontent  =webView.getContentHeight() * webView.getScale()
+
+            val webnow = rl_bofang.getHeight()
+
+            when(event.action){
+
+                0 ->{
+                    Log.d("dengpao", "ACTION_DOWN")
+                }
+                1 -> {
+                    Log.d("dengpao", "ACTION_UP")
+
+                    if(Math.abs(v.getScrollY())>100){
+                        rl_bofang.visibility=View.GONE
+                    }
+                    else if (Math.abs(v.getScrollY())<100){
+                        rl_bofang.visibility=View.VISIBLE
+                    }
+                }
+                2 ->{
+
+                    Log.d("dengpao", "getScrollY高度"+Math.abs(v.getScrollY()))
+                    if (Math.abs(v.getScrollY())<300){
+                        rl_bofang.visibility=View.VISIBLE
+                    }
+
+                }
+                3 ->{
+//                    Log.d("dengpao", "ACTION_CANCEL")
+//
+//                    if(Math.abs(v.getScrollY())>webnow){
+//                        rl_bofang.visibility=View.GONE
+//                    }
+//                    else if (Math.abs(v.getScrollY())<webnow){
+//                        rl_bofang.visibility=View.VISIBLE
+//                    }
+                }
+
+            }
+
+            false
+
+        })
+
+
+        setPercent()
+
+
+    }
+
+    private fun setPercent() {
+        ttsholder.setOnSpeakProgress(object : TtsHolder.OnSpeakProgress {
+            override fun onSpeakProgress(percent: Int) {
+                pb_progressbar.setProgress(percent)
+            }
+        })
+    }
+
+
     override fun getContentViewId(): Int {
-        return R.layout.activity_news_web_view
+        return com.ruanyun.australianews.R.layout.activity_news_web_view
     }
 
     override fun updateNewsInfo(info: NewsCommentCountInfo) {
@@ -205,7 +480,7 @@ open class NewsDetailsActivity : WebViewActivity() {
      * 添加收藏
      */
     private fun addFavorites() {
-        showLoadingView(R.string.in_load)
+        showLoadingView(com.ruanyun.australianews.R.string.in_load)
         val disposable = ApiManger.getApiService().addFavorites(app.userOid, presenter.newsInfoOid, "${presenter.newsInfoType}")
                 .compose(RxUtil.normalSchedulers<ResultBase<CollectionBrowseNewsInfo>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<CollectionBrowseNewsInfo>>() {
@@ -239,7 +514,7 @@ open class NewsDetailsActivity : WebViewActivity() {
         params.type = 2
         params.userOid = app.userOid
         params.collectionInfoOids = newsCommentCountInfo?.collectionInfo
-        showLoadingView(R.string.in_load)
+        showLoadingView(com.ruanyun.australianews.R.string.in_load)
         val subscription = ApiManger.getApiService().deleteCollectionInfo(params)
                 .compose(RxUtil.normalSchedulers<ResultBase<*>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
@@ -279,7 +554,7 @@ open class NewsDetailsActivity : WebViewActivity() {
             LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO -> 7
             else -> 0
         }
-        showLoadingView(R.string.in_load)
+        showLoadingView(com.ruanyun.australianews.R.string.in_load)
         val disposable = ApiManger.getApiService().addWealthFavorites(app.userOid, presenter.newsInfoOid, type)
                 .compose(RxUtil.normalSchedulers<ResultBase<*>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
@@ -319,7 +594,7 @@ open class NewsDetailsActivity : WebViewActivity() {
             LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO -> 7
             else -> 0
         }
-        showLoadingView(R.string.in_load)
+        showLoadingView(com.ruanyun.australianews.R.string.in_load)
         val subscription = ApiManger.getApiService().deleteWealthFavorites(app.userOid, presenter.newsInfoOid, type)
                 .compose(RxUtil.normalSchedulers<ResultBase<*>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
@@ -349,7 +624,7 @@ open class NewsDetailsActivity : WebViewActivity() {
      * 添加新闻、生活评论
      */
     private fun addComment(s: String) {
-        showLoadingView(R.string.in_load)
+        showLoadingView(com.ruanyun.australianews.R.string.in_load)
         val subscription = ApiManger.getApiService().addComment(presenter.newsInfoOid, app.userOid, s, "${presenter.newsInfoType}")
                 .compose(RxUtil.normalSchedulers<ResultBase<*>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
@@ -393,7 +668,7 @@ open class NewsDetailsActivity : WebViewActivity() {
             LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO -> 7
             else -> 0
         }
-        showLoadingView(R.string.in_load)
+        showLoadingView(com.ruanyun.australianews.R.string.in_load)
         val subscription = ApiManger.getApiService().addWealthComment(presenter.newsInfoOid, app.userOid, s, type)
                 .compose(RxUtil.normalSchedulers<ResultBase<*>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
@@ -458,4 +733,11 @@ open class NewsDetailsActivity : WebViewActivity() {
             }
         }
     }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ttsholder.stopSpeaking()
+    }
+
 }

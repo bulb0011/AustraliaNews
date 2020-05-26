@@ -397,3 +397,7 @@
 #========================support=================================
 -dontwarn cn.jmessage.support.**
 -keep class cn.jmessage.support.**{*;}
+
+
+-keep class com.iflytek.**{*;}
+-keepattributes Signature

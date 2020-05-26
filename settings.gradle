@@ -1,1 +1,1 @@
-include ':app', ':imagepicker', ':android-pickers', ':gridviewpager', ':chatapp'
+include ':app', ':imagepicker', ':android-pickers', ':gridviewpager', ':chatapp', ':speechDemo'

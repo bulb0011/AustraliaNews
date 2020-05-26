@@ -1,16 +1,24 @@
 package com.ruanyun.australianews;
 
-import android.app.*;
-import android.content.*;
+import android.app.Activity;
+import android.app.Application;
+import android.app.Fragment;
+import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.ContentProvider;
+import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
+import com.iflytek.cloud.SpeechUtility;
 import com.mob.MobSDK;
 import com.ruanyun.australianews.di.component.DaggerApplicationComponent;
 import com.ruanyun.australianews.model.UserInfo;
-import com.ruanyun.australianews.util.*;
+import com.ruanyun.australianews.util.CacheHelper;
+import com.ruanyun.australianews.util.CommonUtil;
+import com.ruanyun.australianews.util.LogX;
 import com.ruanyun.imagepicker.Util;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
@@ -20,7 +28,13 @@ import java.util.Vector;
 
 import javax.inject.Inject;
 
-import dagger.android.*;
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
+import dagger.android.HasBroadcastReceiverInjector;
+import dagger.android.HasContentProviderInjector;
+import dagger.android.HasFragmentInjector;
+import dagger.android.HasServiceInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 import jiguang.chat.application.JGApplication;
 
@@ -54,11 +68,14 @@ public class App extends JGApplication implements HasActivityInjector, HasFragme
         CommonUtil.setAppContext(this);
         Util.setUriAuthority(this);
         Beta.initDelay = 8000;
-        Bugly.init(app, "f79900e5f7", false);
+        Bugly.init(app, "c403c42348", false);
         SDKInitializer.initialize(this);
         SDKInitializer.setCoordType(CoordType.BD09LL);
         initWebView();
         MobSDK.init(this);
+
+        SpeechUtility.createUtility(App.this, "appid=" + getString(R.string.iflytek));
+
     }
 
     public Boolean isLogin() {
