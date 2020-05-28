@@ -66,7 +66,9 @@
                     app:tl_textSelectColor="@color/theme_color"
                     app:tl_textUnselectColor="@color/text_color_666"
                     app:tl_tab_padding="11dp"
-                    app:tl_indicator_width_equal_title="true"/>
+                    app:tl_indicator_width_equal_title="true"
+                    app:tl_textsize="18dp"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_subscribe_to"
@@ -77,7 +79,7 @@
                     android:paddingLeft="8dp"
                     android:paddingRight="12dp"
                     android:background="@drawable/gradient_bg_transparent_shape"
-                    android:src="@drawable/home_btn_add" />
+                    android:src="@drawable/jiahao" />
 
                 <View
                     android:layout_width="match_parent"
@@ -91,7 +93,7 @@
             <com.ruanyun.australianews.widget.MyConvenientBanner
                 android:id="@+id/banner"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_size_px_608"
+                android:layout_height="@dimen/text_size_px_408"
                 app:canLoop="true" />
 
             <RelativeLayout
@@ -135,23 +137,25 @@
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_25"
+                android:background="@color/bg_white" />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_size_px_215"
-                android:visibility="gone"
+                android:layout_height="@dimen/text_size_px_250"
                 >
-
                 <TextView
                     android:id="@+id/tv_push_record"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/home_icon_record"
-                    android:drawablePadding="@dimen/text_size_px_6"
+                    android:drawableTop="@drawable/hangqing"
+                    android:drawablePadding="10dp"
                     android:gravity="center_horizontal"
-                    android:paddingTop="@dimen/text_size_px_18"
+                    android:paddingTop="@dimen/text_size_px_35"
                     android:text="行情"
-                    android:textSize="@dimen/text_size_sp_13"
+                    android:textSize="14dp"
                     android:textColor="@color/text_default" />
 
                 <TextView
@@ -159,12 +163,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/home_icon_house"
-                    android:drawablePadding="@dimen/text_size_px_6"
+                    android:drawableTop="@drawable/shishi"
+                    android:drawablePadding="10dp"
                     android:gravity="center_horizontal"
-                    android:paddingTop="@dimen/text_size_px_18"
+                    android:paddingTop="@dimen/text_size_px_35"
                     android:text="7X24"
-                    android:textSize="@dimen/text_size_sp_13"
+                    android:textSize="14dp"
                     android:textColor="@color/text_default" />
 
                 <TextView
@@ -172,12 +176,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/home_icon_recruit"
-                    android:drawablePadding="@dimen/text_size_px_6"
+                    android:drawableTop="@drawable/huodong"
+                    android:drawablePadding="10dp"
                     android:gravity="center_horizontal"
-                    android:paddingTop="@dimen/text_size_px_18"
+                    android:paddingTop="@dimen/text_size_px_35"
                     android:text="活动"
-                    android:textSize="@dimen/text_size_sp_13"
+                    android:textSize="14dp"
                     android:textColor="@color/text_default" />
 
                 <TextView
@@ -185,15 +189,16 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/home_icon_more"
-                    android:drawablePadding="@dimen/text_size_px_6"
+                    android:drawableTop="@drawable/dingyue"
+                    android:drawablePadding="10dp"
                     android:gravity="center_horizontal"
-                    android:paddingTop="@dimen/text_size_px_18"
+                    android:paddingTop="@dimen/text_size_px_35"
                     android:text="订阅"
-                    android:textSize="@dimen/text_size_sp_13"
+                    android:textSize="14dp"
                     android:textColor="@color/text_default" />
 
             </LinearLayout>
+
 
             <View
                 android:layout_width="match_parent"
@@ -243,6 +248,48 @@
                 android:layout_height="@dimen/text_size_px_24"
                 android:background="@color/bg_white" />
 
+
+            <RelativeLayout
+                android:id="@+id/rl_tip_login_to"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_size_px_85"
+                android:background="@color/theme_color"
+                android:paddingLeft="@dimen/text_size_px_43"
+                android:paddingRight="@dimen/text_size_px_21">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="登录后，接收新闻推荐，一键发帖更方便"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_login_to"
+                    android:layout_width="@dimen/text_size_px_120"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/text_size_px_100"
+                    android:background="@drawable/corners_stroke_white_1dp_bg_shape"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/text_size_px_2"
+                    android:text="登录"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_sp_12" />
+
+                <ImageView
+                    android:id="@+id/iv_tip_login_close_to"
+                    android:layout_width="@dimen/text_size_px_72"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/text_size_px_18"
+                    android:src="@drawable/home_btn_close" />
+
+            </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
@@ -258,7 +305,9 @@
                     app:tl_textSelectColor="@color/theme_color"
                     app:tl_textUnselectColor="@color/text_color_666"
                     app:tl_tab_padding="11dp"
-                    app:tl_indicator_width_equal_title="true"/>
+                    app:tl_indicator_width_equal_title="true"
+                    app:tl_textsize="18dp"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_subscribe"
@@ -269,7 +318,7 @@
                     android:paddingLeft="8dp"
                     android:paddingRight="12dp"
                     android:background="@drawable/gradient_bg_transparent_shape"
-                    android:src="@drawable/home_btn_add" />
+                    android:src="@drawable/jiahao" />
 
                 <View
                     android:layout_width="match_parent"

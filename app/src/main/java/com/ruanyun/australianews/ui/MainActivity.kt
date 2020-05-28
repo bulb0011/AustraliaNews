@@ -44,7 +44,6 @@ class MainActivity : BaseActivity() {
 
     private val mTabEntities = ArrayList<CustomTabEntity>()
 
-    private val mTitles = arrayOf("新闻", "财富", "个人中心")
     private val mIconUnselectIds = intArrayOf(
         R.drawable.tab_news,
         R.drawable.tab_life,
@@ -105,6 +104,9 @@ class MainActivity : BaseActivity() {
         if(Build.VERSION.SDK_INT >= 23){
             immerse()
         }
+
+        val mTitles = arrayOf(getResources().getString(R.string.xinwen),getResources().getString(R.string.caifu),getResources().getString(R.string.gerenzxin))
+
         //注册sdk的event用于接收各种event事件
         JMessageClient.registerEventReceiver(this)
         for (i in mTitles.indices) {

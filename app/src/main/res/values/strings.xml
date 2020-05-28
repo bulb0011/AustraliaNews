@@ -2,7 +2,7 @@
     
     <string name="iflytek">5ec5fbe3</string>
     
-    <string name="app_name">澳洲财经</string>
+    <string name="app_name">财经见闻AFN</string>
     <string name="password_digits" translatable="false">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ</string>
     <string name="mailbox_digits" translatable="false">_-.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ@</string>
     <string name="in_load">加载中&#8230;</string>
@@ -20,6 +20,14 @@
     <string name="edit">编辑</string>
     <string name="finish">完成</string>
     <string name="release_agreement">若提交您的信息，则您承认您已阅读并同意《澳洲财经APP信息发布协议》并同意以上文方式使用您的信息</string>
+
+
+    <string name="xinwen">新闻</string>
+    <string name="caifu">财富</string>
+    <string name="gerenzxin">个人中心</string>
+
+
+
 
     <string-array name="stream_entries">
         <item>通话</item>

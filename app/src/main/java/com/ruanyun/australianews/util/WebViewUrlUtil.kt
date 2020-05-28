@@ -13,6 +13,7 @@ import com.ruanyun.australianews.ui.WebViewActivity
 import com.ruanyun.australianews.ui.life.release.*
 import com.ruanyun.australianews.ui.main.ReleaseActivitysActivity
 import com.ruanyun.australianews.ui.news.NewsDetailsActivity
+import com.ruanyun.australianews.ui.news.NewsDetailsActivityTo
 import com.ruanyun.australianews.ui.news.VideoNewsDetailsActivity
 import com.ruanyun.australianews.ui.wealth.ReleaseCivilEstateActivity
 import com.ruanyun.australianews.ui.wealth.ReleaseHousingMarketActivity
@@ -72,6 +73,7 @@ open class WebViewUrlUtil {
                     val url = info.outUrl
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
+
                     NewsDetailsActivity.startNewsDetails(context, url, info.oid, NewsCommentParams.NEWS, json)
                 }
             }
@@ -114,6 +116,7 @@ open class WebViewUrlUtil {
                 return
             }
             val url = when(type){
+
                 LifeReleaseCommonUiModel.LIFE_HOUSE_RENT_INFO -> "app/page/index#HouseDetails?city=%s&infoHouseOid=%s&userOid=%s"
                 LifeReleaseCommonUiModel.LIFE_RECRUITMENT_INFO -> "app/page/index#recruitDetails?city=%s&infoRecruitOid=%s&userOid=%s"
                 LifeReleaseCommonUiModel.LIFE_CAR_SALE_INFO -> "app/page/index1#carDetails?city=%s&infoCarOid=%s&userOid=%s"
@@ -132,7 +135,9 @@ open class WebViewUrlUtil {
                 LifeReleaseCommonUiModel.WEALTH_FARM_ESTATE -> "app/newPage/index#estateInfo?city=%s&estateInfoOid=%s&userOid=%s"
                 else -> return
             }
-            NewsDetailsActivity.startNewsDetails(context, FileUtil.getWebViewUrl(url, App.getInstance().cityName, commonOid, App.getInstance().userOid), commonOid, type, "")
+//            NewsDetailsActivity.startNewsDetails(context, FileUtil.getWebViewUrl(url, App.getInstance().cityName, commonOid, App.getInstance().userOid), commonOid, type, "")
+            NewsDetailsActivityTo.startNewsDetails(context, FileUtil.getWebViewUrl(url, App.getInstance().cityName, commonOid, App.getInstance().userOid), commonOid, type, "")
+
         }
 
         /**
@@ -162,7 +167,9 @@ open class WebViewUrlUtil {
                 LifeReleaseCommonUiModel.WEALTH_FARM_ESTATE -> "app/newPage/index#estateInfo?city=%s&estateInfoOid=%s&userOid=%s"
                 else -> return
             }
-            NewsDetailsActivity.startNewsDetailsNewTask(context,FileUtil.getWebViewUrl(url, App.getInstance().cityName, commonOid, App.getInstance().userOid), commonOid, type, "")
+//            NewsDetailsActivity.startNewsDetailsNewTask(context,FileUtil.getWebViewUrl(url, App.getInstance().cityName, commonOid, App.getInstance().userOid), commonOid, type, "")
+            NewsDetailsActivityTo.startNewsDetailsNewTask(context,FileUtil.getWebViewUrl(url, App.getInstance().cityName, commonOid, App.getInstance().userOid), commonOid, type, "")
+
         }
 
         /**
@@ -263,7 +270,11 @@ open class WebViewUrlUtil {
             val finalUrl = FileUtil.getWebViewUrl(url, App.getInstance().cityName, commonOid, App.getInstance().userOid)
             shareJsonInfo.share_url = finalUrl
             val json = GsonUtil.toJson(shareJsonInfo)
-            NewsDetailsActivity.startNewsDetails(context, finalUrl, commonOid, type, json)
+
+
+//            NewsDetailsActivity.startNewsDetails(context, finalUrl, commonOid, type, json)
+
+            NewsDetailsActivityTo.startNewsDetails(context, finalUrl, commonOid, type, json)
         }
 
 

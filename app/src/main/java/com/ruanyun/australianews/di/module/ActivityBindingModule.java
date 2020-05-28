@@ -303,6 +303,10 @@ public abstract class ActivityBindingModule {
 
     @ActivityScoped
     @ContributesAndroidInjector
+    abstract NewsDetailsActivityTo newsDetailsActivityTo();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
     abstract NewsCommentActivity newsCommentActivity();
 
     @ActivityScoped

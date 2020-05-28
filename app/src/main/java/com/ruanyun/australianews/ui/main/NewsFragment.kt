@@ -105,6 +105,7 @@ class NewsFragment : BaseFragment() {
             viewpager.isNestedScrollingEnabled = true
         }
         rl_tip_login.visibility = if(app.user!=null) View.GONE else View.VISIBLE
+        rl_tip_login_to.visibility = if(app.user!=null) View.GONE else View.VISIBLE
         updateMinimumHeight()
         convenientBanner = getView(R.id.banner)
         convenientBanner.setPageIndicator(MyConvenientBanner.indicators)
@@ -119,6 +120,7 @@ class NewsFragment : BaseFragment() {
 
         tab_to.setViewPager(viewpager)//头部的表单
         tab_layout.visibility = View.GONE
+        rl_tip_login_to.visibility = View.GONE
 
 //        tab_to.setOnClickListener {  }
 
@@ -134,12 +136,14 @@ class NewsFragment : BaseFragment() {
                 if (rl_topbar.visibility != View.VISIBLE) {
                     rl_topbar.visibility = View.VISIBLE
                     tab_layout.visibility = View.VISIBLE
+                    rl_tip_login_to.visibility=View.VISIBLE
 //                    adapter.setRefreshViewEnable(false)
                 }
             } else {
                 if (rl_topbar.visibility != View.GONE) {
                     rl_topbar.visibility = View.GONE
                     tab_layout.visibility = View.GONE
+                    rl_tip_login_to.visibility=View.GONE
 //                    adapter.setRefreshViewEnable(false)
                 }
             }
@@ -171,11 +175,28 @@ class NewsFragment : BaseFragment() {
 
         tv_search1.clickWithTrigger { SearchActivity.start(mContext, SearchActivity.HOME_SEARCH) }
         tv_search2.clickWithTrigger { SearchActivity.start(mContext, SearchActivity.HOME_SEARCH) }
+
         tv_login.clickWithTrigger {
             LoginActivity.start(mContext)
         }
+
+        tv_login_to.clickWithTrigger {
+            LoginActivity.start(mContext)
+        }
+
         iv_tip_login_close.clickWithTrigger {
             rl_tip_login.visibility = View.GONE
+            rl_tip_login_to.visibility = View.GONE
+
+            if (rl_topbar.visibility == View.VISIBLE) {
+                app_bar_layout.setExpanded(false, false)
+            }
+            updateMinimumHeight()
+        }
+
+        iv_tip_login_close_to.clickWithTrigger {
+            rl_tip_login.visibility = View.GONE
+            rl_tip_login_to.visibility = View.GONE
             if (rl_topbar.visibility == View.VISIBLE) {
                 app_bar_layout.setExpanded(false, false)
             }
@@ -187,6 +208,14 @@ class NewsFragment : BaseFragment() {
                 ChannelManagerActivity.start(this, REQUEST_CODE_CHANNEL)
             }
         }
+
+        iv_subscribe_to.clickWithTrigger {
+            if (isLoginToActivity) {
+                ChannelManagerActivity.start(this, REQUEST_CODE_CHANNEL)
+            }
+        }
+
+
         iv_expansion.clickWithTrigger {
             EventBus.getDefault().post(Event(C.EventKey.SCROLL_TO_TOP, ""))
             app_bar_layout.setExpanded(true, true)
@@ -216,9 +245,15 @@ class NewsFragment : BaseFragment() {
 
 
     private fun updateMinimumHeight() {
-        val tipLoginHeight = if (rl_tip_login.visibility == View.VISIBLE){
+        var tipLoginHeight = if (rl_tip_login.visibility == View.VISIBLE){
             rl_tip_login.layoutParams.height + view_tab_top_line.layoutParams.height
         } else 0
+
+//        tipLoginHeight=tipLoginHeight
+
+        if (rl_tip_login_to.visibility ==View.VISIBLE ){
+            tipLoginHeight = tipLoginHeight+rl_tip_login_to.layoutParams.height
+        }
 
         if (rl_tip_login.visibility == View.VISIBLE){
             minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height + tipLoginHeight - rl_tip_login.layoutParams.height - view_tab_top_line.layoutParams.height
@@ -276,12 +311,14 @@ class NewsFragment : BaseFragment() {
         if (C.EventKey.UPDATE_USER_INFO == event.key) {
             if(app.user!=null && rl_tip_login.visibility != View.GONE){
                 rl_tip_login.visibility = View.GONE
+                rl_tip_login_to.visibility = View.GONE
                 if (rl_topbar.visibility == View.VISIBLE) {
                     app_bar_layout.setExpanded(false, false)
                 }
                 updateMinimumHeight()
             }else if(app.user==null){
                 rl_tip_login.visibility = View.VISIBLE
+                rl_tip_login_to.visibility = View.VISIBLE
                 updateMinimumHeight()
             }
         }

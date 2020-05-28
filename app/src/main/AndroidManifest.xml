@@ -187,10 +187,20 @@
         <activity
             android:name=".ui.my.UserHomePageActivity"
             android:screenOrientation="portrait" />
+
+
         <activity
             android:name=".ui.news.NewsDetailsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".ui.news.NewsDetailsActivityTo"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+
+
         <activity
             android:name=".ui.news.VideoNewsDetailsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
