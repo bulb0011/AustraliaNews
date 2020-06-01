@@ -4,18 +4,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import cn.jpush.android.api.JPushInterface;
+
 import com.ruanyun.australianews.App;
-import com.ruanyun.australianews.base.ResultBase;
-import com.ruanyun.australianews.data.ApiFailAction;
-import com.ruanyun.australianews.data.ApiManger;
-import com.ruanyun.australianews.data.ApiSuccessAction;
 import com.ruanyun.australianews.model.JPushInfo;
 import com.ruanyun.australianews.model.NewsInfo;
 import com.ruanyun.australianews.model.uimodel.LifeReleaseCommonUiModel;
-import com.ruanyun.australianews.ui.news.NewsDetailsActivity;
-import com.ruanyun.australianews.util.*;
+import com.ruanyun.australianews.util.FileUtil;
+import com.ruanyun.australianews.util.GsonUtil;
+import com.ruanyun.australianews.util.LogX;
+import com.ruanyun.australianews.util.WebViewUrlUtil;
+
 import org.json.JSONObject;
+
+import cn.jpush.android.api.JPushInterface;
 
 /**
  * 自定义接收器
@@ -41,6 +42,7 @@ public class MyReceiver extends BroadcastReceiver {
                     JPushInfo jPushInfo = GsonUtil.parseJson(json, JPushInfo.class);
                     if(jPushInfo!=null){
                         switch (jPushInfo.type){
+
                             case 1://普通新闻
                             case 2://视频新闻
                             case 3://外部新闻
@@ -97,6 +99,7 @@ public class MyReceiver extends BroadcastReceiver {
     public void getNewsDetails(JPushInfo info) {
         NewsInfo newsInfo = new NewsInfo(info.type,0,info.outUrl,info.videoUrl, "","","",0, 0,0,null);
         newsInfo.setOid(info.commonOid);
+
         WebViewUrlUtil.showNewsDetailsWebNewTask(App.getInstance(), newsInfo);
 
 //        ApiManger.getApiService().getNewsDetails(oid)

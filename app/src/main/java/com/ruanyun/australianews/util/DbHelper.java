@@ -178,6 +178,11 @@ public void insertParentCodes(String parentCode, List<ParentCodeInfo> infoList) 
                 .where(ChannelInfoDao.Properties.IsLogin.eq(isLogin), ChannelInfoDao.Properties.IsSubscribe.eq(true)).orderAsc(ChannelInfoDao.Properties.Sort)
                 .build();
         List<ChannelInfo> list = query.list();
+
+        list.add(1,new ChannelInfo(false, 0, true, "行情", "00000000000000000000", 1, 2, 1));
+        list.add(1,new ChannelInfo(false, 0, true, "7*24", "00000000000000000000", 1, 2, 1));
+
+
         list.add(new ChannelInfo(false, 0, true, "其他", "00000000000000000000", 1, 2, 1));
         return list;
     }

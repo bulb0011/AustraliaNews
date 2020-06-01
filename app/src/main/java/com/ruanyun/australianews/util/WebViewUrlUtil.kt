@@ -2,6 +2,7 @@ package com.ruanyun.australianews.util
 
 import android.content.Context
 import android.text.TextUtils
+import android.util.Log
 import com.ruanyun.australianews.App
 import com.ruanyun.australianews.model.CivilEstateInfo
 import com.ruanyun.australianews.model.NewsInfo
@@ -59,11 +60,19 @@ open class WebViewUrlUtil {
             val shareJsonInfo = ShareJsonInfo()
             shareJsonInfo.share_title = info.title
             shareJsonInfo.share_image = info.commonMainPhoto
+
+            LogX.e("dengpao","oid"+info.oid)
+            LogX.e("dengpao","info"+GsonUtil.toJson(info))
+
+
             when(info.type){
+
                 1-> {
                     val url = FileUtil.getWebViewUrl(NEWS_DETAILS, App.getInstance().cityName, info.oid, App.getInstance().userOid)
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
+                    Log.w("dengpao","2222")
+                    Log.w("dengpao","json"+json)
                     NewsDetailsActivity.startNewsDetails(context, url, info.oid, NewsCommentParams.NEWS, json)
                 }
                 2-> {
@@ -73,7 +82,6 @@ open class WebViewUrlUtil {
                     val url = info.outUrl
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
-
                     NewsDetailsActivity.startNewsDetails(context, url, info.oid, NewsCommentParams.NEWS, json)
                 }
             }

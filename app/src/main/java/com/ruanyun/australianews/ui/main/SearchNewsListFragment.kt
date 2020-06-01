@@ -6,7 +6,6 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import com.ruanyun.australianews.App
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.BaseFragment
@@ -27,7 +26,9 @@ import com.ruanyun.australianews.model.Event
 import com.ruanyun.australianews.model.NewsInfo
 import com.ruanyun.australianews.model.params.NewsSearchListParams
 import com.ruanyun.australianews.ui.adapter.NewsListAdapter
-import com.ruanyun.australianews.util.*
+import com.ruanyun.australianews.util.C
+import com.ruanyun.australianews.util.DbHelper
+import com.ruanyun.australianews.util.RxUtil
 import kotlinx.android.synthetic.main.fragment_news_search_list.*
 import kotlinx.android.synthetic.main.layout_search_news_header.*
 import org.greenrobot.eventbus.Subscribe
@@ -61,7 +62,7 @@ class SearchNewsListFragment : BaseFragment(){
         unRegisterBus()
     }
 
-    val adapter by lazy { NewsListAdapter(mContext, arrayListOf()) }
+    val adapter by lazy {NewsListAdapter(mContext, arrayListOf())}
     @Inject
     lateinit var dataSource: NewsListPageDataSource
     @Inject

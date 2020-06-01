@@ -1,9 +1,7 @@
 package com.ruanyun.australianews.ui.main
 
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +26,6 @@ import com.ruanyun.australianews.model.params.NewsListParams
 import com.ruanyun.australianews.ui.adapter.NewsListAdapter
 import com.ruanyun.australianews.util.C
 import com.ruanyun.australianews.util.CommonUtil.dp2px
-import com.ruanyun.australianews.util.LogX
 import com.ruanyun.australianews.util.RxUtil
 import com.ruanyun.australianews.widget.RYEmptyView
 import kotlinx.android.synthetic.main.fragment_news_list_child.*

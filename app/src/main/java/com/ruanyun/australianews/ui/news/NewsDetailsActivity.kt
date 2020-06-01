@@ -49,6 +49,8 @@ open class NewsDetailsActivity : WebViewActivity() {
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
+            LogX.e("dengpao","startNewsDetails"+json)
+            LogX.e("dengpao","WEB_VIEW_URL"+url)
             context.startActivity(starter)
         }
 
@@ -59,7 +61,7 @@ open class NewsDetailsActivity : WebViewActivity() {
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
             starter.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-
+            LogX.e("dengpao","startNewsDetailsNewTask"+json)
             context.startActivity(starter)
         }
     }
@@ -426,14 +428,12 @@ open class NewsDetailsActivity : WebViewActivity() {
                 }
                 2 ->{
 
-                    Log.d("dengpao", "getScrollY高度"+Math.abs(v.getScrollY()))
                     if (Math.abs(v.getScrollY())<300){
                         rl_bofang.visibility=View.VISIBLE
                     }
 
                 }
                 3 ->{
-//                    Log.d("dengpao", "ACTION_CANCEL")
 //
 //                    if(Math.abs(v.getScrollY())>webnow){
 //                        rl_bofang.visibility=View.GONE

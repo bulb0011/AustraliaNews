@@ -46,7 +46,18 @@ class NewsListAdapter(context: Context, datas: List<NewsInfo>) : AdvertInfoBaseA
                 }
                 holder.setText(R.id.tv_title, item.title)
                 holder.setText(R.id.tv_source, NewsInfo.getSourceStr(item))
-                holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)View.VISIBLE else View.GONE
+
+                holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1){
+                    View.GONE
+                }else  View.VISIBLE
+
+
+                if(item.isHot==1){
+                    holder.getView<ImageView>(R.id.img_laba).visibility=View.VISIBLE
+                }else {
+                    holder.getView<ImageView>(R.id.img_laba).visibility=View.GONE
+                }
+
                 holder.convertView.clickWithTrigger { showNewsDetails(item) }
             }
         })
@@ -66,7 +77,13 @@ class NewsListAdapter(context: Context, datas: List<NewsInfo>) : AdvertInfoBaseA
             override fun convert(holder: ViewHolder, item: NewsInfo, position: Int) {
                 holder.setText(R.id.tv_title, item.title)
                 holder.setText(R.id.tv_source, NewsInfo.getSourceStr(item))
-                holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)View.VISIBLE else View.GONE
+                holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)
+                    View.GONE else View.VISIBLE
+                if(item.isHot==1){
+                    holder.getView<ImageView>(R.id.img_laba).visibility=View.VISIBLE
+                }else {
+                    holder.getView<ImageView>(R.id.img_laba).visibility=View.GONE
+                }
                 updatePhotoList(holder, item)
                 holder.convertView.clickWithTrigger { showNewsDetails(item) }
             }

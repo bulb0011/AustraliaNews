@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.flyco.tablayout.listener.OnTabSelectListener
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.BaseFragment
 import com.ruanyun.australianews.base.ResultBase
@@ -64,6 +65,8 @@ class NewsFragment : BaseFragment() {
     private var height: Int = 0
     private var minimumHeight: Int = 0
 
+    private var myCurrentTab =0
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initView()
@@ -73,11 +76,14 @@ class NewsFragment : BaseFragment() {
     override fun onResume() {
         super.onResume()
         convenientBanner.startTurning(4000)
+        tab.setCurrentTab(myCurrentTab)
+        tab_to.setCurrentTab(myCurrentTab)
     }
 
     override fun onPause() {
         super.onPause()
         convenientBanner.stopTurning()
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -112,7 +118,7 @@ class NewsFragment : BaseFragment() {
         convenientBanner.setPageIndicatorAlign(MyConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
         convenientBanner.setPageIndicatorMargins(0,0,dp2px(10f),dp2px(25f))
 
-        adapter = TitleFragmentAdapter(childFragmentManager, DbHelper.getInstance().getSubscribedList(app.isLogin) )
+        adapter = TitleFragmentAdapter(childFragmentManager, DbHelper.getInstance().getSubscribedList(app.isLogin))
         adapter.notifyDataSetChanged()
         viewpager.adapter = adapter
         viewpager.offscreenPageLimit = 1
@@ -163,6 +169,7 @@ class NewsFragment : BaseFragment() {
                 getHomeResultBase()
                 if(tab.tabCount>0) {
                     EventNotifier.getInstance().updateNewsList(tab.getTitleView(tab.currentTab)?.getStr())
+                    EventNotifier.getInstance().updateNewsList(tab.getTitleView(tab_to.currentTab)?.getStr())
                 }
             }
 
@@ -241,7 +248,45 @@ class NewsFragment : BaseFragment() {
         tv_city.clickWithTrigger {
             CityListActivity.start(mContext)
         }
+
+        tab.setOnTabSelectListener(object : OnTabSelectListener{
+            override fun onTabSelect(position: Int) {
+                if(position==1){
+                    WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
+
+                }else if (position==2){
+                    WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
+                }else{
+                    myCurrentTab
+                }
+            }
+
+            override fun onTabReselect(position: Int) {
+
+                LogX.e("dengpao","onTabReselect"+position)
+            }
+        })
+
+        tab_to.setOnTabSelectListener(object : OnTabSelectListener{
+            override fun onTabSelect(position: Int) {
+                if(position==1){
+                    WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
+                }else if (position==2){
+                    WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
+                }else{
+                    myCurrentTab
+                }
+            }
+
+            override fun onTabReselect(position: Int) {
+
+                LogX.e("dengpao","onTabReselect"+position)
+            }
+        })
+
+
     }
+
 
 
     private fun updateMinimumHeight() {
@@ -343,6 +388,7 @@ class NewsFragment : BaseFragment() {
             adapter.channels = databaseSubscribedList
             adapter.notifyDataSetChanged()
             tab.notifyDataSetChanged()
+            tab_to.notifyDataSetChanged()
         }else {
 //            CacheHelper.getInstance().requestChannelList()
         }

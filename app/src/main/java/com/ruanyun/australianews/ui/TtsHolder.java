@@ -104,17 +104,7 @@ public class TtsHolder {
         @Override
         public void onBufferProgress(int percent, int beginPos, int endPos,
                                      String info) {
-            // 合成进度
-            Log.e("MscSpeechLog_", "percent =" + percent);
 
-
-            Log.e("dengpao","合成进度进度"+percent);
-
-            Log.e("dengpao","合成开始进度"+beginPos);
-
-            Log.e("dengpao","合成结束进度"+endPos);
-
-            Log.e("dengpao","合成info进度"+info);
 
 //            mPercentForBuffering = percent;
 //            showTip(String.format(getString(R.string.tts_toast_format),
@@ -123,14 +113,7 @@ public class TtsHolder {
 
         @Override
         public void onSpeakProgress(int percent, int beginPos, int endPos) {
-            // 播放进度
-            Log.e("MscSpeechLog_", "percent =" + percent);
 
-            Log.e("dengpao","播放进度进度"+percent);
-
-            Log.e("dengpao","播放进度开始进度"+beginPos);
-
-            Log.e("dengpao","播放进度结束进度"+endPos);
 
             onspeakprogress.onSpeakProgress(percent);
 
