@@ -518,7 +518,7 @@ public interface ApiService {
      **/
     @FormUrlEncoded
     @POST("app/newsinfo/getNewsInfoOid")
-    Observable<ResultBase<NewsInfo>> getNewsDetails(@Field("newsInfoOid") String newsInfoOid);
+    Observable<ResultBase<NewParticularsBean>> getNewsDetails(@Field("newsInfoOid") String newsInfoOid);
 
     /**
      * 获取新闻评论数和是否收藏信息

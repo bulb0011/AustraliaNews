@@ -18,14 +18,19 @@
         android:background="@color/white"
         >
 
-        <ImageView
+        <RelativeLayout
             android:id="@+id/image_return"
-            android:layout_width="9dp"
-            android:layout_height="17dp"
-            android:background="@drawable/nav_btn_back"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="30dp"
-            />
+            android:layout_width="70dp"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="17dp"
+                android:background="@drawable/nav_btn_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                />
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/ll_en_zhong"
@@ -145,74 +150,7 @@
                     android:layout_height="wrap_content"
                     />
 
-                <RelativeLayout
-                    android:id="@+id/rl_xuanfu"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="@drawable/shape_button"
-                    android:layout_gravity="bottom"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginLeft="15dp"
-                    >
 
-                    <ImageView
-                        android:id="@+id/iv_kaishi"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/bofang"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        />
-
-                    <ImageView
-                        android:id="@+id/iv_zanting"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/zanting"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        />
-
-
-                    <ImageView
-                        android:id="@+id/iv_guanbi"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/chahao"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="20dp"
-                        />
-
-
-                    <ProgressBar
-                        android:id="@+id/pb_progressbar"
-                        style="@style/mProgressBarStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:progressDrawable="@drawable/main_pb_bg"
-                        android:max="100"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="3dp"
-                        />
-
-
-                    <TextView
-                        android:id="@+id/tv_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@id/iv_guanbi"
-                        android:layout_marginLeft="45dp"
-                        android:text="@string/release_agreement"
-                        android:textColor="@color/white"
-                        android:maxEms="15"
-                        android:singleLine="true"
-                        android:ellipsize="end"
-                        />
-
-                </RelativeLayout>
             </FrameLayout>
         </RelativeLayout>
 
@@ -225,6 +163,76 @@
         android:layout_above="@+id/rl_bottom"
         android:layout_below="@+id/topbar"
         android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_xuanfu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_button"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_kaishi"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bofang"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_zanting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/zanting"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/iv_guanbi"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/chahao"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            />
+
+
+        <ProgressBar
+            android:id="@+id/pb_progressbar"
+            style="@style/mProgressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:progressDrawable="@drawable/main_pb_bg"
+            android:max="100"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="3dp"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_guanbi"
+            android:layout_marginLeft="45dp"
+            android:text="@string/release_agreement"
+            android:textColor="@color/white"
+            android:maxEms="15"
+            android:singleLine="true"
+            android:ellipsize="end"
+            />
+
+    </RelativeLayout>
 
     <include
         android:id="@+id/rl_bottom"

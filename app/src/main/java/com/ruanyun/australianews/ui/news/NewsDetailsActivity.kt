@@ -11,10 +11,7 @@ import com.ruanyun.australianews.data.ApiFailAction
 import com.ruanyun.australianews.data.ApiManger
 import com.ruanyun.australianews.data.ApiSuccessAction
 import com.ruanyun.australianews.ext.clickWithTrigger
-import com.ruanyun.australianews.model.CollectionBrowseNewsInfo
-import com.ruanyun.australianews.model.Event
-import com.ruanyun.australianews.model.NewsCommentCountInfo
-import com.ruanyun.australianews.model.ShareJsonInfo
+import com.ruanyun.australianews.model.*
 import com.ruanyun.australianews.model.params.DeleteCollectionParams
 import com.ruanyun.australianews.model.params.NewsCommentParams
 import com.ruanyun.australianews.model.uimodel.LifeReleaseCommonUiModel
@@ -46,6 +43,7 @@ open class NewsDetailsActivity : WebViewActivity() {
             val starter = Intent(context, NewsDetailsActivity::class.java)
             starter.putExtra(C.IntentKey.WEB_VIEW_URL, url)
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
+            LogX.e("dengpao","newsInfoOid"+newsInfoOid)
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
             context.startActivity(starter)
@@ -74,25 +72,52 @@ open class NewsDetailsActivity : WebViewActivity() {
 
     lateinit var ttsholder : TtsHolder
 
-    var English="Hooray! It's snowing! It's time to make a sn" +
-            "owman.James runs out. He makes a big pile of s" +
-            "now. He puts a big snowball on top. He adds a scarf " +
-            "and a hat. He adds an orange for the nose. He adds coal for the eyes and buttons.In " +
-            "the evening, James opens the door. What does he see? The snowman is moving! James invites him in. " +
-            "The snowman has never been inside a house. He says hello to the cat. He plays with paper towels.A" +
-            " moment later, the snowman takes James's hand and goes out.They go up, up, up into the air! They are" +
-            " flying! What a wonderful night!The next morning, James jumps out of bed. He runs to the door.He" +
-            " wants to thank the snowman. But he's gone."
+    var English=""
 
-
-     var text="他看见了什么？雪人在移动！詹姆斯邀请它进来。雪人从来没有去过房间里面。它对猫咪打了个招呼。猫咪玩着纸巾。不久之后，雪人牵着詹姆斯的手出去了。他们一直向上升，一直升到空中！他们在飞翔！多么美妙的夜晚！第二天早上，詹姆斯从床上蹦了起来。他向门口跑去。他想感谢雪人，但是它已经消失了。"
+     var text=""
 
     var isXinWen = true
 
     override fun initView() {
         super.initView()
 
-        ttsholder=TtsHolder(context,text)
+        val oid = intent.getStringExtra(C.IntentKey.NEWS_INFO_OID)
+        if (oid.isNullOrEmpty()) {
+
+        } else {
+            ApiManger.getApiService().getNewsDetails(oid)
+                .compose(RxUtil.normalSchedulers())
+                .subscribe(object : ApiSuccessAction<ResultBase<NewParticularsBean>>(){
+                    override fun onSuccess(result: ResultBase<NewParticularsBean>) {
+
+                        LogX.e("dengpao","NewParticularsBean"+GsonUtil.toJson(result))
+
+                        LogX.e("dengpao","result.data.commentCount"+result.data.contentText)
+
+                        LogX.e("dengpao","result.data.commentCount"+result.data.contentEn)
+
+                        text = result.data.contentText
+                        English = result.data.contentEn
+
+                        ttsholder=TtsHolder(context,text)
+
+                        if (zhong!=null) {
+                            isXinWen()
+                        }
+
+                    }
+
+                    override fun onError(erroCode: Int, erroMsg: String?) {
+                        disMissLoadingView()
+                        showToast(erroMsg)
+                    }
+                }, object : ApiFailAction() {
+                    override fun onFail(msg: String) {
+                        disMissLoadingView()
+                        showToast(msg)
+                    }
+                } )
+        }
 
 
         webView.webViewClient = object : WebViewClient() {
@@ -208,9 +233,10 @@ open class NewsDetailsActivity : WebViewActivity() {
         }
         presenter.getNewsCommentCount()
 
-        if (zhong!=null) {
-            isXinWen()
-        }
+
+
+
+
 
     }
 

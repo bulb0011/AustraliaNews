@@ -254,10 +254,10 @@ class NewsFragment : BaseFragment() {
                 if(position==1){
                     WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
 
-                }else if (position==2){
+                }else if (position==3){
                     WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
                 }else{
-                    myCurrentTab
+                    myCurrentTab=position
                 }
             }
 
@@ -271,10 +271,10 @@ class NewsFragment : BaseFragment() {
             override fun onTabSelect(position: Int) {
                 if(position==1){
                     WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
-                }else if (position==2){
+                }else if (position==3){
                     WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
                 }else{
-                    myCurrentTab
+                    myCurrentTab=position
                 }
             }
 
