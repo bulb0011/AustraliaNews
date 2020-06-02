@@ -37,7 +37,7 @@
                     android:background="@null"
                     android:drawablePadding="7dp"
                     android:gravity="center_vertical"
-                    android:hint="搜索感兴趣的内容"
+                    android:hint="@string/shousuohint"
                     android:imeOptions="actionSearch"
                     android:drawableLeft="@drawable/home_icon_search"
                     android:paddingLeft="@dimen/text_size_px_43"
@@ -108,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="登录后，接收新闻推荐，一键发帖更方便"
+                    android:text="@string/login_hint"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_sp_12" />
 
@@ -122,7 +122,7 @@
                     android:background="@drawable/corners_stroke_white_1dp_bg_shape"
                     android:gravity="center"
                     android:paddingBottom="@dimen/text_size_px_2"
-                    android:text="登录"
+                    android:text="@string/lonin_text"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_sp_12" />
 
@@ -264,7 +264,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="登录后，接收新闻推荐，一键发帖更方便"
+                    android:text="@string/login_hint"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_sp_12" />
 
@@ -278,7 +278,7 @@
                     android:background="@drawable/corners_stroke_white_1dp_bg_shape"
                     android:gravity="center"
                     android:paddingBottom="@dimen/text_size_px_2"
-                    android:text="登录"
+                    android:text="@string/lonin_text"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_sp_12" />
 

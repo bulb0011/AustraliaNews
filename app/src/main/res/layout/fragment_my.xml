@@ -89,7 +89,7 @@
                         android:layout_marginTop="@dimen/text_size_px_50"
                         android:layout_marginBottom="@dimen/text_size_px_24"
                         android:layout_toRightOf="@+id/iv_user_avatar"
-                        android:text="点击登录"
+                        android:text="@string/dianjidenglu"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_sp_17" />
 
@@ -150,7 +150,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="我的消息"
+                                android:text="@string/mymessage"
                                 android:gravity="center_vertical"
                                 android:layout_below="@id/image_wodexiaoxi"
                                 android:layout_centerHorizontal="true"
@@ -178,7 +178,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="我的评论"
+                                android:text="@string/mycritic"
                                 android:gravity="center_vertical"
                                 android:layout_below="@id/image_wodepingluo"
                                 android:layout_centerHorizontal="true"
@@ -205,7 +205,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="我的收藏"
+                                android:text="@string/mycollect"
                                 android:gravity="center_vertical"
                                 android:layout_below="@id/image_wodeshoucang"
                                 android:layout_centerHorizontal="true"
@@ -233,7 +233,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="推送记录"
+                                android:text="@string/pushrecord"
                                 android:gravity="center_vertical"
                                 android:layout_below="@id/image_tuisongjilu"
                                 android:layout_centerHorizontal="true"
@@ -338,7 +338,7 @@
                         style="@style/my_fragment_text"
                         android:drawableLeft="@drawable/my_icon_history"
                         android:drawableRight="@drawable/icon_arrow_right"
-                        android:text="浏览历史" />
+                        android:text="@string/browsinghistory" />
 
                 </FrameLayout>
 
@@ -354,7 +354,7 @@
                         android:id="@+id/tv_reminder_notice"
                         style="@style/my_fragment_text"
                         android:drawableLeft="@drawable/my_icon_notice"
-                        android:text="提醒通知" />
+                        android:text="@string/Remindernotices" />
 
                     <TextView
                         android:id="@+id/tv_notice_switch_tip"
@@ -362,7 +362,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="110dp"
-                        android:text="(接收新闻推送已关闭)"
+                        android:text="@string/receivenews_close"
                         android:textSize="@dimen/text_size_sp_12"
                         android:textColor="@color/color_grey_999999"/>
 
@@ -389,7 +389,7 @@
                         style="@style/my_fragment_text"
                         android:drawableLeft="@drawable/my_icon_fee"
                         android:drawableRight="@drawable/icon_arrow_right"
-                        android:text="意见反馈" />
+                        android:text="@string/feedback" />
 
                 </FrameLayout>
 
@@ -406,7 +406,7 @@
                         style="@style/my_fragment_text"
                         android:drawableLeft="@drawable/my_icon_clean"
                         android:drawableRight="@drawable/icon_arrow_right"
-                        android:text="清除缓存" />
+                        android:text="@string/clearcache" />
 
                     <TextView
                         android:id="@+id/tv_cache"
@@ -433,7 +433,7 @@
                         style="@style/my_fragment_text"
                         android:drawableLeft="@drawable/my_icon_score"
                         android:drawableRight="@drawable/icon_arrow_right"
-                        android:text="为我评分" />
+                        android:text="@string/grade" />
 
                 </FrameLayout>
 
@@ -450,7 +450,7 @@
                         style="@style/my_fragment_text"
                         android:drawableLeft="@drawable/my_icon_aboutus"
                         android:drawableRight="@drawable/icon_arrow_right"
-                        android:text="关于我们" />
+                        android:text="@string/AboutUs" />
 
                 </FrameLayout>
 

@@ -25,6 +25,49 @@
     <string name="xinwen">新闻</string>
     <string name="caifu">财富</string>
     <string name="gerenzxin">个人中心</string>
+    <string name="shousuohint">搜索感兴趣的内容</string>
+    <string name="login_hint">登录后，接收新闻推荐，一键发帖更方便</string>
+    <string name="lonin_text">登录</string>
+    <string name="gupiao">股票</string>
+    <string name="jijin">基金</string>
+    <string name="huilv">汇率</string>
+    <string name="budongcan">不动产</string>
+    <string name="shengyi">生意</string>
+    <string name="wode">我的</string>
+    <string name="zuixindongtai">最新动态</string>
+    <string name="dianjidenglu">点击登录</string>
+    <string name="mymessage">我的消息</string>
+    <string name="mycritic">我的评论</string>
+    <string name="mycollect">我的收藏</string>
+    <string name="pushrecord">推送记录</string>
+    <string name="browsinghistory">浏览历史</string>
+    <string name="Remindernotices">提醒通知</string>
+    <string name="receivenews_close">(接收新闻推送已关闭)</string>
+    <string name="receivenews_open">(接收新闻推送已开启)</string>
+    <string name="feedback">意见反馈</string>
+    <string name="clearcache">清除缓存</string>
+    <string name="grade">为我评分</string>
+    <string name="AboutUs">关于我们</string>
+    <string name="save">保存</string>
+    <string name="personaldata">个人资料</string>
+    <string name="headportrait">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="sex">性别</string>
+    <string name="dateofbirth">出生日期</string>
+    <string name="cellphone">手机号码</string>
+    <string name="binding">未绑定</string>
+    <string name="mailbox">邮箱</string>
+    <string name="signature">签名</string>
+    <string name="nosignature">未填写签名</string>
+
+    <string name="logout">退出登录</string>
+
+    <string name="choose">请选择</string>
+
+
+
+
+
 
 
 

@@ -51,7 +51,7 @@
                 android:background="@null"
                 android:drawablePadding="7dp"
                 android:gravity="center_vertical"
-                android:hint="搜索感兴趣的内容"
+                android:hint="@string/shousuohint"
                 android:imeOptions="actionSearch"
                 android:drawableLeft="@drawable/home_icon_search"
                 android:paddingLeft="@dimen/text_size_px_43"
@@ -81,7 +81,7 @@
             android:drawablePadding="@dimen/text_size_px_7"
             android:gravity="center_horizontal"
             android:paddingTop="@dimen/text_size_px_20"
-            android:text="股票"
+            android:text="@string/gupiao"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
 
@@ -94,7 +94,7 @@
             android:drawablePadding="@dimen/text_size_px_7"
             android:gravity="center_horizontal"
             android:paddingTop="@dimen/text_size_px_20"
-            android:text="基金"
+            android:text="@string/jijin"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
 
@@ -107,7 +107,7 @@
             android:drawablePadding="@dimen/text_size_px_7"
             android:gravity="center_horizontal"
             android:paddingTop="@dimen/text_size_px_20"
-            android:text="汇率"
+            android:text="@string/huilv"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
 
@@ -120,7 +120,7 @@
             android:drawablePadding="@dimen/text_size_px_7"
             android:gravity="center_horizontal"
             android:paddingTop="@dimen/text_size_px_20"
-            android:text="不动产"
+            android:text="@string/budongcan"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
 
@@ -142,7 +142,7 @@
             android:drawablePadding="@dimen/text_size_px_7"
             android:gravity="center_horizontal"
             android:paddingTop="@dimen/text_size_px_20"
-            android:text="生意"
+            android:text="@string/shengyi"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
 
@@ -155,7 +155,7 @@
             android:drawablePadding="@dimen/text_size_px_7"
             android:gravity="center_horizontal"
             android:paddingTop="@dimen/text_size_px_20"
-            android:text="我的"
+            android:text="@string/wode"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
 

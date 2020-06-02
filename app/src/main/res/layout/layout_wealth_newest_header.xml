@@ -20,7 +20,7 @@
         android:paddingBottom="@dimen/text_size_px_25"
         android:paddingLeft="@dimen/text_size_px_43"
         android:background="@color/white"
-        android:text="最新动态"
+        android:text="@string/zuixindongtai"
         android:textColor="@color/text_black"
         android:textSize="@dimen/text_size_sp_14" />
 

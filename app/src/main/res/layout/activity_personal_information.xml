@@ -12,9 +12,9 @@
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:topBarRightText="保存"
+        app:topBarRightText="@string/save"
         app:topBarRightTextEnable="true"
-        app:topBarTitleText="个人资料" />
+        app:topBarTitleText="@string/personaldata" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
-                    android:text="头像"
+                    android:text="@string/headportrait"
                     android:textColor="@color/text_default"
                     android:textSize="@dimen/text_size_sp_15" />
 
@@ -67,7 +67,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
-                    android:text="昵称"
+                    android:text="@string/nickname"
                     android:textColor="@color/text_default"
                     android:textSize="@dimen/text_size_sp_15" />
 
@@ -104,7 +104,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
-                    android:text="性别"
+                    android:text="@string/sex"
                     android:textColor="@color/text_default"
                     android:textSize="@dimen/text_size_sp_15" />
 
@@ -117,7 +117,7 @@
                     android:drawablePadding="@dimen/text_size_px_30"
                     android:ellipsize="end"
                     android:gravity="center_vertical|right"
-                    android:hint="请选择"
+                    android:hint="@string/choose"
                     android:maxLines="2"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
@@ -140,7 +140,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
-                    android:text="出生日期"
+                    android:text="@string/dateofbirth"
                     android:textColor="@color/text_default"
                     android:textSize="@dimen/text_size_sp_15" />
 
@@ -153,7 +153,7 @@
                     android:drawablePadding="@dimen/text_size_px_30"
                     android:ellipsize="end"
                     android:gravity="center_vertical|right"
-                    android:hint="请选择"
+                    android:hint="@string/choose"
                     android:maxLines="2"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
@@ -176,7 +176,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
-                    android:text="手机号码"
+                    android:text="@string/cellphone"
                     android:textColor="@color/text_default"
                     android:textSize="@dimen/text_size_sp_15" />
 
@@ -189,7 +189,7 @@
                     android:drawablePadding="@dimen/text_size_px_30"
                     android:ellipsize="end"
                     android:gravity="center_vertical|right"
-                    android:hint="未绑定"
+                    android:hint="@string/binding"
                     android:maxLines="2"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
@@ -211,7 +211,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
-                    android:text="邮箱"
+                    android:text="@string/mailbox"
                     android:textColor="@color/text_default"
                     android:textSize="@dimen/text_size_sp_15" />
 
@@ -224,7 +224,7 @@
                     android:drawablePadding="@dimen/text_size_px_30"
                     android:ellipsize="end"
                     android:gravity="center_vertical|right"
-                    android:hint="未绑定"
+                    android:hint="@string/binding"
                     android:maxLines="2"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingRight="@dimen/text_size_px_43"
@@ -250,7 +250,7 @@
                     android:paddingTop="@dimen/text_size_px_48"
                     android:paddingRight="@dimen/text_size_px_43"
                     android:paddingBottom="@dimen/text_size_px_48"
-                    android:text="签名"
+                    android:text="@string/signature"
                     android:textColor="@color/text_default"
                     android:textSize="@dimen/text_size_sp_15" />
 
@@ -263,7 +263,7 @@
                     android:drawablePadding="@dimen/text_size_px_30"
                     android:ellipsize="end"
                     android:gravity="right|top"
-                    android:hint="未填写签名"
+                    android:hint="@string/nosignature"
                     android:maxLength="50"
                     android:paddingLeft="@dimen/text_size_px_43"
                     android:paddingTop="@dimen/text_size_px_48"
@@ -287,7 +287,7 @@
                 android:layout_marginBottom="@dimen/text_size_px_85"
                 android:background="@drawable/corners_registered_bg_shape"
                 android:gravity="center"
-                android:text="退出登录"
+                android:text="@string/logout"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_sp_15" />
 

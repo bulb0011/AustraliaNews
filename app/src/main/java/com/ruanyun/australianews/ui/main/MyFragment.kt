@@ -31,8 +31,6 @@ import com.ruanyun.australianews.widget.TipDialog
 import kotlinx.android.synthetic.main.fragment_my.*
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import retrofit2.http.Url
-import java.net.URL
 import javax.inject.Inject
 
 
@@ -113,9 +111,9 @@ class MyFragment : BaseFragment() {
     private fun initNoticeSwitch() {
         iv_notice_switch.isSelected = CacheHelper.getInstance().isTurnOnPush
         if (iv_notice_switch.isSelected) {
-            tv_notice_switch_tip.text = "(接收新闻推送已开启)"
+            tv_notice_switch_tip.text =getResources().getString(R.string.receivenews_open)
         } else {
-            tv_notice_switch_tip.text = "(接收新闻推送已关闭)"
+            tv_notice_switch_tip.text = getResources().getString(R.string.receivenews_close)
         }
     }
 
