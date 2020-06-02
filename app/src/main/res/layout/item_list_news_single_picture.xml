@@ -34,20 +34,43 @@
             android:visibility="visible"
             android:src="@drawable/default_img" />
 
-        <TextView
-            android:id="@+id/tv_title"
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/text_size_px_40"
             android:layout_toLeftOf="@+id/iv_photo"
-            android:ellipsize="end"
-            android:lineSpacingMultiplier="1.1"
-            android:maxLines="2"
-            android:paddingLeft="@dimen/text_size_px_27"
-            android:paddingRight="@dimen/text_size_px_43"
-            android:text="舒服舒服是否舒服舒服舒服舒一舒服是否舒服舒服舒服舒服舒服是否舒服舒服舒服"
-            android:textColor="@color/text_black"
-            android:textSize="@dimen/text_size_sp_15" />
+            >
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lineSpacingMultiplier="1.1"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/text_size_px_27"
+                android:paddingRight="@dimen/text_size_px_43"
+                android:text="舒服舒服是否舒服舒服舒服舒一舒服是否舒服舒服舒服舒服舒服是否舒服舒服舒服"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_size_sp_15" />
+
+            <TextView
+                android:id="@+id/tv_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_size_px_25"
+                android:background="@drawable/corners_hot_bg_shape"
+                android:paddingLeft="@dimen/text_size_px_8"
+                android:paddingRight="@dimen/text_size_px_8"
+                android:text="热门"
+                android:layout_marginTop="4dp"
+                tools:visibility="visible"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_sp_10" />
+
+        </RelativeLayout>
+
+
 
         <LinearLayout
             android:layout_alignParentBottom="true"
@@ -68,19 +91,6 @@
                 android:layout_marginLeft="@dimen/text_size_px_25"
                 />
 
-            <TextView
-                android:id="@+id/tv_hot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/text_size_px_25"
-                android:background="@drawable/corners_hot_bg_shape"
-                android:paddingLeft="@dimen/text_size_px_8"
-                android:paddingRight="@dimen/text_size_px_8"
-                android:text="热门"
-                android:visibility="gone"
-                tools:visibility="visible"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_sp_10" />
 
             <TextView
                 android:id="@+id/tv_source"

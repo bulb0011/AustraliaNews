@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import android.util.Log
 import android.view.View
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.ResultBase
@@ -49,8 +48,6 @@ open class NewsDetailsActivity : WebViewActivity() {
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
-            LogX.e("dengpao","startNewsDetails"+json)
-            LogX.e("dengpao","WEB_VIEW_URL"+url)
             context.startActivity(starter)
         }
 
@@ -61,7 +58,6 @@ open class NewsDetailsActivity : WebViewActivity() {
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
             starter.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            LogX.e("dengpao","startNewsDetailsNewTask"+json)
             context.startActivity(starter)
         }
     }
@@ -162,6 +158,7 @@ open class NewsDetailsActivity : WebViewActivity() {
             val newsInfo = GsonUtil.parseJson(shareJson, ShareJsonInfo::class.java)
             sharePopWindow.share_title = newsInfo.share_title
             title=newsInfo.share_title
+            title_txt.text=title
             val shareText = newsInfo.share_text
             if (!shareText.isNullOrEmpty()) {
                 sharePopWindow.share_text = shareText
@@ -237,6 +234,14 @@ open class NewsDetailsActivity : WebViewActivity() {
     }
 
     private fun initEvent() {
+
+
+        image_return.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(v: View?) {
+                finish()
+            }
+        })
+
         /**
          * 点击上面中英文切换
          */
@@ -405,49 +410,49 @@ open class NewsDetailsActivity : WebViewActivity() {
 
 
 
-        webView.setOnTouchListener(View.OnTouchListener { v, event ->
-
-            val webcontent  =webView.getContentHeight() * webView.getScale()
-
-            val webnow = rl_bofang.getHeight()
-
-            when(event.action){
-
-                0 ->{
-                    Log.d("dengpao", "ACTION_DOWN")
-                }
-                1 -> {
-                    Log.d("dengpao", "ACTION_UP")
-
-                    if(Math.abs(v.getScrollY())>100){
-                        rl_bofang.visibility=View.GONE
-                    }
-                    else if (Math.abs(v.getScrollY())<100){
-                        rl_bofang.visibility=View.VISIBLE
-                    }
-                }
-                2 ->{
-
-                    if (Math.abs(v.getScrollY())<300){
-                        rl_bofang.visibility=View.VISIBLE
-                    }
-
-                }
-                3 ->{
+//        webView.setOnTouchListener(View.OnTouchListener { v, event ->
 //
-//                    if(Math.abs(v.getScrollY())>webnow){
+//            val webcontent  =webView.getContentHeight() * webView.getScale()
+//
+//            val webnow = rl_bofang.getHeight()
+//
+//            when(event.action){
+//
+//                0 ->{
+//                    Log.d("dengpao", "ACTION_DOWN")
+//                }
+//                1 -> {
+//                    Log.d("dengpao", "ACTION_UP")
+//
+//                    if(Math.abs(v.getScrollY())>100){
 //                        rl_bofang.visibility=View.GONE
 //                    }
-//                    else if (Math.abs(v.getScrollY())<webnow){
+//                    else if (Math.abs(v.getScrollY())<100){
 //                        rl_bofang.visibility=View.VISIBLE
 //                    }
-                }
-
-            }
-
-            false
-
-        })
+//                }
+//                2 ->{
+//
+//                    if (Math.abs(v.getScrollY())<300){
+//                        rl_bofang.visibility=View.VISIBLE
+//                    }
+//
+//                }
+//                3 ->{
+////
+////                    if(Math.abs(v.getScrollY())>webnow){
+////                        rl_bofang.visibility=View.GONE
+////                    }
+////                    else if (Math.abs(v.getScrollY())<webnow){
+////                        rl_bofang.visibility=View.VISIBLE
+////                    }
+//                }
+//
+//            }
+//
+//            false
+//
+//        })
 
 
         setPercent()

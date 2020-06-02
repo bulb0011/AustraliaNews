@@ -44,15 +44,21 @@ class NewsListAdapter(context: Context, datas: List<NewsInfo>) : AdvertInfoBaseA
                     holder.getView<ImageView>(R.id.iv_photo).visibility=View.VISIBLE
                     holder.getView<ImageView>(R.id.iv_photo).loadImage(url)
                 }
-                holder.setText(R.id.tv_title, item.title)
+
                 holder.setText(R.id.tv_source, NewsInfo.getSourceStr(item))
 
-                holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1){
-                    View.GONE
-                }else  View.VISIBLE
+
+                holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)
+                {View.VISIBLE} else{View.GONE}
+
+                if (item.isHot==1){
+                    holder.setText(R.id.tv_title, "\t\t\t\t"+item.title)
+                }else{
+                    holder.setText(R.id.tv_title, item.title)
+                }
 
 
-                if(item.isHot==1){
+                if(item.type==1){
                     holder.getView<ImageView>(R.id.img_laba).visibility=View.VISIBLE
                 }else {
                     holder.getView<ImageView>(R.id.img_laba).visibility=View.GONE
@@ -75,11 +81,21 @@ class NewsListAdapter(context: Context, datas: List<NewsInfo>) : AdvertInfoBaseA
             }
 
             override fun convert(holder: ViewHolder, item: NewsInfo, position: Int) {
-                holder.setText(R.id.tv_title, item.title)
+//                holder.setText(R.id.tv_title, item.title)
                 holder.setText(R.id.tv_source, NewsInfo.getSourceStr(item))
                 holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)
                     View.GONE else View.VISIBLE
-                if(item.isHot==1){
+
+                holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)
+                    View.VISIBLE else View.GONE
+
+                if (item.isHot==1){
+                    holder.setText(R.id.tv_title, "\t\t\t\t"+item.title)
+                }else{
+                    holder.setText(R.id.tv_title, item.title)
+                }
+
+                if(item.type==1){
                     holder.getView<ImageView>(R.id.img_laba).visibility=View.VISIBLE
                 }else {
                     holder.getView<ImageView>(R.id.img_laba).visibility=View.GONE

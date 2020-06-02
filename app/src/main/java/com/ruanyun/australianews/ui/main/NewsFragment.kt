@@ -65,7 +65,7 @@ class NewsFragment : BaseFragment() {
     private var height: Int = 0
     private var minimumHeight: Int = 0
 
-    private var myCurrentTab =0
+    var myCurrentTab =0
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
