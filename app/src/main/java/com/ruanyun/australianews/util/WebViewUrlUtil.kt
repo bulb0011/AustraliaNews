@@ -2,7 +2,6 @@ package com.ruanyun.australianews.util
 
 import android.content.Context
 import android.text.TextUtils
-import android.util.Log
 import com.ruanyun.australianews.App
 import com.ruanyun.australianews.model.CivilEstateInfo
 import com.ruanyun.australianews.model.NewsInfo
@@ -61,9 +60,9 @@ open class WebViewUrlUtil {
             shareJsonInfo.share_title = info.title
             shareJsonInfo.share_image = info.commonMainPhoto
 
-            LogX.e("dengpao","oid"+info.oid)
-            LogX.e("dengpao","info"+GsonUtil.toJson(info))
-
+                LogX.e("dengpao","评论数"+info.commentCount)
+                LogX.e("dengpao","浏览数"+info.watchCount)
+                LogX.e("dengpao","来源数"+info.baseWebsite)
 
             when(info.type){
 
@@ -71,18 +70,28 @@ open class WebViewUrlUtil {
                     val url = FileUtil.getWebViewUrl(NEWS_DETAILS, App.getInstance().cityName, info.oid, App.getInstance().userOid)
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
-                    Log.w("dengpao","2222")
-                    Log.w("dengpao","json"+json)
-                    NewsDetailsActivity.startNewsDetails(context, url, info.oid, NewsCommentParams.NEWS, json)
+
+                    val url_zh=url+"&language=zh"
+                    val url_en=url+"&language=en"
+
+                    LogX.e("dengpao","url_zh="+url_zh)
+                    LogX.e("dengpao","url_en="+url_en)
+
+                    NewsDetailsActivity.startNewsDetails(context, url_zh, info.oid, NewsCommentParams.NEWS, json,info.commentCount,info.watchCount,info.baseWebsite,info.commonTime,url_en)
                 }
                 2-> {
                     VideoNewsDetailsActivity.start(context, info)
                 }
                 3-> {
+
                     val url = info.outUrl
+
+                    val url_zh=url+"&language=zh"
+                    val url_en=url+"&language=en"
+
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
-                    NewsDetailsActivity.startNewsDetails(context, url, info.oid, NewsCommentParams.NEWS, json)
+                    NewsDetailsActivity.startNewsDetails(context, url_zh, info.oid, NewsCommentParams.NEWS, json,info.commentCount,info.watchCount,info.baseWebsite,info.commonTime,url_en)
                 }
             }
         }
@@ -99,9 +108,13 @@ open class WebViewUrlUtil {
             when(info.type){
                 1-> {
                     val url = FileUtil.getWebViewUrl(NEWS_DETAILS, App.getInstance().cityName, info.oid, App.getInstance().userOid)
+
+                    val url_zh=url+"&language=zh"
+                    val url_en=url+"&language=en"
+
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
-                    NewsDetailsActivity.startNewsDetailsNewTask(context, url, info.oid, NewsCommentParams.NEWS, json)
+                    NewsDetailsActivity.startNewsDetailsNewTask(context, url_zh, info.oid, NewsCommentParams.NEWS, json,info.commentCount,info.watchCount,info.baseWebsite,info.commonTime,url_en)
                 }
                 2-> {
                     VideoNewsDetailsActivity.startNewTask(context, info)
@@ -109,8 +122,12 @@ open class WebViewUrlUtil {
                 3-> {
                     val url = info.outUrl
                     shareJsonInfo.share_url = url
+
+                    val url_zh=url+"&language=zh"
+                    val url_en=url+"&language=en"
+
                     val json = GsonUtil.toJson(shareJsonInfo)
-                    NewsDetailsActivity.startNewsDetailsNewTask(context, url, info.oid, NewsCommentParams.NEWS, json)
+                    NewsDetailsActivity.startNewsDetailsNewTask(context, url_zh, info.oid, NewsCommentParams.NEWS, json,info.commentCount,info.watchCount,info.baseWebsite,info.commonTime,url_en)
                 }
             }
         }

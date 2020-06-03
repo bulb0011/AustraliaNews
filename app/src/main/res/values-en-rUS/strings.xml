@@ -1,0 +1,92 @@
+<resources>
+    
+    <string name="iflytek">5ec5fbe3</string>
+    
+    <string name="app_name">财经见闻AFN</string>
+    <string name="password_digits" translatable="false">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ</string>
+    <string name="mailbox_digits" translatable="false">_-.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ@</string>
+    <string name="in_load">Loading&#8230;</string>
+    <string name="in_submit">Submitting&#8230;</string>
+    <string name="in_login">Logging in&#8230;</string>
+    <string name="in_location">Locating&#8230;</string>
+    <string name="location_fail">Unable to locate</string>
+
+    <string name="click_to_subscribe">Click to follow channels</string>
+    <string name="tip_drag_default">Click to enter the channel</string>
+    <string name="tip_drag">Drag the buttons below to sort</string>
+    <string name="my_cahnnel">My channel</string>
+    <string name="other_channel">Subscriptions</string>
+    <string name="customize_channel">Custom Channel</string>
+    <string name="edit">Edit</string>
+    <string name="finish">Completed</string>
+    <string name="release_agreement">To acknowledge that you have read, understood and agree to be bound by the "AFN App Information Release Agreement" and agreed to use your information in the above manner.</string>
+
+
+    <string name="xinwen">News</string>
+    <string name="caifu">Wealth</string>
+    <string name="gerenzxin">Information center</string>
+    <string name="shousuohint">Search interest</string>
+    <string name="login_hint">Logging in is more convenient to receive news and post with one click.</string>
+    <string name="lonin_text">Log in</string>
+    <string name="gupiao">Stock</string>
+    <string name="jijin">Fund</string>
+    <string name="huilv">Exchange Rate</string>
+    <string name="budongcan">Real Estate</string>
+    <string name="shengyi">Business</string>
+    <string name="wode">Me</string>
+    <string name="zuixindongtai">Latest News</string>
+    <string name="dianjidenglu">Click Login</string>
+    <string name="mymessage">Message</string>
+    <string name="mycritic">Comment</string>
+    <string name="mycollect">Favourite</string>
+    <string name="pushrecord">Record</string>
+    <string name="browsinghistory">History</string>
+    <string name="Remindernotices">Notification</string>
+    <string name="receivenews_close">(Receiving news feed is closed)</string>
+    <string name="receivenews_open">(Receiving news feed is open)</string>
+    <string name="feedback">Feedback</string>
+    <string name="clearcache">Clear Cache</string>
+    <string name="grade">Rating</string>
+    <string name="AboutUs">About us</string>
+    <string name="save">Save</string>
+    <string name="personaldata">Personal Information</string>
+    <string name="headportrait">Avatar</string>
+    <string name="nickname">Nickname</string>
+    <string name="sex">Gender</string>
+    <string name="dateofbirth">DOB</string>
+    <string name="cellphone">Mobile</string>
+    <string name="binding">Unbound</string>
+    <string name="mailbox">Email</string>
+    <string name="signature">Signature</string>
+    <string name="nosignature">No signature</string>
+
+    <string name="logout">Log out</string>
+
+    <string name="choose">Please Select</string>
+
+
+
+
+
+
+
+
+
+    <string-array name="stream_entries">
+        <item>Call</item>
+        <item>System</item>
+        <item>Ring</item>
+        <item>Music</item>
+        <item>Alerts</item>
+        <item>Notification</item>
+    </string-array>
+    <string-array name="stream_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+</resources>

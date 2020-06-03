@@ -166,6 +166,7 @@ public final class C {
         public static final String CHANNEL_INFO = "channel_info";
         public static final String CLICK_POSITION = "click_position";
         public static final String WEB_VIEW_URL = "web_view_url";
+        public static final String WEB_VIEW_URL_EN = "web_view_url_en";
         public static final String WEB_VIEW_TITLE = "web_view_title";
         public static final String CITY_NAME = "city_name";
         public static final String PHONE_AREA_INFO = "phone_area_info";
@@ -176,6 +177,12 @@ public final class C {
         public static final String NEWS_INFO = "news_info";
         public static final String NEWS_INFO_OID = "news_info_oid";
         public static final String SHARE_INFO_JSON = "news_info_json";
+
+        public static final String SHARE_INFO_COMMENTCOUNT = "news_info_commentCount";
+        public static final String SHARE_INFO_WATCHCOUNT = "news_info_watchCount";
+        public static final String SHARE_INFO_BASEWEBSITE = "news_info_baseWebsite";
+        public static final String SHARE_INFO_COMMONTIME = "news_info_commonTime";
+
         public static final String NEWS_IMAGE_COVER = "news_image_cover";
         public static final String NEWS_VIDEO_PATH = "news_video_path";
         public static final String TYPE = "type";

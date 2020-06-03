@@ -85,13 +85,13 @@
                         android:id="@+id/tv_user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignTop="@+id/iv_user_avatar"
-                        android:layout_marginTop="@dimen/text_size_px_50"
+                        android:layout_marginTop="@dimen/text_size_px_90"
                         android:layout_marginBottom="@dimen/text_size_px_24"
                         android:layout_toRightOf="@+id/iv_user_avatar"
                         android:text="@string/dianjidenglu"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_sp_17" />
+                        android:textSize="@dimen/text_size_sp_17"
+                        />
 
                     <TextView
                         android:id="@+id/tv_phone"

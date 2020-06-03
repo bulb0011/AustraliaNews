@@ -39,26 +39,40 @@ import kotlinx.android.synthetic.main.layout_news_bottom.*
 open class NewsDetailsActivity : WebViewActivity() {
 
     companion object {
-        fun startNewsDetails(context: Context, url: String?, newsInfoOid: String?, type: Int, json: String) {
+        fun startNewsDetails(context: Context, url: String?, newsInfoOid: String?,
+                             type: Int, json: String,commentCount: Int,watchCount: Int,baseWebsite : String?,commonTime: String?,url_en: String?) {
             val starter = Intent(context, NewsDetailsActivity::class.java)
             starter.putExtra(C.IntentKey.WEB_VIEW_URL, url)
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
-            LogX.e("dengpao","newsInfoOid"+newsInfoOid)
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
+            starter.putExtra(C.IntentKey.SHARE_INFO_COMMENTCOUNT, commentCount)
+            starter.putExtra(C.IntentKey.SHARE_INFO_WATCHCOUNT, watchCount)
+            starter.putExtra(C.IntentKey.SHARE_INFO_BASEWEBSITE, baseWebsite)
+            starter.putExtra(C.IntentKey.SHARE_INFO_COMMONTIME, commonTime)
+            starter.putExtra(C.IntentKey.WEB_VIEW_URL_EN, url_en)
             context.startActivity(starter)
         }
 
-        fun startNewsDetailsNewTask(context: Context, url: String?, newsInfoOid: String?, type: Int, json:String) {
+        fun startNewsDetailsNewTask(context: Context, url: String?, newsInfoOid: String?,
+                                    type: Int, json:String,commentCount: Int,watchCount: Int,baseWebsite : String?,commonTime: String?,url_en: String?) {
             val starter = Intent(context, NewsDetailsActivity::class.java)
             starter.putExtra(C.IntentKey.WEB_VIEW_URL, url)
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
             starter.putExtra(C.IntentKey.SHARE_INFO_JSON, json)
             starter.putExtra(C.IntentKey.TYPE, type)
+            starter.putExtra(C.IntentKey.SHARE_INFO_COMMENTCOUNT, commentCount)
+            starter.putExtra(C.IntentKey.SHARE_INFO_WATCHCOUNT, watchCount)
+            starter.putExtra(C.IntentKey.SHARE_INFO_BASEWEBSITE, baseWebsite)
+            starter.putExtra(C.IntentKey.SHARE_INFO_COMMONTIME, commonTime)
+            starter.putExtra(C.IntentKey.WEB_VIEW_URL_EN, url_en)
             starter.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(starter)
         }
     }
+
+
+
 
     var newsCommentCountInfo: NewsCommentCountInfo?=null
 
@@ -78,10 +92,50 @@ open class NewsDetailsActivity : WebViewActivity() {
 
     var isXinWen = true
 
+    var url_zh=""
+
+    var url_en=""
+
     override fun initView() {
         super.initView()
 
         val oid = intent.getStringExtra(C.IntentKey.NEWS_INFO_OID)
+
+        url_zh = intent.getStringExtra(C.IntentKey.WEB_VIEW_URL)
+        url_en = intent.getStringExtra(C.IntentKey.WEB_VIEW_URL_EN)
+
+        LogX.e("dengpao","url_zh+"+url_zh)
+        LogX.e("dengpao","url_en+"+url_en)
+
+
+        val commentCount = intent.getStringExtra(C.IntentKey.SHARE_INFO_COMMENTCOUNT)
+        val watchCount = intent.getStringExtra(C.IntentKey.SHARE_INFO_WATCHCOUNT)
+        val baseWebsite = intent.getStringExtra(C.IntentKey.SHARE_INFO_BASEWEBSITE)
+        val commonTime = intent.getStringExtra(C.IntentKey.SHARE_INFO_COMMONTIME)
+
+
+
+        if (watchCount.isNullOrEmpty()){
+            tv_liulan.text="0"+"浏览"
+        }else{
+            tv_liulan.text=watchCount
+        }
+
+        if (commentCount.isNullOrEmpty()){
+            tv_pinglun.text="0"+"评论"
+        }else{
+            tv_pinglun.text=commentCount+"评论"
+        }
+
+        if (baseWebsite.isNullOrEmpty()){
+            tv_laoyuan.text=""
+        }else{
+            tv_laoyuan.text=baseWebsite
+        }
+
+        tv_shijian.text=StringUtil.getLifeTime(commonTime)
+
+
         if (oid.isNullOrEmpty()) {
 
         } else {
@@ -90,11 +144,8 @@ open class NewsDetailsActivity : WebViewActivity() {
                 .subscribe(object : ApiSuccessAction<ResultBase<NewParticularsBean>>(){
                     override fun onSuccess(result: ResultBase<NewParticularsBean>) {
 
-                        LogX.e("dengpao","NewParticularsBean"+GsonUtil.toJson(result))
-
                         LogX.e("dengpao","result.data.commentCount"+result.data.contentText)
-
-                        LogX.e("dengpao","result.data.commentCount"+result.data.contentEn)
+                        LogX.e("dengpao","result.data.contentEn"+result.data.contentEn)
 
                         text = result.data.contentText
                         English = result.data.contentEn
@@ -108,12 +159,10 @@ open class NewsDetailsActivity : WebViewActivity() {
                     }
 
                     override fun onError(erroCode: Int, erroMsg: String?) {
-                        disMissLoadingView()
                         showToast(erroMsg)
                     }
                 }, object : ApiFailAction() {
                     override fun onFail(msg: String) {
-                        disMissLoadingView()
                         showToast(msg)
                     }
                 } )
@@ -234,6 +283,11 @@ open class NewsDetailsActivity : WebViewActivity() {
         presenter.getNewsCommentCount()
 
 
+        image_return.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(v: View?) {
+                finish()
+            }
+        })
 
 
 
@@ -262,12 +316,6 @@ open class NewsDetailsActivity : WebViewActivity() {
     private fun initEvent() {
 
 
-        image_return.setOnClickListener(object :View.OnClickListener{
-            override fun onClick(v: View?) {
-                finish()
-            }
-        })
-
         /**
          * 点击上面中英文切换
          */
@@ -288,12 +336,18 @@ open class NewsDetailsActivity : WebViewActivity() {
 
                     zhong.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.theme_color))
                     en.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.text_black))
+
+                    webview.loadUrl(url_zh)
+
                     isChina = false
                 } else {
                     ttsholder=TtsHolder(context,English)
 
                     zhong.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.text_black))
                     en.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.theme_color))
+
+                    webview.loadUrl(url_en)
+
                     isChina = true
                 }
 
@@ -776,7 +830,10 @@ open class NewsDetailsActivity : WebViewActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        ttsholder.stopSpeaking()
+        if(::ttsholder.isInitialized){
+            ttsholder.stopSpeaking()
+        }
+
     }
 
 }

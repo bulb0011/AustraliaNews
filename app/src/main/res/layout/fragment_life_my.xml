@@ -58,7 +58,7 @@
                     android:layout_toRightOf="@+id/iv_user_avatar"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_sp_17"
-                    tools:text="点击登录" />
+                    tools:text="@string/dianjidenglu" />
 
                 <TextView
                     android:id="@+id/tv_phone"

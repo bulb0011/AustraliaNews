@@ -127,7 +127,7 @@ class MyFragment : BaseFragment() {
             tv_phone.visibility = View.VISIBLE
         }else {
             iv_user_avatar.setImageResource(R.drawable.my_img_headempty)
-            tv_user_name.text = "点击登录"
+            tv_user_name.text = getResources().getString(R.string.dianjidenglu)
             tv_phone.visibility = View.GONE
         }
     }

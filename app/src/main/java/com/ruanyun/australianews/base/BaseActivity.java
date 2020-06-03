@@ -12,27 +12,35 @@ import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+
 import com.ruanyun.australianews.App;
 import com.ruanyun.australianews.R;
-import com.ruanyun.australianews.data.ApiService;
 import com.ruanyun.australianews.ui.login.LoginActivity;
-import com.ruanyun.australianews.util.*;
+import com.ruanyun.australianews.util.CommonUtil;
+import com.ruanyun.australianews.util.LogX;
+import com.ruanyun.australianews.util.PixelSizeUtil;
 import com.ruanyun.australianews.widget.LoadingDialog;
 import com.ruanyun.australianews.widget.TopBar;
-import dagger.android.support.DaggerAppCompatActivity;
+
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
+import java.util.Locale;
 
+import javax.inject.Inject;
+
+import dagger.android.support.DaggerAppCompatActivity;
 import me.jessyan.autosize.AutoSize;
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
-
-import javax.inject.Inject;
 
 /**
  * Description:
@@ -79,6 +87,8 @@ public abstract class BaseActivity extends DaggerAppCompatActivity implements Ti
         mCompositeSubscription.add(subscription);
     }
 
+    Locale locale;
+
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -86,6 +96,15 @@ public abstract class BaseActivity extends DaggerAppCompatActivity implements Ti
 //        initInjector();
         mContext = this;
         app.pushActivity(this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            locale = getResources().getConfiguration().getLocales().get(0);
+        } else {
+            locale = getResources().getConfiguration().locale;
+        }
+
+        String lang = locale.getLanguage() + "-" + locale.getCountry();
+
     }
 
     @Override
