@@ -8,10 +8,10 @@ import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.AppBarLayout
 import android.support.v4.content.ContextCompat
+import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.flyco.tablayout.listener.OnTabSelectListener
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.BaseFragment
 import com.ruanyun.australianews.base.ResultBase
@@ -249,41 +249,60 @@ class NewsFragment : BaseFragment() {
             CityListActivity.start(mContext)
         }
 
-        tab.setOnTabSelectListener(object : OnTabSelectListener{
-            override fun onTabSelect(position: Int) {
-                if(position==1){
-                    WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
+//        tab.setOnTabSelectListener(object : OnTabSelectListener{
+//            override fun onTabSelect(position: Int) {
+//                if(position==1){
+//                    WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
+//
+//                }else if (position==3){
+//                    WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
+//                }else{
+//                    myCurrentTab=position
+//                }
+//            }
+//
+//            override fun onTabReselect(position: Int) {
+//
+//                LogX.e("dengpao","onTabReselect"+position)
+//            }
+//        })
+//
+//
+//        tab_to.setOnTabSelectListener(object : OnTabSelectListener{
+//            override fun onTabSelect(position: Int) {
+//                if(position==1){
+//                    WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
+//                }else if (position==3){
+//                    WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
+//                }else{
+//                    myCurrentTab=position
+//                }
+//            }
+//
+//            override fun onTabReselect(position: Int) {
+//
+//                LogX.e("dengpao","onTabReselect"+position)
+//            }
+//        })
 
-                }else if (position==3){
+        viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+
+            override fun onPageScrollStateChanged(p0: Int) {
+            }
+
+            override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
+            }
+
+            override fun onPageSelected(p0: Int) {
+                if(p0==1){
+                    WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
+                }else if (p0==3){
                     WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
                 }else{
-                    myCurrentTab=position
+                    myCurrentTab=p0
                 }
             }
-
-            override fun onTabReselect(position: Int) {
-
-                LogX.e("dengpao","onTabReselect"+position)
-            }
         })
-
-        tab_to.setOnTabSelectListener(object : OnTabSelectListener{
-            override fun onTabSelect(position: Int) {
-                if(position==1){
-                    WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
-                }else if (position==3){
-                    WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
-                }else{
-                    myCurrentTab=position
-                }
-            }
-
-            override fun onTabReselect(position: Int) {
-
-                LogX.e("dengpao","onTabReselect"+position)
-            }
-        })
-
 
     }
 

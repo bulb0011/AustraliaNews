@@ -60,10 +60,6 @@ open class WebViewUrlUtil {
             shareJsonInfo.share_title = info.title
             shareJsonInfo.share_image = info.commonMainPhoto
 
-                LogX.e("dengpao","评论数"+info.commentCount)
-                LogX.e("dengpao","浏览数"+info.watchCount)
-                LogX.e("dengpao","来源数"+info.baseWebsite)
-
             when(info.type){
 
                 1-> {

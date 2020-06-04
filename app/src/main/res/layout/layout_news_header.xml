@@ -211,9 +211,10 @@
                 android:layout_height="@dimen/text_size_px_166">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="33dp"
+                    android:layout_height="35dp"
                     android:layout_marginLeft="@dimen/text_size_px_45"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/home_icon_weather"/>
 
                 <TextView

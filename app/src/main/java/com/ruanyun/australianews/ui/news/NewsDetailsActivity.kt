@@ -104,10 +104,6 @@ open class NewsDetailsActivity : WebViewActivity() {
         url_zh = intent.getStringExtra(C.IntentKey.WEB_VIEW_URL)
         url_en = intent.getStringExtra(C.IntentKey.WEB_VIEW_URL_EN)
 
-        LogX.e("dengpao","url_zh+"+url_zh)
-        LogX.e("dengpao","url_en+"+url_en)
-
-
         val commentCount = intent.getStringExtra(C.IntentKey.SHARE_INFO_COMMENTCOUNT)
         val watchCount = intent.getStringExtra(C.IntentKey.SHARE_INFO_WATCHCOUNT)
         val baseWebsite = intent.getStringExtra(C.IntentKey.SHARE_INFO_BASEWEBSITE)
@@ -459,81 +455,6 @@ open class NewsDetailsActivity : WebViewActivity() {
 
             }
         })
-
-//        webView.setOnScrollChangeListener(object :View .OnScrollChangeListener{
-//            override fun onScrollChange(
-//                v: View,
-//                scrollX: Int,
-//                scrollY: Int,
-//                oldScrollX: Int,
-//                oldScrollY: Int
-//            ) {
-//
-//                val webcontent  =webView.getContentHeight() * webView.getScale();
-//
-//                val webnow = v.getHeight() + v.getScrollY()
-//
-//                if (Math.abs(webcontent - webnow) < 1) {
-//                    //处于底端
-//
-//                } else if (v.getScrollY() == 0) {
-//                    //处于顶端
-//
-//                    rl_bofang.visibility=View.VISIBLE
-//                } else {
-//                    rl_bofang.visibility=View.GONE
-//                }
-//
-//            }
-//        })
-
-
-
-
-//        webView.setOnTouchListener(View.OnTouchListener { v, event ->
-//
-//            val webcontent  =webView.getContentHeight() * webView.getScale()
-//
-//            val webnow = rl_bofang.getHeight()
-//
-//            when(event.action){
-//
-//                0 ->{
-//                    Log.d("dengpao", "ACTION_DOWN")
-//                }
-//                1 -> {
-//                    Log.d("dengpao", "ACTION_UP")
-//
-//                    if(Math.abs(v.getScrollY())>100){
-//                        rl_bofang.visibility=View.GONE
-//                    }
-//                    else if (Math.abs(v.getScrollY())<100){
-//                        rl_bofang.visibility=View.VISIBLE
-//                    }
-//                }
-//                2 ->{
-//
-//                    if (Math.abs(v.getScrollY())<300){
-//                        rl_bofang.visibility=View.VISIBLE
-//                    }
-//
-//                }
-//                3 ->{
-////
-////                    if(Math.abs(v.getScrollY())>webnow){
-////                        rl_bofang.visibility=View.GONE
-////                    }
-////                    else if (Math.abs(v.getScrollY())<webnow){
-////                        rl_bofang.visibility=View.VISIBLE
-////                    }
-//                }
-//
-//            }
-//
-//            false
-//
-//        })
-
 
         setPercent()
 
