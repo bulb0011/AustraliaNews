@@ -167,6 +167,10 @@ public abstract class ActivityBindingModule {
 
     @ActivityScoped
     @ContributesAndroidInjector
+    abstract SetLanguageActivity setLanguageActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
     abstract MyMessageNotificationDetailsActivity myMessageNotificationDetailsActivity();
 
     @ActivityScoped

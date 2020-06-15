@@ -8,7 +8,7 @@
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:topBarRightText="确认"
+        app:topBarRightText="@string/queren"
         app:topBarRightTextEnable="true"
         app:topBarTitleText="选择地址" />
 

@@ -12,21 +12,24 @@ import com.ruanyun.australianews.base.ResultBase
 import com.ruanyun.australianews.data.ApiFailAction
 import com.ruanyun.australianews.data.ApiService
 import com.ruanyun.australianews.data.ApiSuccessAction
-import com.ruanyun.australianews.ext.*
+import com.ruanyun.australianews.ext.clickWithTrigger
+import com.ruanyun.australianews.ext.getStr
+import com.ruanyun.australianews.ext.loadCircleImage
+import com.ruanyun.australianews.ext.loadCircleImageNotCache
 import com.ruanyun.australianews.model.Event
 import com.ruanyun.australianews.model.UserInfo
 import com.ruanyun.australianews.model.params.UpdateUserInfoParams
 import com.ruanyun.australianews.ui.login.LoginActivity
 import com.ruanyun.australianews.util.*
-import com.ruanyun.australianews.widget.SelectGenderPopWindow
 import com.ruanyun.australianews.widget.SelectDateDialog
+import com.ruanyun.australianews.widget.SelectGenderPopWindow
 import com.ruanyun.australianews.widget.TipDialog
 import kotlinx.android.synthetic.main.activity_personal_information.*
 import okhttp3.RequestBody
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import java.io.File
-import java.util.HashMap
+import java.util.*
 import javax.inject.Inject
 
 /**
@@ -76,7 +79,7 @@ class PersonalInformationActivity : HeaderPickerActivity() {
         informationType = intent.getIntExtra(C.IntentKey.INFORMATION_TYPE, 0)
         if(informationType == REGISTER_TO_FILL_OUT){
             topbar.setRightTextEnable(false)
-            tv_confirm.text = "确认"
+            tv_confirm.text = resources.getString(R.string.queding)
         }
 
         rl_avatar.clickWithTrigger { showSelectPopView(rl_avatar) }
@@ -112,7 +115,7 @@ class PersonalInformationActivity : HeaderPickerActivity() {
             if(informationType == REGISTER_TO_FILL_OUT){
                 updateUserInfo()
             }else {
-                tipDialog.show("温馨提示", "是否确认退出登录?", "确认")
+                tipDialog.show(resources.getString(R.string.wenxin), resources.getString(R.string.quedingtc), resources.getString(R.string.queding))
             }
         }
         initUserData()
@@ -127,12 +130,12 @@ class PersonalInformationActivity : HeaderPickerActivity() {
             if(CommonUtil.isNotEmpty(mobile)){
                 tv_phone.setText(mobile)
             }else {
-                tv_phone.setText("去绑定")
+                tv_phone.setText(resources.getString(R.string.qubangding))
             }
             if(CommonUtil.isNotEmpty(email)){
                 tv_mailbox.setText(email)
             }else {
-                tv_mailbox.setText("去绑定")
+                tv_mailbox.setText(resources.getString(R.string.qubangding))
             }
             et_signature.setText(signature)
         }

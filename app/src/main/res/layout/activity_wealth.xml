@@ -21,7 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/theme_color"
-
         >
         <ImageView
             android:id="@+id/image_que"
@@ -65,12 +64,17 @@
 
     </RelativeLayout>
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/theme_color"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_px_170"
-        android:background="@color/theme_color">
+        android:background="@color/theme_color"
+        >
 
         <TextView
             android:id="@+id/tv_gupiao"
@@ -83,7 +87,9 @@
             android:paddingTop="@dimen/text_size_px_20"
             android:text="@string/gupiao"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_sp_13" />
+            android:textSize="@dimen/text_size_sp_13"
+            android:visibility="gone"
+            />
 
         <TextView
             android:id="@+id/tv_jijin"
@@ -124,15 +130,6 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
 
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/text_size_px_170"
-        android:background="@color/theme_color">
-
         <TextView
             android:id="@+id/tv_business"
             android:layout_width="0dp"
@@ -146,6 +143,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
 
+
         <TextView
             android:id="@+id/tv_my"
             android:layout_width="0dp"
@@ -158,6 +156,16 @@
             android:text="@string/wode"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_sp_13" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_px_170"
+        android:background="@color/theme_color"
+        android:visibility="gone"
+        >
 
         <TextView
             android:layout_width="0dp"

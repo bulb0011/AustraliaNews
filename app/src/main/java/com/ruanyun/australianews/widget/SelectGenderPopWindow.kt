@@ -37,11 +37,11 @@ class SelectGenderPopWindow(private val mContext: Context) : PopupWindow(), Popu
         val tvWoman = view.findViewById<View>(R.id.tv_woman) as TextView
         val tvCancel = view.findViewById<View>(R.id.tv_cancel) as TextView
         tvMale.setOnClickListener {
-            block.invoke("男")
+            block.invoke(mContext.resources.getString(R.string.nan))
             dismiss()
         }
         tvWoman.setOnClickListener {
-            block.invoke("女")
+            block.invoke(mContext.resources.getString(R.string.nv))
             dismiss()
         }
         //取消按钮事件

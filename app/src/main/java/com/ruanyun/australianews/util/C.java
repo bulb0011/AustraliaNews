@@ -166,6 +166,7 @@ public final class C {
         public static final String CHANNEL_INFO = "channel_info";
         public static final String CLICK_POSITION = "click_position";
         public static final String WEB_VIEW_URL = "web_view_url";
+        public static final String WEB_VIEW_724 = "web_view_724";
         public static final String WEB_VIEW_URL_EN = "web_view_url_en";
         public static final String WEB_VIEW_TITLE = "web_view_title";
         public static final String CITY_NAME = "city_name";
@@ -222,6 +223,8 @@ public final class C {
         public static final String UPDATE_SHOP_GOODS_PAGE = "update_shop_goods_page";
         public static final String SCROLL_TO_TOP = "scroll_to_top";
         public static final String ADD_COMMENT_SUCCESS = "add_comment_success";
+
+        public static final String CHANGE_APP_LANGUAGE = "change_app_language";
     }
 
     public static final class IconType {

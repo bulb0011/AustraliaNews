@@ -22,7 +22,7 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
         when(v.id){
 
             R.id.rl_juminlou ->{
-                topbar.setTitleText("居民楼")
+                topbar.setTitleText(resources.getString(R.string.mingmin))
                 v_jumin.visibility=View.VISIBLE
                 v_minsheng.visibility=View.INVISIBLE
                 v_shangye.visibility=View.INVISIBLE
@@ -32,7 +32,7 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
             }
 
             R.id.rl_minshangyongdi ->{
-                topbar.setTitleText("民生用地")
+                topbar.setTitleText(resources.getString(R.string.tudi))
                 v_jumin.visibility=View.INVISIBLE
                 v_minsheng.visibility=View.VISIBLE
                 v_shangye.visibility=View.INVISIBLE
@@ -43,7 +43,7 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
             }
 
             R.id.rl_shangyeyongdi ->{
-                topbar.setTitleText("商业用地")
+                topbar.setTitleText(resources.getString(R.string.shnegye))
                 v_jumin.visibility=View.INVISIBLE
                 v_minsheng.visibility=View.INVISIBLE
                 v_shangye.visibility=View.VISIBLE
@@ -54,7 +54,7 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
             }
 
             R.id.rl_nongchang ->{
-                topbar.setTitleText("农场")
+                topbar.setTitleText(resources.getString(R.string.nongc))
                 v_jumin.visibility=View.INVISIBLE
                 v_minsheng.visibility=View.INVISIBLE
                 v_shangye.visibility=View.INVISIBLE

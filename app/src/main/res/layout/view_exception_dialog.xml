@@ -36,7 +36,7 @@
         android:layout_height="@dimen/text_size_px_120"
         android:background="@drawable/bg_red_corners_bottom_left_right"
         android:gravity="center"
-        android:text="确定"
+        android:text="@string/queding"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_sp_15" />
 </LinearLayout>

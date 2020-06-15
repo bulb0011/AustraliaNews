@@ -164,10 +164,16 @@ open class WebViewActivity : BaseActivity(), AndroidImagePicker.OnPictureTakeCom
         }
     }
 
+    var isYc=false
+
     open fun initView() {
         webViewUrl = intent.getStringExtra(C.IntentKey.WEB_VIEW_URL)
         presenter.newsInfoOid = intent.getStringExtra(C.IntentKey.NEWS_INFO_OID)
         presenter.newsInfoType = intent.getIntExtra(C.IntentKey.TYPE, 1)
+
+        isYc = intent.getBooleanExtra(C.IntentKey.WEB_VIEW_724,false)
+
+
         if (!webViewUrl.startsWith(ApiManger.API_URL) && TextUtils.isEmpty(presenter.newsInfoOid)) {
             topbar?.visibility = View.VISIBLE
             topbar?.setTitleText(intent.getStringExtra(C.IntentKey.WEB_VIEW_TITLE))?.setTopBarClickListener(this)
@@ -253,6 +259,10 @@ open class WebViewActivity : BaseActivity(), AndroidImagePicker.OnPictureTakeCom
                 if(isLoadError){
                     emptyview.showLoadFail()
                 }
+
+                if (isYc)conceal()
+
+
             }
 
             override fun onReceivedError(p0: WebView?, p1: Int, p2: String?, p3: String?) {
@@ -316,13 +326,14 @@ open class WebViewActivity : BaseActivity(), AndroidImagePicker.OnPictureTakeCom
         if (CommonUtil.isNetworkAvailable()) {
             if(webViewUrl.startsWith("http")){
                 webView.loadUrl(webViewUrl, null)
-                LogX.e("retrofit", "loadUrl = $webViewUrl")
+                LogX.e("retrofit", "++++loadUrl = $webViewUrl")
             }else if(webViewUrl.startsWith("file")){//本地html界面
                 webView.loadUrl(webViewUrl, null)
                 LogX.e("retrofit", "loadUrl = $webViewUrl")
             }else {
                 webView.loadDataWithBaseURL(null, HtmlFormat.getHtmlContent(webViewUrl), "text/html", "utf-8", null)
             }
+
         } else {
             emptyview.showLoadFail("检查网络连接")
         }
@@ -428,6 +439,18 @@ open class WebViewActivity : BaseActivity(), AndroidImagePicker.OnPictureTakeCom
         }
     }
 
+    fun conceal() {
+        val js="\$('.jin-timeline_title a').hide();"
+        LogX.e("dengpao", "diaoyong+++++")
+        runOnUiThread {
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+                webView.evaluateJavascript(js, null)
+            } else {
+                webView.loadUrl(js)
+            }
+        }
+    }
+
     override fun aliPaySuccess() {
         runOnUiShowToast("支付成功")
     }
@@ -444,7 +467,6 @@ open class WebViewActivity : BaseActivity(), AndroidImagePicker.OnPictureTakeCom
      * js监听
      */
     internal inner class JsMethodListener {
-
         /**
          * 去首页
          */
@@ -656,6 +678,13 @@ open class WebViewActivity : BaseActivity(), AndroidImagePicker.OnPictureTakeCom
             val starter = Intent(context, WebViewActivity::class.java)
             starter.putExtra(C.IntentKey.WEB_VIEW_TITLE, title)
             starter.putExtra(C.IntentKey.WEB_VIEW_URL, html)
+            context.startActivity(starter)
+        }
+        fun startHtml(context: Context, title: String?, html: String?,isYinC : Boolean ) {
+            val starter = Intent(context, WebViewActivity::class.java)
+            starter.putExtra(C.IntentKey.WEB_VIEW_TITLE, title)
+            starter.putExtra(C.IntentKey.WEB_VIEW_URL, html)
+            starter.putExtra(C.IntentKey.WEB_VIEW_724, isYinC)
             context.startActivity(starter)
         }
     }

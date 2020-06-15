@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/topbar"
-        app:topBarTitleText="我的发布"
+        app:topBarTitleText="@string/wodefabu"
         app:topBarRightText="管理"
         app:topBarRightTextEnable="true"
         app:topBarViewLineEnable="false"/>

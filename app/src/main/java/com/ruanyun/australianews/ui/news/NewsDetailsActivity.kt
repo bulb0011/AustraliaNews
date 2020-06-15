@@ -102,7 +102,13 @@ open class NewsDetailsActivity : WebViewActivity() {
         val oid = intent.getStringExtra(C.IntentKey.NEWS_INFO_OID)
 
         url_zh = intent.getStringExtra(C.IntentKey.WEB_VIEW_URL)
-        url_en = intent.getStringExtra(C.IntentKey.WEB_VIEW_URL_EN)
+
+        try {
+
+            url_en = intent.getStringExtra(C.IntentKey.WEB_VIEW_URL_EN)
+
+        } catch (e: Exception) {
+        }
 
         val commentCount = intent.getStringExtra(C.IntentKey.SHARE_INFO_COMMENTCOUNT)
         val watchCount = intent.getStringExtra(C.IntentKey.SHARE_INFO_WATCHCOUNT)
@@ -111,25 +117,27 @@ open class NewsDetailsActivity : WebViewActivity() {
 
 
 
-        if (watchCount.isNullOrEmpty()){
-            tv_liulan.text="0"+"浏览"
-        }else{
-            tv_liulan.text=watchCount
-        }
+        if (tv_liulan !=null ) {
+            if (watchCount.isNullOrEmpty()){
+                tv_liulan.text="0"+"浏览"
+            }else{
+                tv_liulan.text=watchCount
+            }
 
-        if (commentCount.isNullOrEmpty()){
-            tv_pinglun.text="0"+"评论"
-        }else{
-            tv_pinglun.text=commentCount+"评论"
-        }
+            if (commentCount.isNullOrEmpty()){
+                tv_pinglun.text="0"+"评论"
+            }else{
+                tv_pinglun.text=commentCount+"评论"
+            }
 
-        if (baseWebsite.isNullOrEmpty()){
-            tv_laoyuan.text=""
-        }else{
-            tv_laoyuan.text=baseWebsite
-        }
+            if (baseWebsite.isNullOrEmpty()){
+                tv_laoyuan.text=""
+            }else{
+                tv_laoyuan.text=baseWebsite
+            }
 
-        tv_shijian.text=StringUtil.getLifeTime(commonTime)
+            tv_shijian.text=StringUtil.getLifeTime(commonTime)
+        }
 
 
         if (oid.isNullOrEmpty()) {
@@ -228,7 +236,11 @@ open class NewsDetailsActivity : WebViewActivity() {
             val newsInfo = GsonUtil.parseJson(shareJson, ShareJsonInfo::class.java)
             sharePopWindow.share_title = newsInfo.share_title
             title=newsInfo.share_title
-            title_txt.text=title
+
+            if(title_txt!=null){
+                title_txt.text=title
+            }
+
             val shareText = newsInfo.share_text
             if (!shareText.isNullOrEmpty()) {
                 sharePopWindow.share_text = shareText
@@ -278,15 +290,13 @@ open class NewsDetailsActivity : WebViewActivity() {
         }
         presenter.getNewsCommentCount()
 
-
-        image_return.setOnClickListener(object :View.OnClickListener{
-            override fun onClick(v: View?) {
-                finish()
-            }
-        })
-
-
-
+        if (image_return!=null) {
+            image_return.setOnClickListener(object :View.OnClickListener{
+                override fun onClick(v: View?) {
+                    finish()
+                }
+            })
+        }
 
     }
 

@@ -44,6 +44,13 @@ public class EventNotifier {
     }
 
     /**
+     * 改变语言
+     **/
+    public void changeAppLanguage() {
+        EventBus.getDefault().post(new Event<String>(C.EventKey.CHANGE_APP_LANGUAGE, ""));
+    }
+
+    /**
      * 刷新购物车列表
      **/
     public void updateShopCartList() {

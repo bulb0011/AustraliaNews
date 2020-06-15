@@ -96,7 +96,7 @@ class MyFragment : BaseFragment() {
         }
         initNoticeSwitch()
         tv_feedback.clickWithTrigger { if(isLoginToActivity) FeedbackActivity.start(mContext) }
-        tv_clear_cache.clickWithTrigger { tipDialog.show("温馨提示", "是否确认清除缓存?", "确认") }
+        tv_clear_cache.clickWithTrigger { tipDialog.show(resources.getString(R.string.wenxin), "是否确认清除缓存?",resources.getString(R.string.queren) ) }
         tv_rate_me.clickWithTrigger {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://app.banglebang.net/cx4f")))
         }
@@ -106,7 +106,12 @@ class MyFragment : BaseFragment() {
             tipDialog.dismiss()
             ImageUtil.clearImageAllCache()
         }
+
+        tv_language.clickWithTrigger{if(isLoginToActivity) SetLanguageActivity.start(mContext)}
+
     }
+
+
 
     private fun initNoticeSwitch() {
         iv_notice_switch.isSelected = CacheHelper.getInstance().isTurnOnPush

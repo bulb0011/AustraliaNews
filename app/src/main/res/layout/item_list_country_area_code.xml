@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/text_size_px_166"
         android:singleLine="true"
-        android:text="中国大陆"
+        android:text="@string/zhongguo"
         android:gravity="center_vertical"
         android:textColor="@color/text_black"
         android:textSize="14sp"/>

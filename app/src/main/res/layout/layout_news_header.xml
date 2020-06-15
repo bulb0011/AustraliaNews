@@ -110,7 +110,11 @@
                     android:layout_centerVertical="true"
                     android:text="@string/login_hint"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_sp_12" />
+                    android:textSize="@dimen/text_size_sp_12"
+                    android:ellipsize="middle"
+                    android:maxLines="1"
+                    android:maxEms="18"
+                    />
 
                 <TextView
                     android:id="@+id/tv_login"
@@ -201,54 +205,55 @@
             </LinearLayout>
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_size_px_25"
-                android:background="@color/bg_white" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/text_size_px_25"-->
+<!--                android:background="@color/bg_white" />-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_size_px_166">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/text_size_px_166"-->
+<!--                >-->
 
-                <ImageView
-                    android:layout_width="33dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="@dimen/text_size_px_45"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/home_icon_weather"/>
+<!--                <ImageView-->
+<!--                    android:layout_width="33dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginLeft="@dimen/text_size_px_45"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:src="@drawable/home_icon_weather"/>-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/text_size_px_198"
-                    android:layout_marginTop="@dimen/text_size_px_30"
-                    android:includeFontPadding="false"
-                    android:singleLine="true"
-                    android:textSize="@dimen/text_size_sp_13"
-                    android:text="今日天气： 晴转多云"
-                    android:textColor="@color/text_default" />
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="@dimen/text_size_px_198"-->
+<!--                    android:layout_marginTop="@dimen/text_size_px_30"-->
+<!--                    android:includeFontPadding="false"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textSize="@dimen/text_size_sp_13"-->
+<!--                    android:text="今日天气： 晴转多云"-->
+<!--                    android:textColor="@color/text_default" />-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="@dimen/text_size_px_198"
-                    android:layout_marginBottom="@dimen/text_size_px_30"
-                    android:includeFontPadding="false"
-                    android:singleLine="true"
-                    android:textSize="@dimen/text_size_sp_13"
-                    android:text="今日汇率： 澳元/人民币 = 4.7918"
-                    android:textColor="@color/text_default" />
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_marginLeft="@dimen/text_size_px_198"-->
+<!--                    android:layout_marginBottom="@dimen/text_size_px_30"-->
+<!--                    android:includeFontPadding="false"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textSize="@dimen/text_size_sp_13"-->
+<!--                    android:text="今日汇率： 澳元/人民币 = 4.7918"-->
+<!--                    android:textColor="@color/text_default" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
 
 
-            <View
-                android:id="@+id/view_tab_top_line"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_size_px_24"
-                android:background="@color/bg_white" />
+<!--            <View-->
+<!--                android:id="@+id/view_tab_top_line"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/text_size_px_24"-->
+<!--                android:background="@color/bg_white" />-->
 
 
             <RelativeLayout
@@ -267,7 +272,11 @@
                     android:layout_centerVertical="true"
                     android:text="@string/login_hint"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_sp_12" />
+                    android:textSize="@dimen/text_size_sp_12"
+                    android:ellipsize="middle"
+                    android:maxLines="1"
+                    android:maxEms="18"
+                    />
 
                 <TextView
                     android:id="@+id/tv_login_to"

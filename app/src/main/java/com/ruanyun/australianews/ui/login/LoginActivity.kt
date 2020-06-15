@@ -184,14 +184,14 @@ class LoginActivity : BaseActivity(), LoginMvpView {
             rl_phone_area.visibility = View.VISIBLE
             rl_phone.visibility = View.VISIBLE
             rl_mailbox.visibility = View.GONE
-            tv_switch_login.text = "邮箱登录"
-            topbar.setTitleText("手机号登录")
+            tv_switch_login.text = resources.getString(R.string.youxiang)
+            topbar.setTitleText(resources.getString(R.string.shoujihaidl))
         } else {
             rl_phone_area.visibility = View.GONE
             rl_phone.visibility = View.GONE
             rl_mailbox.visibility = View.VISIBLE
-            tv_switch_login.text = "手机号登录"
-            topbar.setTitleText("邮箱登录")
+            tv_switch_login.text = resources.getString(R.string.shoujihaidl)
+            topbar.setTitleText(resources.getString(R.string.youxiang))
         }
         updateLoginBtnEnabled()
     }

@@ -25,12 +25,12 @@
     <string name="xinwen">News</string>
     <string name="caifu">Wealth</string>
     <string name="gerenzxin">Information center</string>
-    <string name="shousuohint">Search interest</string>
+    <string name="shousuohint">Search</string>
     <string name="login_hint">Logging in is more convenient to receive news and post with one click.</string>
     <string name="lonin_text">Log in</string>
     <string name="gupiao">Stock</string>
     <string name="jijin">Fund</string>
-    <string name="huilv">Exchange Rate</string>
+    <string name="huilv">Currency</string>
     <string name="budongcan">Real Estate</string>
     <string name="shengyi">Business</string>
     <string name="wode">Me</string>
@@ -45,6 +45,7 @@
     <string name="receivenews_close">(Receiving news feed is closed)</string>
     <string name="receivenews_open">(Receiving news feed is open)</string>
     <string name="feedback">Feedback</string>
+    <string name="language">language settings</string>
     <string name="clearcache">Clear Cache</string>
     <string name="grade">Rating</string>
     <string name="AboutUs">About us</string>
@@ -65,11 +66,81 @@
     <string name="choose">Please Select</string>
 
 
+    <string name="quxiao">cancel</string>
 
+    <string name="yuyansez">语言设置</string>
 
+    <string name="jintizhengwen">简体中文</string>
 
+    <string name="yingwen">English</string>
 
+    <string name="nan">Male</string>
 
+    <string name="nv">Female</string>
+
+    <string name="shoujihao">Mobile</string>
+
+    <string name="qubangding">Add</string>
+
+    <string name="shangwuhezuo">Business Cooperation</string>
+
+    <string name="lianxiwom">Contact Us</string>
+
+    <string name="mianzshengming">Disclaimer</string>
+
+    <string name="jiaruwom">Join us</string>
+
+    <string name="wodefabu">Post</string>
+
+    <string name="wodezuj">History</string>
+
+    <string name="mingmin">Residential</string>
+
+    <string name="tudi">Land</string>
+
+    <string name="shnegye">Commercial</string>
+
+    <string name="nongc">Farm</string>
+
+    <string name="shengri">生日</string>
+
+    <string name="queding">Confirm</string>
+
+    <string name="wenxin">Please note</string>
+
+    <string name="quedingtc">Are you sure you want to log out</string>
+
+    <string name="queren">Confirm</string>
+
+    <string name="shoujihaidl">Mobile Login</string>
+
+    <string name="diqu">Country/Region</string>
+
+    <string name="zuce">Sign up</string>
+
+    <string name="shurushoujihao">Mobile</string>
+
+    <string name="mima">Password</string>
+
+    <string name="shurumim">Password</string>
+
+    <string name="wngjimima">Forgot your password?</string>
+
+    <string name="youxiang">Email Login</string>
+
+    <string name="aodayia">Australia</string>
+
+    <string name="zhongguo">China Mainland</string>
+
+    <string name="tiwan">Taiwan, China</string>
+
+    <string name="xianggang">Hong Kong, China</string>
+
+    <string name="aomen">Macao, China</string>
+
+    <string name="xinxilan">New Zealand</string>
+
+    <string name="xunzdiz">Select Country/Region</string>
 
 
     <string-array name="stream_entries">

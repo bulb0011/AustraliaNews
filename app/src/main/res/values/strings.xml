@@ -45,6 +45,9 @@
     <string name="receivenews_close">(接收新闻推送已关闭)</string>
     <string name="receivenews_open">(接收新闻推送已开启)</string>
     <string name="feedback">意见反馈</string>
+
+    <string name="language">语言设置</string>
+
     <string name="clearcache">清除缓存</string>
     <string name="grade">为我评分</string>
     <string name="AboutUs">关于我们</string>
@@ -65,9 +68,82 @@
     <string name="choose">请选择</string>
 
 
+    <string name="quxiao">取消</string>
+
+    <string name="yuyansez">语言设置</string>
 
 
+    <string name="jintizhengwen">简体中文</string>
 
+    <string name="yingwen">English</string>
+
+    <string name="nan">男</string>
+
+    <string name="nv">女</string>
+
+    <string name="shoujihao">手机号</string>
+
+    <string name="qubangding">去绑定</string>
+
+    <string name="shangwuhezuo">商务合作</string>
+
+    <string name="lianxiwom">联系我们</string>
+
+    <string name="mianzshengming">免责声明</string>
+
+    <string name="jiaruwom">加入我们</string>
+    
+    <string name="wodefabu">我的发布</string>
+    
+    <string name="wodezuj">我的足迹</string>
+
+    <string name="mingmin">民用</string>
+
+    <string name="tudi">土地</string>
+
+    <string name="shnegye">商业</string>
+
+    <string name="nongc">农场</string>
+
+    <string name="shengri">生日</string>
+
+    <string name="queding">确定</string>
+
+    <string name="wenxin">温馨提示</string>
+
+    <string name="quedingtc">是否确认退出登录</string>
+
+    <string name="queren">确认</string>
+
+    <string name="shoujihaidl">手机号登录</string>
+
+    <string name="diqu">国家/地区</string>
+
+    <string name="zuce">注册</string>
+    
+    <string name="shurushoujihao">请输入手机号</string>
+
+    <string name="mima">密码</string>
+
+    <string name="shurumim">请输入密码</string>
+
+    <string name="wngjimima">忘记密码</string>
+
+    <string name="youxiang">邮箱登录</string>
+
+    <string name="aodayia">澳大利亚</string>
+
+    <string name="zhongguo">中国大陆</string>
+
+    <string name="tiwan">中国台湾</string>
+
+    <string name="xianggang">中国香港</string>
+
+    <string name="aomen">中国澳门</string>
+
+    <string name="xinxilan">新西兰</string>
+
+    <string name="xunzdiz">选择国家和地区</string>
 
 
 

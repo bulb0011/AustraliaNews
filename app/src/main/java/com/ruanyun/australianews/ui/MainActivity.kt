@@ -20,11 +20,13 @@ import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.BaseActivity
 import com.ruanyun.australianews.ext.clickWithTrigger
 import com.ruanyun.australianews.ext.dp2px
+import com.ruanyun.australianews.model.Event
 import com.ruanyun.australianews.model.TabEntity
 import com.ruanyun.australianews.ui.login.LoginActivity
 import com.ruanyun.australianews.ui.main.MyFragment
 import com.ruanyun.australianews.ui.main.NewsFragment
 import com.ruanyun.australianews.ui.wealth.WealthActivity
+import com.ruanyun.australianews.util.C
 import com.ruanyun.australianews.util.CacheHelper
 import com.ruanyun.australianews.util.EventNotifier
 import com.ruanyun.australianews.util.LogX
@@ -33,7 +35,11 @@ import jiguang.chat.entity.EventNotifyUnread
 import jiguang.chat.utils.FileHelper
 import jiguang.chat.utils.SharePreferenceManager
 import kotlinx.android.synthetic.main.activity_main.*
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import java.util.*
+
 
 /**
  * @description
@@ -100,6 +106,9 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
+
+        EventBus.getDefault().register(this)
+
         setContentView(R.layout.activity_main)
         if(Build.VERSION.SDK_INT >= 23){
             immerse()
@@ -127,6 +136,7 @@ class MainActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         JMessageClient.unRegisterEventReceiver(this)
+        EventBus.getDefault().unregister(this)
     }
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
@@ -287,5 +297,54 @@ class MainActivity : BaseActivity() {
         tv_unread_count.text = String.format("%s", unreadMsgCount)
         tv_unread_count.visibility = if (unreadMsgCount > 0) View.VISIBLE else View.INVISIBLE
     }
+
+    /**
+     * 用户信息更新、退出登录
+     * @param event
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun AppLanguage(event: Event<String>) {
+        if (C.EventKey.CHANGE_APP_LANGUAGE == event.key) {
+
+            LogX.e("dengpao","++++++++++++++++++++++++++++++")
+
+            changeAppLanguage()
+
+//            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, SplashActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+            // 杀掉进程
+            android.os.Process.killProcess(android.os.Process.myPid())
+            System.exit(0)
+
+
+        }
+    }
+
+//    fun changeAppLanguage() {
+//        val yuyan = SharePreferenceManager.getSystemLanguage()
+//
+//        LogX.e("dengpao", "取出来的" + SharePreferenceManager.getSystemLanguage()!!)
+//
+//        if (yuyan != null) {
+//
+//            val resources = context.resources
+//            val dm = resources.displayMetrics
+//            val config = resources.configuration
+//
+//            if ("zh" == yuyan) {
+//                config.locale = Locale.CHINESE
+//                LogX.e("dengpao", "中文$yuyan")
+//            } else {
+//                // 应用用户选择语言
+//                config.locale = Locale.ENGLISH
+//                LogX.e("dengpao", "英文$yuyan")
+//            }
+//
+//            LogX.e("dengpao", "语言$yuyan")
+//            resources.updateConfiguration(config, dm)
+//        }
+//    }
 
 }

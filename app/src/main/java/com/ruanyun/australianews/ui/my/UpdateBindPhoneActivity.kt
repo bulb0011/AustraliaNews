@@ -65,7 +65,7 @@ class UpdateBindPhoneActivity : BaseActivity() {
             val phone = editPhone!!.text!!.toString()
             val code = editCode!!.text!!.toString()
             if (TextUtils.isEmpty(phone)) {
-                showToast("请输入手机号")
+                showToast(resources.getString(R.string.shurushoujihao))
                 return@clickWithTrigger
             }
             if (TextUtils.isEmpty(code)) {
@@ -129,7 +129,7 @@ class UpdateBindPhoneActivity : BaseActivity() {
         editCode!!.setText("")
 
         setEditEnable(editPhone, true)
-        button!!.text = "确定"
+        button!!.text = resources.getString(R.string.queding)
         verCode!!.reset()
 
     }

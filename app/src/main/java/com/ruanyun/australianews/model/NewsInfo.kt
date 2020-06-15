@@ -58,8 +58,29 @@ class NewsInfo(
                 "${item.baseWebsiteName}  "
             }
 //            return "$baseWebsite${StringUtil.getWCount(item.watchCount)}浏览  ${StringUtil.getWCount(item.commentCount)}评论  ${StringUtil.getNewsTime(item.createTime)}"
-            return "$baseWebsite${StringUtil.getWCount(item.watchCount)}浏览  ${StringUtil.getNewsTime(item.createTime)}"
+//            return "$baseWebsite${StringUtil.getWCount(item.watchCount)}浏览  ${StringUtil.getNewsTime(item.createTime)}"
+
+            return "$baseWebsite"
         }
+
+        fun getSourceStrPing(item: NewsInfo): CharSequence? {
+            val baseWebsite = if (TextUtils.isEmpty(item.baseWebsiteName)) {
+                if (TextUtils.isEmpty(item.baseWebsite)) {
+                    ""
+                } else {
+                    "${DbHelper.getInstance().getItemName(item.baseWebsite, C.ParentCode.NEWSINFO_WEBSITE)}  "
+                }
+            } else {
+                "${item.baseWebsiteName}  "
+            }
+//            return "$baseWebsite${StringUtil.getWCount(item.watchCount)}浏览  ${StringUtil.getWCount(item.commentCount)}评论  ${StringUtil.getNewsTime(item.createTime)}"
+//            return "$baseWebsite${StringUtil.getWCount(item.watchCount)}浏览  ${StringUtil.getNewsTime(item.createTime)}"
+            return "$baseWebsite  ${StringUtil.getNewsTime(item.createTime)}"
+
+//            return "$baseWebsite"
+        }
+
+
     }
 
 }

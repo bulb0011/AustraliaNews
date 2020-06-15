@@ -91,7 +91,7 @@
                     style="@style/my_fragment_text"
                     android:drawableLeft="@drawable/life_my_icon_release"
                     android:drawableRight="@drawable/icon_arrow_right"
-                    android:text="我的发布" />
+                    android:text="@string/wodefabu" />
 
             </FrameLayout>
 
@@ -125,7 +125,7 @@
                     style="@style/my_fragment_text"
                     android:drawableLeft="@drawable/life_my_icon_history"
                     android:drawableRight="@drawable/icon_arrow_right"
-                    android:text="我的足迹" />
+                    android:text="@string/wodezuj" />
 
             </FrameLayout>
 

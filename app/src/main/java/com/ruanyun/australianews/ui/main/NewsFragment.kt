@@ -285,6 +285,10 @@ class NewsFragment : BaseFragment() {
 //            }
 //        })
 
+
+        /**
+         * 滑动的监听
+         */
         viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
 
             override fun onPageScrollStateChanged(p0: Int) {
@@ -295,10 +299,12 @@ class NewsFragment : BaseFragment() {
 
             override fun onPageSelected(p0: Int) {
                 if(p0==1){
-                    WebViewActivity.startHtml(mContext, "7x24", "file:///android_asset/7_24.html");
-                }else if (p0==3){
-                    WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html");
-                }else{
+                    WebViewActivity.startHtml(mContext, "7x24", "https://www.jin10.com/example/jin10.com.html?fontSize=14px&theme=white",true);
+                }else
+                if (p0==2){
+                    WebViewActivity.startHtml(mContext, "行情", "file:///android_asset/quotes.html")
+                }
+                else{
                     myCurrentTab=p0
                 }
             }
@@ -310,7 +316,8 @@ class NewsFragment : BaseFragment() {
 
     private fun updateMinimumHeight() {
         var tipLoginHeight = if (rl_tip_login.visibility == View.VISIBLE){
-            rl_tip_login.layoutParams.height + view_tab_top_line.layoutParams.height
+//            rl_tip_login.layoutParams.height + view_tab_top_line.layoutParams.height
+            rl_tip_login.layoutParams.height
         } else 0
 
 //        tipLoginHeight=tipLoginHeight
@@ -320,7 +327,8 @@ class NewsFragment : BaseFragment() {
         }
 
         if (rl_tip_login.visibility == View.VISIBLE){
-            minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height + tipLoginHeight - rl_tip_login.layoutParams.height - view_tab_top_line.layoutParams.height
+//            minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height + tipLoginHeight - rl_tip_login.layoutParams.height - view_tab_top_line.layoutParams.height
+            minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height + tipLoginHeight - rl_tip_login.layoutParams.height
         }else{
             minimumHeight = PixelSizeUtil.unDisplayViewSize(rl_topbar)[1] + tab_layout.layoutParams.height
         }
@@ -335,6 +343,9 @@ class NewsFragment : BaseFragment() {
      * 获取首页信息
      */
     private fun getHomeResultBase() {
+
+        LogX.e("dengpao","app.userOid+"+app.userOid+"app.cityName+"+app.cityName)
+
         val subscription = ApiManger.getApiService().getHomeResultBase(app.userOid, app.cityName)
                 .compose(RxUtil.normalSchedulers<ResultBase<HomeResultBase>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<HomeResultBase>>() {

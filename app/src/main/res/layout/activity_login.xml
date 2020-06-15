@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/topbar"
-                app:topBarTitleText="手机号登录"/>
+                app:topBarTitleText="@string/shoujihaidl"/>
 
             <RelativeLayout
                 android:id="@+id/rl_phone_area"
@@ -31,7 +31,7 @@
                 <TextView
                     android:layout_width="@dimen/text_size_px_300"
                     android:layout_height="match_parent"
-                    android:text="国家/地区"
+                    android:text="@string/diqu"
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/text_size_px_40"
                     android:textSize="@dimen/text_size_sp_15"
@@ -44,8 +44,8 @@
                     android:paddingRight="@dimen/text_size_px_41"
                     android:layout_marginLeft="@dimen/text_size_px_300"
                     android:gravity="center_vertical"
-                    android:hint="请选择国家/地区"
-                    android:text="澳大利亚"
+                    android:hint="@string/xunzdiz"
+                    android:text="@string/aodayia"
                     android:textColor="@color/text_black"
                     android:textColorHint="@color/text_gray"
                     android:textSize="@dimen/text_size_sp_15"
@@ -89,7 +89,7 @@
                     android:paddingRight="@dimen/text_size_px_100"
                     android:layout_marginLeft="@dimen/text_size_px_300"
                     android:background="@null"
-                    android:hint="请输入手机号"
+                    android:hint="@string/shurushoujihao"
                     android:singleLine="true"
                     style="@style/edit_text_phone"
                     android:textColor="@color/text_black"
@@ -148,7 +148,7 @@
                 <TextView
                     android:layout_width="@dimen/text_size_px_300"
                     android:layout_height="match_parent"
-                    android:text="密码"
+                    android:text="@string/mima"
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/text_size_px_40"
                     android:textSize="@dimen/text_size_sp_15"
@@ -166,7 +166,7 @@
                     android:paddingLeft="@dimen/text_size_px_25"
                     android:paddingRight="@dimen/text_size_px_25"
                     android:background="@drawable/corners_stroke_text_gray_3dp_shape"
-                    android:text="忘记密码"
+                    android:text="@string/wngjimima"
                     android:textColor="@color/text_color_666" />
 
                 <ImageView
@@ -185,7 +185,7 @@
                     android:layout_marginLeft="@dimen/text_size_px_300"
                     android:layout_toLeftOf="@+id/tv_password_show"
                     android:background="@null"
-                    android:hint="请输入密码"
+                    android:hint="@string/shurumim"
                     android:singleLine="true"
                     android:maxLength="16"
                     android:inputType="textPassword"
@@ -210,7 +210,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
-                    android:text="邮箱登录"
+                    android:text="@string/youxiang"
                     android:paddingLeft="@dimen/text_size_px_41"
                     android:paddingRight="@dimen/text_size_px_41"
                     android:textColor="@color/theme_color" />
@@ -223,7 +223,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_alignParentRight="true"
                     android:gravity="center"
-                    android:text="注册"
+                    android:text="@string/zuce"
                     android:paddingLeft="@dimen/text_size_px_41"
                     android:paddingRight="@dimen/text_size_px_41"
                     android:textColor="@color/theme_color" />

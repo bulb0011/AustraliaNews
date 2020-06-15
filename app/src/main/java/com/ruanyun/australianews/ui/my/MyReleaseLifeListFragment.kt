@@ -116,7 +116,7 @@ class MyReleaseLifeListFragment : BaseFragment() {
 
         tv_delete.clickWithTrigger {
             if (adapter.datas.any { it.isSelect }) {
-                tipDialog.show("温馨提示", "是否确认删除选中发布?", "确认")
+                tipDialog.show(resources.getString(R.string.wenxin), "是否确认删除选中发布?", resources.getString(R.string.queding))
             }
         }
     }

@@ -9,7 +9,7 @@
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:topBarTitleText="选择国家和地区" />
+        app:topBarTitleText="@string/xunzdiz" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

@@ -5,6 +5,8 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
@@ -12,6 +14,8 @@ import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +31,7 @@ import com.ruanyun.australianews.ui.login.LoginActivity;
 import com.ruanyun.australianews.util.CommonUtil;
 import com.ruanyun.australianews.util.LogX;
 import com.ruanyun.australianews.util.PixelSizeUtil;
+import com.ruanyun.australianews.util.SharedPreferencesUtils;
 import com.ruanyun.australianews.widget.LoadingDialog;
 import com.ruanyun.australianews.widget.TopBar;
 
@@ -103,9 +108,35 @@ public abstract class BaseActivity extends DaggerAppCompatActivity implements Ti
             locale = getResources().getConfiguration().locale;
         }
 
-        String lang = locale.getLanguage() + "-" + locale.getCountry();
-
+        changeAppLanguage();
     }
+
+    public void changeAppLanguage( ) {
+
+        String yuyan= (String) SharedPreferencesUtils.getParam(App.context, SharedPreferencesUtils.KEY_SYSTEM_LANGUAGE,"");
+
+
+        if (!TextUtils.isEmpty(yuyan)) {
+            Resources resources = getContext().getResources();
+            DisplayMetrics dm = resources.getDisplayMetrics();
+            Configuration config = resources.getConfiguration();
+
+            if ("zh".equals(yuyan)){
+                config.locale = Locale.CHINESE;
+                LogX.e("dengpao","中文"+yuyan);
+            }
+            else{
+                // 应用用户选择语言
+                config.locale = Locale.ENGLISH;
+                LogX.e("dengpao","英文"+yuyan);
+            }
+
+            LogX.e("dengpao","语言"+yuyan);
+            resources.updateConfiguration(config, dm);
+        }
+    }
+
+
 
     @Override
     public void setContentView(int layoutResID) {

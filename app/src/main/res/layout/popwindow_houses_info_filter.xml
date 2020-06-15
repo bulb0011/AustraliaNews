@@ -42,7 +42,7 @@
                 android:layout_weight="1"
                 android:background="@color/theme_color"
                 android:gravity="center"
-                android:text="确定"
+                android:text="@string/queding"
                 android:textColor="@color/white" />
 
         </LinearLayout>

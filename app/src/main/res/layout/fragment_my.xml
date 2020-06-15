@@ -385,6 +385,23 @@
                     android:layout_height="@dimen/text_size_px_145">
 
                     <TextView
+                        android:id="@+id/tv_language"
+                        style="@style/my_fragment_text"
+                        android:drawableLeft="@drawable/my_icon_yuyan"
+                        android:drawableRight="@drawable/icon_arrow_right"
+                        android:text="@string/language" />
+
+                </FrameLayout>
+
+                <View
+                    style="@style/DividerHorizontal"
+                    android:layout_marginLeft="@dimen/text_size_px_140" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_size_px_145">
+
+                    <TextView
                         android:id="@+id/tv_feedback"
                         style="@style/my_fragment_text"
                         android:drawableLeft="@drawable/my_icon_fee"

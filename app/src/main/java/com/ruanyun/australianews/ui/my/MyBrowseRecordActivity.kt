@@ -3,7 +3,6 @@ package com.ruanyun.australianews.ui.my
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.View
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.BaseActivity
@@ -72,7 +71,7 @@ class MyBrowseRecordActivity : BaseActivity() {
             }
             2 -> {
                 setFragment(1)
-                topbar.setTitleText("我的足迹")
+                topbar.setTitleText(resources.getString(R.string.wodezuj))
                 ll_tab.visibility = View.GONE
                 tv_tab_life.isSelected = true
             }

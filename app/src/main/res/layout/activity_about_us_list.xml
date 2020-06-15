@@ -30,7 +30,7 @@
         android:id="@+id/tv_swhz"
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_px_147"
-        android:text="商务合作"
+        android:text="@string/shangwuhezuo"
         android:textColor="@color/text_color_666"
         android:paddingLeft="@dimen/text_size_px_43"
         android:paddingRight="@dimen/text_size_px_43"
@@ -38,7 +38,9 @@
         android:gravity="center_vertical"/>
 
     <View style="@style/DividerHorizontal"
-        android:layout_marginLeft="@dimen/text_size_px_43"/>
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:visibility="gone"
+        />
 
     <TextView
         android:id="@+id/tv_tbmx"
@@ -49,7 +51,9 @@
         android:paddingLeft="@dimen/text_size_px_43"
         android:paddingRight="@dimen/text_size_px_43"
         android:drawableRight="@drawable/icon_arrow_right"
-        android:gravity="center_vertical"/>
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        />
 
     <View style="@style/DividerHorizontal"
         android:layout_marginLeft="@dimen/text_size_px_43"/>
@@ -58,7 +62,7 @@
         android:id="@+id/tv_lxwm"
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_px_147"
-        android:text="联系我们"
+        android:text="@string/lianxiwom"
         android:textColor="@color/text_color_666"
         android:paddingLeft="@dimen/text_size_px_43"
         android:paddingRight="@dimen/text_size_px_43"
@@ -66,18 +70,22 @@
         android:gravity="center_vertical"/>
 
     <View style="@style/DividerHorizontal"
-        android:layout_marginLeft="@dimen/text_size_px_43"/>
+        android:layout_marginLeft="@dimen/text_size_px_43"
+        android:visibility="gone"
+        />
 
     <TextView
         android:id="@+id/tv_jrwm"
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_px_147"
-        android:text="加入我们"
+        android:text="@string/jiaruwom"
         android:textColor="@color/text_color_666"
         android:paddingLeft="@dimen/text_size_px_43"
         android:paddingRight="@dimen/text_size_px_43"
         android:drawableRight="@drawable/icon_arrow_right"
-        android:gravity="center_vertical"/>
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        />
 
     <View style="@style/DividerHorizontal"
         android:layout_marginLeft="@dimen/text_size_px_43"/>
@@ -86,7 +94,7 @@
         android:id="@+id/tv_mzsm"
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_px_147"
-        android:text="免责申明"
+        android:text="@string/mianzshengming"
         android:textColor="@color/text_color_666"
         android:paddingLeft="@dimen/text_size_px_43"
         android:paddingRight="@dimen/text_size_px_43"
