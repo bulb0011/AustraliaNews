@@ -45,7 +45,7 @@ class WealthMyBrowseListActivity : BaseActivity() {
                 showToast("暂无数据")
             }
         } else {
-            topbar.topBarRightTitle.text = "管理"
+            topbar.topBarRightTitle.text = resources.getString(R.string.guangli)
             fragment.setEditMode(false)
         }
     }

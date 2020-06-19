@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/topbar"
         app:topBarTitleText="我的评论"
-        app:topBarRightText="管理"
+        app:topBarRightText="@string/guangli"
         app:topBarRightTextEnable="true"/>
 
     <FrameLayout

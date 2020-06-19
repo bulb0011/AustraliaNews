@@ -24,6 +24,7 @@ import com.ruanyun.australianews.model.PhoneAreaInfo
 import com.ruanyun.australianews.mvpview.RegisteredMvpView
 import com.ruanyun.australianews.presenter.RegisteredPresenter
 import com.ruanyun.australianews.ui.WebViewActivity
+import com.ruanyun.australianews.ui.wealth.YongHuXieYiActivity
 import com.ruanyun.australianews.util.C
 import com.ruanyun.australianews.util.CommonUtil
 import com.ruanyun.australianews.util.RxUtil
@@ -133,7 +134,9 @@ class RegisteredBindActivity : BaseActivity(), RegisteredMvpView {
             tv_read_and_agree.isSelected = !tv_read_and_agree.isSelected
         }
         tv_protocol.clickWithTrigger {
-            requestData()
+//            requestData()
+            showActivity(YongHuXieYiActivity::class.java)
+
         }
         tv_registered.clickWithTrigger {
             if (!tv_read_and_agree.isSelected) {

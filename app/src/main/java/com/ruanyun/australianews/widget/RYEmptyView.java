@@ -47,7 +47,7 @@ public class RYEmptyView extends RelativeLayout implements IRefreshListLoadViewF
         progressBar.setIndeterminate(true);
         progressBar.setIndeterminateDrawable(getResources().getDrawable(R.drawable.anim_loading));
         imgStatus.setVisibility(INVISIBLE);
-        btnReload.setText("刷新");
+        btnReload.setText(context.getResources().getString(R.string.shuaxin));
         btnReload.setVisibility(INVISIBLE);
 //        setBackgroundColor(ContextCompat.getColor(context, R.color.white));
     }
@@ -147,7 +147,7 @@ public class RYEmptyView extends RelativeLayout implements IRefreshListLoadViewF
         setVisibility(View.VISIBLE);
         progressBar.setVisibility(INVISIBLE);
         btnReload.setVisibility(View.VISIBLE);
-        setMessage("加载失败");
+        setMessage(getResources().getString(R.string.load_failed_toast));
         setImgStatusRes(IS_ERROR);
     }
 

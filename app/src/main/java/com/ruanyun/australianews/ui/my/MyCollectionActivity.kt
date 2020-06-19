@@ -49,7 +49,7 @@ class MyCollectionActivity : BaseActivity() {
                 tv_tab_news.isSelected = true
                 tv_tab_life.isSelected = false
                 setFragment(0)
-                topbar.topBarRightTitle.text = "管理"
+                topbar.topBarRightTitle.text = resources.getString(R.string.guangli)
                 newsFragment?.setEditMode(false)
                 lifeFragment?.setEditMode(false)
             }
@@ -59,7 +59,7 @@ class MyCollectionActivity : BaseActivity() {
                 tv_tab_news.isSelected = false
                 tv_tab_life.isSelected = true
                 setFragment(1)
-                topbar.topBarRightTitle.text = "管理"
+                topbar.topBarRightTitle.text = resources.getString(R.string.guangli)
                 newsFragment?.setEditMode(false)
                 lifeFragment?.setEditMode(false)
             }
@@ -97,7 +97,7 @@ class MyCollectionActivity : BaseActivity() {
                 }
             }
         } else {
-            topbar.topBarRightTitle.text = "管理"
+            topbar.topBarRightTitle.text = resources.getString(R.string.guangli)
             newsFragment?.setEditMode(false)
             lifeFragment?.setEditMode(false)
         }

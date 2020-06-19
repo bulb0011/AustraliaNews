@@ -45,9 +45,14 @@ import org.greenrobot.eventbus.ThreadMode
  * @date 2019/5/5
  */
 class NewsFragment : BaseFragment() {
+
+
     companion object {
+        var itemHead=0
         const val REQUEST_CODE_CHANNEL = 1001
     }
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mContentView = inflater.inflate(R.layout.fragment_news, container, false)
         registerBus()
@@ -66,6 +71,8 @@ class NewsFragment : BaseFragment() {
     private var minimumHeight: Int = 0
 
     var myCurrentTab =0
+
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -298,6 +305,9 @@ class NewsFragment : BaseFragment() {
             }
 
             override fun onPageSelected(p0: Int) {
+
+                itemHead=p0
+
                 if(p0==1){
                     WebViewActivity.startHtml(mContext, "7x24", "https://www.jin10.com/example/jin10.com.html?fontSize=14px&theme=white",true);
                 }else
@@ -311,6 +321,8 @@ class NewsFragment : BaseFragment() {
         })
 
     }
+
+
 
 
 
@@ -352,6 +364,9 @@ class NewsFragment : BaseFragment() {
                     override fun onSuccess(result: ResultBase<HomeResultBase>) {
                         refresh_layout.refreshComplete()
                         val advertList = result.data.adverInfoList?: arrayListOf()
+
+                        LogX.e("dengpao","首页联网"+GsonUtil.toJson(result))
+
                         convenientBanner.setPages({ AdverViewHolder() }, advertList).setOnItemClickListener{
                             if(advertList.isNotEmpty()) {
                                 WebViewUrlUtil.showAdvertDetailsWeb(mContext, advertList[it])
@@ -374,6 +389,9 @@ class NewsFragment : BaseFragment() {
                         showToast(msg)
                     }
                 })
+
+
+
         addSubscrebe(subscription)
     }
 

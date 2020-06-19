@@ -72,6 +72,7 @@ class ChannelManagerActivity : BaseActivity(), ChannelAdapter.DataChangeListener
             entity.isSubscribe = false
             channels.add(entity)
         }
+
         if (app.isLogin){
             updateChannelList(channels)
         }else {

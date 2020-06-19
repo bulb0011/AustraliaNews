@@ -120,7 +120,7 @@ class MyEvaluationListActivity : BaseActivity(){
             adapter.notifyDataSetChanged()
             headerAdapter.notifyDataSetChanged()
         }else {
-            topbar.topBarRightTitle.text = "管理"
+            topbar.topBarRightTitle.text = resources.getString(R.string.guangli)
             rl_delete_manage.visibility = View.GONE
             adapter.isEditorMode = false
             adapter.notifyDataSetChanged()

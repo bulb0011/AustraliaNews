@@ -17,6 +17,7 @@ import com.ruanyun.australianews.model.params.NewsCommentParams
 import com.ruanyun.australianews.model.uimodel.LifeReleaseCommonUiModel
 import com.ruanyun.australianews.ui.TtsHolder
 import com.ruanyun.australianews.ui.WebViewActivity
+import com.ruanyun.australianews.ui.main.NewsFragment
 import com.ruanyun.australianews.util.*
 import com.ruanyun.australianews.widget.LeaveMessageDialogFragment
 import com.ruanyun.australianews.widget.SharePopWindow
@@ -39,6 +40,7 @@ import kotlinx.android.synthetic.main.layout_news_bottom.*
 open class NewsDetailsActivity : WebViewActivity() {
 
     companion object {
+
         fun startNewsDetails(context: Context, url: String?, newsInfoOid: String?,
                              type: Int, json: String,commentCount: Int,watchCount: Int,baseWebsite : String?,commonTime: String?,url_en: String?) {
             val starter = Intent(context, NewsDetailsActivity::class.java)
@@ -71,9 +73,6 @@ open class NewsDetailsActivity : WebViewActivity() {
         }
     }
 
-
-
-
     var newsCommentCountInfo: NewsCommentCountInfo?=null
 
     lateinit var leaveMessageDialogFragment: LeaveMessageDialogFragment
@@ -96,8 +95,13 @@ open class NewsDetailsActivity : WebViewActivity() {
 
     var url_en=""
 
+
     override fun initView() {
         super.initView()
+
+        if ("English".equals(DbHelper.getInstance().getSubscribedList(app.isLogin).get(NewsFragment.itemHead).title)){
+            ll_en_zhong.visibility=View.INVISIBLE
+        }
 
         val oid = intent.getStringExtra(C.IntentKey.NEWS_INFO_OID)
 

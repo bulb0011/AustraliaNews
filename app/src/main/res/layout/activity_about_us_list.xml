@@ -10,13 +10,13 @@
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:topBarTitleText="关于我们" />
+        app:topBarTitleText="@string/AboutUs" />
 
     <TextView
         android:id="@+id/tv_gywm"
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_px_147"
-        android:text="关于我们"
+        android:text="@string/AboutUs"
         android:textColor="@color/text_color_666"
         android:paddingLeft="@dimen/text_size_px_43"
         android:paddingRight="@dimen/text_size_px_43"

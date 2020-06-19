@@ -210,7 +210,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="13.67dp"
             android:background="@drawable/red_btn_selector"
-            android:text="删除"
+            android:text="@string/shanchu"
             android:textColor="#FFFFFF"
             android:textSize="16sp"/>
 

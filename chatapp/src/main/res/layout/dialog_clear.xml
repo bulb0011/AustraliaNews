@@ -28,7 +28,7 @@
         android:background="@drawable/selector_item_bg"
         android:gravity="center"
         android:padding="10dip"
-        android:text="删除"
+        android:text="@string/shanchu"
         android:textColor="#FF2C2C2C"
         android:textSize="16sp"/>
 

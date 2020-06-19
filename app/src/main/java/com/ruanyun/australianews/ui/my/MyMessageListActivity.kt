@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.text.TextUtils
 import android.view.View
 import cn.jpush.im.android.api.JMessageClient
 import com.flyco.tablayout.listener.CustomTabEntity
@@ -25,7 +24,6 @@ import com.ruanyun.australianews.model.TabEntity
 import com.ruanyun.australianews.model.params.NotificationListParams
 import com.ruanyun.australianews.ui.adapter.NotificationListAdapter
 import com.ruanyun.australianews.util.C
-import com.ruanyun.australianews.util.EventNotifier
 import com.ruanyun.australianews.util.OnTabDebounceSelectListener
 import com.ruanyun.australianews.util.RxUtil
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter
@@ -132,8 +130,8 @@ class MyMessageListActivity : BaseActivity() {
 
         val arrayList = ArrayList<CustomTabEntity>()
         arrayList.apply {
-            add(TabEntity("公告"))
-            add(TabEntity("私信"))
+            add(TabEntity(resources.getString(R.string.gonggao)))
+            add(TabEntity(resources.getString(R.string.sixin)))
         }
         tabLayout.setTabData(arrayList)
         tabLayout.setOnTabSelectListener(onTabSelectListener)

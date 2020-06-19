@@ -2,6 +2,8 @@ package com.ruanyun.australianews.base.refreshview.impl;
 
 import android.view.View;
 
+import com.ruanyun.australianews.App;
+import com.ruanyun.australianews.R;
 import com.ruanyun.australianews.base.PageInfoBase;
 import com.ruanyun.australianews.base.ResultBase;
 import com.ruanyun.australianews.base.refreshview.data.IDataDelegate;
@@ -45,6 +47,7 @@ public class DefaultModel2ViewControler<Data> implements IDataDelegate {
     private LoadResultInterceptor loadResultInterceptor;
 
     public DefaultModel2ViewControler(IRefreshViewHolder refreshViewHolder) {
+
         this.refreshViewHolder = refreshViewHolder;
         if (refreshViewHolder.loadMoreEnable())
             refreshViewHolder.getILoadMoreListenerHandler().setScrollBottomListener(refreshViewHolder.getRefreshView().getContentView(), scrollBottomListener);
@@ -132,7 +135,7 @@ public class DefaultModel2ViewControler<Data> implements IDataDelegate {
         public void handleError(int loadAction,Throwable throwable) {
             getDataAdapter().refresh(new ArrayList<>());
             if (refreshViewHolder.emptyViewEnable())
-                getEmptyView().showLoadFail("加载失败");
+                getEmptyView().showLoadFail(App.app.getResources().getString(R.string.load_failed_toast));
             if(loadAction==IDataSource.LOADMORE){
                getLoadMoreView().hide();
            }else if(loadAction==IDataSource.REFRESH){

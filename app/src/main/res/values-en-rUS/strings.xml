@@ -66,6 +66,14 @@
     <string name="choose">Please Select</string>
 
 
+    <string name="gonggao">notice</string>
+    <string name="sixin">letter</string>
+
+    <string name="shuaxin">refresh</string>
+
+    <string name="zanwushuyu">no data</string>
+
+
     <string name="quxiao">cancel</string>
 
     <string name="yuyansez">语言设置</string>
@@ -141,6 +149,76 @@
     <string name="xinxilan">New Zealand</string>
 
     <string name="xunzdiz">Select Country/Region</string>
+
+    <string name="tijiao">submit</string>
+
+    <string name="hinyijian">Give your valuable advice</string>
+
+    <string name="guangli">Management</string>
+
+    <string name="qingkong">Clear</string>
+
+    <string name="shanchu">Delete</string>
+
+    <string name="mingc">Name</string>
+
+    <string name="jingz">Net Value</string>
+
+    <string name="zzl">Growth Rate</string>
+
+    <string name="fenlibiti">Category Name</string>
+
+    <string name="biaoti">Title</string>
+
+    <string name="xianfgxingxinxi">Detail</string>
+
+    <string name="leixing">class</string>
+
+    <string name="liuxialianxi">Leave your contact information</string>
+
+    <string name="xieyi">1. Introduction. \n\n
+
+These App Standard Terms And Conditions (these “Terms” or these “App Standard Terms And Conditions”) contained herein on this page, shall govern your use of AFN App, including all pages within this website (collectively referred to herein below as this “App”). These Terms apply in full force and effect to your use of this Website and by using this Website, you expressly accept all terms and conditions contained herein in full. You must not use this Website, if you have any objection to any of these App Standard Terms And Conditions.\n \n
+
+2. Intellectual Property Rights. \n\n
+
+Other than content you own, which you may have opted to include on this App, under these Terms, Australian Financial News and/or its licensors own all rights to the intellectual property and material contained in this App, and all such rights are reserved.\n \n
+You are granted a limited license only, subject to the restrictions provided in these Terms, for purposes of viewing the material contained on this App.\n \n
+
+3. Restrictions. \n\n
+You are expressly and emphatically restricted from all of the following:\n\n
+
+	1.	publishing any App material in any media; \n\n
+	2.	selling, sublicensing and/or otherwise commercializing any App material; \n\n
+	3.	publicly performing and/or showing any App material; \n\n
+	4.	using this App in any way that is, or may be, damaging to this App; \n\n
+	5.	using this App in any way that impacts user access to this App; \n\n
+	6.	using this App contrary to applicable laws and regulations, or in a way that causes, or may cause, harm to the App, or to any person or business entity; \n \n
+	7.	engaging in any data mining, data harvesting, data extracting or any other similar activity in relation to this App, or while using this App; \n \n
+	8.	using this App to engage in any advertising or marketing; \n\n
+Certain areas of this App are restricted from access by you and Australian Financial News may further restrict access by you to any areas of this App, at any time, in its sole and absolute discretion.  Any user ID and password you may have for this App are confidential and you must maintain confidentiality of such information.\n\n
+
+4. Your Content. \n\n
+In these App Standard Terms And Conditions, “Your Content” shall mean any audio, video, text, images or other material you choose to display on this Website. With respect to Your Content, by displaying it, you grant Australian Financial News a non-exclusive, worldwide, irrevocable, royalty-free, sublicensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media.\n\n
+Your Content must be your own and must not be infringing on any third party’s rights.Australian Financial News reserves the right to remove any of Your Content from this App at any time, and for any reason, without notice.\n \n
+
+5. No warranties. \n\n
+This App is provided “as is,” with all faults, and Australian Financial News makes no express or implied representations or warranties, of any kind related to this App or the materials contained on this Website. Additionally, nothing contained on this Website shall be construed as providing consult or advice to you.\n\n
+
+6. Limitation of liability. \n\n
+In no event shall Australian Financial News, nor any of its officers, directors and employees, be liable to you for anything arising out of or in any way connected with your use of this App, whether such liability is under contract, tort or otherwise, and Australian Financial News, including its officers, directors and employees shall not be liable for any indirect, consequential or special liability arising out of or in any way related to your use of this App.\n \n
+
+7. Indemnification. \n\n
+You hereby indemnify to the fullest extent Australian Financial News from and against any and all liabilities, costs, demands, causes of action, damages and expenses (including reasonable attorney’s fees) arising out of or in any way related to your breach of any of the provisions of these Terms.\n\n
+
+8.	Severability. \n\n
+If any provision of these Terms is found to be unenforceable or invalid under any applicable law, such unenforceability or invalidity shall not render these Terms unenforceable or invalid as a whole, and such provisions shall be deleted without affecting the remaining provisions herein.\n\n
+
+9. Variation of Terms. \n\n
+Australian Financial News is permitted to revise these Terms at any time as it sees fit, and by using this App you are expected to review such Terms on a regular basis to ensure you understand all terms and conditions governing use of this App.\n\n
+
+10.	Assignment. \n\n
+Australian Financial News shall be permitted to assign, transfer, and subcontract its rights and/or obligations under these Terms without any notification or consent required. However, you shall not be permitted to assign, transfer, or subcontract any of your rights and/or obligations under these Terms.\n\n </string>
 
 
     <string-array name="stream_entries">

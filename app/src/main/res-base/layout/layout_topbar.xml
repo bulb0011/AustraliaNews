@@ -21,7 +21,7 @@
         android:gravity="center"
         android:singleLine="true"
         android:maxLength="13"
-        android:text="标题"
+        android:text="@string/biaoti"
         android:textColor="@color/black"
         android:textSize="@dimen/topbar_title_textsize"/>
     

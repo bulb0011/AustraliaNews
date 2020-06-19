@@ -48,6 +48,7 @@ class MyFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mContentView = inflater.inflate(R.layout.fragment_my, container, false)
         registerBus()
+
         return mContentView
     }
 
@@ -64,6 +65,16 @@ class MyFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initView()
+
+        val yuyan = SharedPreferencesUtils.getParam(
+            App.context,
+            SharedPreferencesUtils.KEY_SYSTEM_LANGUAGE,
+            ""
+        ) as String
+
+        if(yuyan == "en"){
+            tv_notice_switch_tip.visibility=View.INVISIBLE
+        }
         updateMsgCount()
         getUserInfo()
     }
@@ -85,6 +96,9 @@ class MyFragment : BaseFragment() {
             }
         })
         rl_user.clickWithTrigger { if(isLoginToActivity) PersonalInformationActivity.start(mContext) }
+
+        tv_user_name.clickWithTrigger { isLoginToActivity}
+
         tv_message.clickWithTrigger { MyMessageListActivity.start(mContext) }
         tv_comment.clickWithTrigger { if(isLoginToActivity) MyEvaluationListActivity.start(mContext) }
         tv_collection.clickWithTrigger { if(isLoginToActivity) MyCollectionActivity.start(mContext) }

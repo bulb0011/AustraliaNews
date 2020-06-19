@@ -56,7 +56,7 @@
         android:drawablePadding="@dimen/text_size_px_25"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/text_size_px_43"
-        android:text="分类信息标题"
+        android:text="@string/fenlibiti"
         android:textColor="@color/text_color_666"
         android:textSize="@dimen/text_size_sp_14" />
 
@@ -93,7 +93,7 @@
         android:drawablePadding="@dimen/text_size_px_25"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/text_size_px_43"
-        android:text="详细信息"
+        android:text="@string/xianfgxingxinxi"
         android:textColor="@color/text_color_666"
         android:textSize="@dimen/text_size_sp_14" />
 </merge>

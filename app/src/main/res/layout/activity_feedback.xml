@@ -12,7 +12,7 @@
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:topBarTitleText="意见反馈" />
+        app:topBarTitleText="@string/feedback" />
 
     <EditText
         android:id="@+id/et_select_feedback"
@@ -23,7 +23,7 @@
         android:layout_marginRight="@dimen/text_size_px_50"
         android:background="@drawable/corners_stroke_gray_2dp_shape"
         android:gravity="start"
-        android:hint="留下您的联系方式"
+        android:hint="@string/liuxialianxi"
         android:inputType="phone"
         android:maxLength="20"
         android:textColor="@color/text_black"
@@ -39,7 +39,7 @@
         android:layout_marginRight="@dimen/text_size_px_50"
         android:background="@drawable/corners_stroke_gray_2dp_shape"
         android:gravity="start"
-        android:hint="提出您宝贵的意见"
+        android:hint="@string/hinyijian"
         android:minLines="6"
         android:maxLength="200"
         android:textColor="@color/text_black"
@@ -64,7 +64,7 @@
         android:layout_marginRight="@dimen/text_size_px_50"
         android:background="@drawable/corners_registered_bg_shape"
         android:gravity="center"
-        android:text="提交"
+        android:text="@string/tijiao"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_sp_16" />
 

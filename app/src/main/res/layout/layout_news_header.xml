@@ -102,7 +102,9 @@
                 android:layout_height="@dimen/text_size_px_85"
                 android:background="@color/theme_color"
                 android:paddingLeft="@dimen/text_size_px_43"
-                android:paddingRight="@dimen/text_size_px_21">
+                android:paddingRight="@dimen/text_size_px_21"
+                android:visibility="gone"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"

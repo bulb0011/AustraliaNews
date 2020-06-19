@@ -56,7 +56,7 @@
             <TextView
                 android:id="@+id/tv_type"
                 style="@style/life_filter_text_style"
-                android:text="类型" />
+                android:text="@string/leixing" />
         </FrameLayout>
 
         <FrameLayout

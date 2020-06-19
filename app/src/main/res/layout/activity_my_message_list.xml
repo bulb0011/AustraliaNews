@@ -11,7 +11,7 @@
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:topBarTitleText="我的消息"
+        app:topBarTitleText="@string/mymessage"
         app:topBarViewLineEnable="false" />
 
     <FrameLayout

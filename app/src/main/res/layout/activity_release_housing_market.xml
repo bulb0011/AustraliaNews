@@ -33,7 +33,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="类型" />
+                    android:text="@string/leixing" />
 
                 <TextView
                     android:id="@+id/tv_type"

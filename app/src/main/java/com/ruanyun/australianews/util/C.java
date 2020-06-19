@@ -255,7 +255,7 @@ public final class C {
 
         public static final String 基金 = "基金";
         public static final String 股票 = "股票";
-        public static final String 外汇 = "外汇";
+        public static final String 汇率 = "汇率";
         public static final String 民用地产 = "民用地产";
         public static final String 商业地产 = "商业地产";
         public static final String 估值 = "估值";

@@ -5,17 +5,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
 import android.support.v4.view.PagerAdapter
-import android.widget.ImageView
-import com.ruanyun.australianews.base.BaseActivity
 import android.support.v4.view.ViewPager
 import android.view.View
-import android.widget.LinearLayout
 import com.ruanyun.australianews.R
-import com.ruanyun.australianews.ext.clickWithTrigger
-import com.ruanyun.australianews.ext.dp2px
-import com.ruanyun.australianews.util.C
+import com.ruanyun.australianews.base.BaseActivity
 import com.ruanyun.australianews.util.CacheHelper
-import com.ruanyun.australianews.util.PixelSizeUtil
 import kotlinx.android.synthetic.main.activity_guide.*
 
 
@@ -30,7 +24,7 @@ class GuideActivity : BaseActivity(), ViewPager.OnPageChangeListener {
 
     //引导图片资源
     private val imgs = intArrayOf(
-        R.drawable.bootpage_1,
+        R.drawable.bootpage_1_1,
         R.drawable.bootpage_2,
         R.drawable.bootpage_3
     )

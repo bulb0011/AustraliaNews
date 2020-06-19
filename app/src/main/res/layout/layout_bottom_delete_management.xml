@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:background="@color/white"
             android:gravity="center"
-            android:text="清空"
+            android:text="@string/qingkong"
             android:textColor="@color/text_default" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:background="@color/theme_color"
             android:gravity="center"
-            android:text="删除"
+            android:text="@string/shanchu"
             android:textColor="@color/white" />
 
     </LinearLayout>

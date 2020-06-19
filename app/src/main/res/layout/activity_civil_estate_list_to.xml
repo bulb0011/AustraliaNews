@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:topBarRightImageEnable="true"
-        app:topBarRightImageSrc="@drawable/life_btn_add"
+        app:topBarRightImageSrc="@drawable/fabu"
         app:topBarTitleText="民用地产"/>
 
     <LinearLayout

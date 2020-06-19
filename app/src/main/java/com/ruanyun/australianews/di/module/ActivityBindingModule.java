@@ -425,4 +425,8 @@ public abstract class ActivityBindingModule {
     @ContributesAndroidInjector
     abstract RegisteredBindActivity RegisteredBindActivity();
 
+    @FragmentScoped
+    @ContributesAndroidInjector
+    abstract YongHuXieYiActivity yongHuXieYiActivity();
+
 }

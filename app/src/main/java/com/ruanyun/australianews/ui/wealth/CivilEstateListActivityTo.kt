@@ -83,6 +83,7 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
         super.onCreate(bundle)
         setContentView(R.layout.activity_civil_estate_list_to)
         initView()
+
     }
 
     private fun initView() {
@@ -122,6 +123,10 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
         v_nongc.visibility=View.INVISIBLE
 
 
+    }
+
+    override fun onTopBarRightTextClick() {
+        super.onTopBarRightTextClick()
     }
 
     override fun onTopBarRightImgClick() {

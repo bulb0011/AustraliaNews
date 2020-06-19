@@ -108,7 +108,7 @@
             android:layout_height="@dimen/text_size_px_140"
             android:paddingLeft="@dimen/text_size_px_43"
             android:paddingRight="@dimen/text_size_px_43"
-            android:text="清空"
+            android:text="@string/qingkong"
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
             android:textSize="@dimen/text_size_sp_14"

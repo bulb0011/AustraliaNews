@@ -60,7 +60,7 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
                 WebViewActivity.startHtml(mContext, "股票", "file:///android_asset/gupiao.html")
             }
             "3" -> {
-                WebViewActivity.startHtml(mContext, "外汇", "file:///android_asset/waihui.html")
+                WebViewActivity.startHtml(mContext, "汇率", "file:///android_asset/waihui.html")
             }
         }
     }
@@ -124,7 +124,7 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
         })
 
         //汇率
-        tv_hunlv.clickWithTrigger { WebViewActivity.startHtml(mContext, "外汇", "file:///android_asset/waihui.html")}
+        tv_hunlv.clickWithTrigger { WebViewActivity.startHtml(mContext, "汇率", "file:///android_asset/waihui.html")}
 
         //跳转搜索
         tv_search2.clickWithTrigger { SearchActivity.start(mContext, SearchActivity.HOME_SEARCH) }
@@ -155,7 +155,7 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
         topbar.setTopBarClickListener(this)
         iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.基金, R.drawable.icon_funding))
         iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.股票, R.drawable.icon_stock))
-        iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.外汇, R.drawable.icon_foreign_currency_exchange))
+        iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.汇率, R.drawable.icon_foreign_currency_exchange))
         iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.民用地产, R.drawable.icon_civil_real_estate))
         iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.商业地产, R.drawable.icon_commercial_estate))
 //        iconList.add(IconInfo(IconInfo.TYPE_ICON, C.IconType.估值, R.drawable.icon_valuation))
@@ -169,8 +169,8 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
                 C.IconType.股票 -> {
                     WebViewActivity.startHtml(mContext, "股票", "file:///android_asset/gupiao.html")
                 }
-                C.IconType.外汇 -> {
-                    WebViewActivity.startHtml(mContext, "外汇", "file:///android_asset/waihui.html")
+                C.IconType.汇率 -> {
+                    WebViewActivity.startHtml(mContext, "汇率", "file:///android_asset/waihui.html")
                 }
                 C.IconType.民用地产 -> {
                     CivilEstateListActivity.start(mContext, CivilEstateInfo.ESTATEINFO_TYPE1)
@@ -247,7 +247,7 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
 
         typeList.add(ParentCodeInfo("基金", "1"))
         typeList.add(ParentCodeInfo("股票", "2"))
-        typeList.add(ParentCodeInfo("外汇", "3"))
+        typeList.add(ParentCodeInfo("汇率", "3"))
         typeFilter = FilterListPopupWindow(mContext, 1, getListFloat(typeList))
         typeFilter.setOnFilterListener(this, 0)
     }

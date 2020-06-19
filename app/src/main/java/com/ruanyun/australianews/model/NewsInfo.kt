@@ -2,10 +2,7 @@ package com.ruanyun.australianews.model
 
 import android.text.TextUtils
 import com.ruanyun.australianews.model.uimodel.LifeReleaseCommonUiModel
-import com.ruanyun.australianews.util.C
-import com.ruanyun.australianews.util.DbHelper
-import com.ruanyun.australianews.util.FileUtil
-import com.ruanyun.australianews.util.StringUtil
+import com.ruanyun.australianews.util.*
 
 /**
  * @author hdl
@@ -60,7 +57,11 @@ class NewsInfo(
 //            return "$baseWebsite${StringUtil.getWCount(item.watchCount)}浏览  ${StringUtil.getWCount(item.commentCount)}评论  ${StringUtil.getNewsTime(item.createTime)}"
 //            return "$baseWebsite${StringUtil.getWCount(item.watchCount)}浏览  ${StringUtil.getNewsTime(item.createTime)}"
 
-            return "$baseWebsite"
+            LogX.e("dengpao","时间+"+item.createTime)
+
+            return "  ${StringUtil.getNewsTime(item.createTime)}"
+
+//            return "$baseWebsite"
         }
 
         fun getSourceStrPing(item: NewsInfo): CharSequence? {

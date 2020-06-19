@@ -50,7 +50,7 @@ public class App extends JGApplication implements HasActivityInjector, HasFragme
     public String longitude;//经度
     public String latitude;//纬度
 
-    static App app;
+    public static App app;
     private Vector<Activity> activityStacks = new Vector<Activity>();
     @Inject
     CacheHelper cacheHelper;
@@ -68,7 +68,7 @@ public class App extends JGApplication implements HasActivityInjector, HasFragme
         CommonUtil.setAppContext(this);
         Util.setUriAuthority(this);
         Beta.initDelay = 8000;
-        Bugly.init(app, "c403c42348", false);
+        Bugly.init(app, "c403c42348", true);
         SDKInitializer.initialize(this);
         SDKInitializer.setCoordType(CoordType.BD09LL);
         initWebView();

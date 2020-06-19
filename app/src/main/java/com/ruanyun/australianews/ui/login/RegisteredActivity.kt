@@ -1,7 +1,6 @@
 package com.ruanyun.australianews.ui.login
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -22,11 +21,10 @@ import com.ruanyun.australianews.model.PhoneAreaInfo
 import com.ruanyun.australianews.mvpview.RegisteredMvpView
 import com.ruanyun.australianews.presenter.RegisteredPresenter
 import com.ruanyun.australianews.ui.WebViewActivity
-import com.ruanyun.australianews.ui.my.PersonalInformationActivity
+import com.ruanyun.australianews.ui.wealth.YongHuXieYiActivity
 import com.ruanyun.australianews.util.C
 import com.ruanyun.australianews.util.CommonUtil
 import com.ruanyun.australianews.util.RxUtil
-import com.ruanyun.australianews.util.WebViewUrlUtil
 import kotlinx.android.synthetic.main.activity_registered.*
 import javax.inject.Inject
 
@@ -117,7 +115,8 @@ class RegisteredActivity : BaseActivity(), RegisteredMvpView {
             tv_read_and_agree.isSelected = !tv_read_and_agree.isSelected
         }
         tv_protocol.clickWithTrigger {
-            requestData()
+//            requestData()
+            showActivity(YongHuXieYiActivity::class.java)
         }
         tv_registered.clickWithTrigger {
             if (!tv_read_and_agree.isSelected) {

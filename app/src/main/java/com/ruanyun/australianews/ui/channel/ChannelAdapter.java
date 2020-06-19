@@ -18,9 +18,12 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.ruanyun.australianews.R;
 import com.ruanyun.australianews.model.ChannelInfo;
+import com.ruanyun.australianews.util.LogX;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -65,11 +68,28 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private List<ChannelInfo> mMyChannelItems, mOtherChannelItems, mCustomizeChannelItems;
 
+    private List<ChannelInfo> changeChannelItems=new ArrayList<>();
+
     public ChannelAdapter(Context context, ItemTouchHelper helper, @NonNull DataChangeListener listenter) {
         mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mItemTouchHelper = helper;
-        this.mMyChannelItems = listenter.getMyChannel();
+
+        LogX.e("dengpao","++++++nitama de "+listenter.getMyChannel().size());
+
+        for (int i = 0; i < listenter.getMyChannel().size(); i++) {
+
+            if (i>2){
+                listenter.getMyChannel().get(i).isFixed=2;
+                listenter.getMyChannel().get(i).isTop=2;
+            }
+
+            changeChannelItems.add(listenter.getMyChannel().get(i));
+        }
+
+        this.mMyChannelItems=changeChannelItems;
+
+
         this.mOtherChannelItems = listenter.getOtherChannel();
         this.mCustomizeChannelItems = listenter.getCustomizeChannel();
         this.dataChangeListener = listenter;

@@ -91,7 +91,7 @@ class MyReleaseActivity : BaseActivity() {
 //                }
             }
         } else {
-            topbar.topBarRightTitle.text = "管理"
+            topbar.topBarRightTitle.text = resources.getString(R.string.guangli)
 //            newsFragment?.setEditMode(false)
             lifeFragment?.setEditMode(false)
         }

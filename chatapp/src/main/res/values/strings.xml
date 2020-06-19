@@ -80,7 +80,7 @@
     <!--<string name="not_select_photo">你没有选择照片，请重新选择</string>-->
     <!--<string name="picture_not_found">没有找到您想要的图片</string>-->
     <string name="jmui_loading">正在加载</string>
-    <!--<string name="load_failed_toast">加载失败</string>-->
+    <string name="load_failed_toast">加载失败</string>
     <!--<string name="info_null">未填写</string>-->
     <!--<string name="change_avatar">修改头像</string>-->
     <!--<string name="operation">操作</string>-->
