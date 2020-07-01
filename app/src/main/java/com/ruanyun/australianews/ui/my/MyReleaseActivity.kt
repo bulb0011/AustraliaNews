@@ -87,7 +87,7 @@ class MyReleaseActivity : BaseActivity() {
                     topbar.topBarRightTitle.text = "完成"
                     lifeFragment?.setEditMode(true)
                 }else {
-                    showToast("暂无数据")
+                    showToast(resources.getString(R.string.zanwushuju))
 //                }
             }
         } else {

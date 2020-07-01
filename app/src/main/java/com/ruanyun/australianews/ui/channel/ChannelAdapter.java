@@ -21,7 +21,6 @@ import android.widget.TextView;
 
 import com.ruanyun.australianews.R;
 import com.ruanyun.australianews.model.ChannelInfo;
-import com.ruanyun.australianews.util.LogX;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,19 +74,19 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         this.mInflater = LayoutInflater.from(context);
         this.mItemTouchHelper = helper;
 
-        LogX.e("dengpao","++++++nitama de "+listenter.getMyChannel().size());
+//        LogX.e("dengpao","++++++nitama de "+listenter.getMyChannel().size());
+//
+//        for (int i = 0; i < listenter.getMyChannel().size(); i++) {
+//
+//            if (i>2){
+//                listenter.getMyChannel().get(i).isFixed=2;
+//                listenter.getMyChannel().get(i).isTop=2;
+//            }
+//
+//            changeChannelItems.add(listenter.getMyChannel().get(i));
+//        }
 
-        for (int i = 0; i < listenter.getMyChannel().size(); i++) {
-
-            if (i>2){
-                listenter.getMyChannel().get(i).isFixed=2;
-                listenter.getMyChannel().get(i).isTop=2;
-            }
-
-            changeChannelItems.add(listenter.getMyChannel().get(i));
-        }
-
-        this.mMyChannelItems=changeChannelItems;
+        this.mMyChannelItems=listenter.getMyChannel();
 
 
         this.mOtherChannelItems = listenter.getOtherChannel();

@@ -44,10 +44,13 @@ public class TopBar extends RelativeLayout {
         String titleStr = "";
         String rightTitleStr = "";
         int titleStrColor = DEFAULT_TEXT_COLOR;
+        int rightTextColor = DEFAULT_TEXT_COLOR;
+
         if (ta != null) {
             isAdaptationStatusBar = ta.getBoolean(R.styleable.TopBar_topBarAdaptationStatusBar, false);
             titleStr = ta.getString(R.styleable.TopBar_topBarTitleText);
             titleStrColor = ta.getColor(R.styleable.TopBar_topBarTitleTextColor, DEFAULT_TEXT_COLOR);
+            rightTextColor = ta.getColor(R.styleable.TopBar_topBarRightTextColor, DEFAULT_TEXT_COLOR);
             topBarTitleEnable = ta.getBoolean(R.styleable.TopBar_topBarTitleEnable, true);
             topBarLeftImageEnable = ta.getBoolean(R.styleable.TopBar_topBarLeftImageEnable, true);
             topBarLeftImageSrc = ta.getResourceId(R.styleable.TopBar_topBarLeftImageSrc, R.drawable.nav_btn_back);
@@ -73,7 +76,7 @@ public class TopBar extends RelativeLayout {
         topBarTitle.setTextColor(titleStrColor);
         topBarTitle.setVisibility(topBarTitleEnable ? VISIBLE : GONE);
         topBarRightTitle.setText(rightTitleStr);
-        topBarRightTitle.setTextColor(titleStrColor);
+        topBarRightTitle.setTextColor(rightTextColor);
         topBarRightTitle.setVisibility(topBarRightTextEnable ? VISIBLE : GONE);
 
         topBarLeftImg.setImageResource(topBarLeftImageSrc);

@@ -60,7 +60,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="公司名称" />
+                    android:text="@string/gongsiminc" />
 
                 <EditText
                     android:id="@+id/et_company_name"
@@ -68,7 +68,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     style="@style/life_release_padding_size_style"
                     android:singleLine="true"
@@ -86,7 +86,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="公司地址" />
+                    android:text="@string/gongsidiz" />
 
                 <EditText
                     android:id="@+id/et_company_address"
@@ -94,7 +94,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     style="@style/life_release_padding_size_style"
                     android:singleLine="true"
@@ -120,7 +120,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     style="@style/life_release_padding_size_style"
                     android:singleLine="true"

@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:hint="请填写"
+            android:hint="@string/qingtianxie"
             android:paddingTop="@dimen/text_size_px_35"
             android:minLines="5"
             android:gravity="start"

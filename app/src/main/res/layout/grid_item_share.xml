@@ -21,7 +21,7 @@
         android:layout_below="@+id/iv_icon"
         android:layout_marginTop="@dimen/text_size_px_26"
         android:layout_marginBottom="@dimen/text_size_px_20"
-        android:text="微信"
+        android:text="@string/weixn"
         android:textSize="12sp"/>
 
 </RelativeLayout>

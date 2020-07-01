@@ -94,7 +94,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     android:singleLine="true"
                     android:textColor="@color/text_black" />
@@ -172,7 +172,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     android:singleLine="true"
                     android:textColor="@color/text_black" />
@@ -284,7 +284,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:inputType="numberDecimal"
                     android:maxLength="6"
                     android:singleLine="true"
@@ -311,7 +311,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:inputType="numberDecimal"
                     android:maxLength="6"
                     android:singleLine="true"
@@ -338,7 +338,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:inputType="numberDecimal"
                     android:maxLength="6"
                     android:singleLine="true"
@@ -410,7 +410,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/text_size_px_33"
-                    android:text="描述"
+                    android:text="@string/miaosu"
                     android:textColor="@color/text_black" />
 
                 <EditText
@@ -420,7 +420,7 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="start"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:paddingBottom="@dimen/text_size_px_43"
                     android:lineSpacingMultiplier="1.2"
                     android:maxLength="500"

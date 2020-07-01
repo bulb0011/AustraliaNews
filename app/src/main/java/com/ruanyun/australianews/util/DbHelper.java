@@ -182,7 +182,7 @@ public void insertParentCodes(String parentCode, List<ParentCodeInfo> infoList) 
         if (list.size()>0) {
     //        list.add(2,new ChannelInfo(false, 0, true, "行情", "00000000000000000000", 1, 2, 1));
     //        list.add(1,new ChannelInfo(false, 0, true, "7*24", "00000000000000000000", 1, 2, 1));
-              list.add(new ChannelInfo(false, 0, true, "其他", "00000000000000000000", 1, 2, 1));
+//              list.add(new ChannelInfo(false, 0, true, "其他", "00000000000000000000", 1, 2, 1));
         }
         return list;
     }

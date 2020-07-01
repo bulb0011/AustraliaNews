@@ -82,7 +82,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     android:singleLine="true"
                     android:textColor="@color/text_black" />
@@ -99,7 +99,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="价格" />
+                    android:text="@string/jiage" />
 
                 <EditText
                     android:id="@+id/et_price"
@@ -108,7 +108,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:inputType="numberDecimal"
                     android:maxLength="9"
                     android:singleLine="true"
@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="start"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:lineSpacingMultiplier="1.2"
                     android:paddingBottom="@dimen/text_size_px_43"
                     android:maxLength="500"

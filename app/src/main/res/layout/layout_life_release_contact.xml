@@ -14,7 +14,7 @@
         android:drawablePadding="@dimen/text_size_px_25"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/text_size_px_43"
-        android:text="联系方式"
+        android:text="@string/lianxifansghi"
         android:textColor="@color/text_color_666"
         android:textSize="@dimen/text_size_sp_14" />
 
@@ -32,7 +32,7 @@
             android:drawableLeft="@drawable/release_icon_name"
             android:drawablePadding="@dimen/text_size_px_32"
             android:gravity="center_vertical"
-            android:text="联系人"
+            android:text="@string/lianxiren"
             android:textColor="@color/black" />
 
         <EditText
@@ -42,7 +42,7 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:gravity="center_vertical|end"
-            android:hint="请填写"
+            android:hint="@string/qingtianxie"
             android:maxLength="30"
             android:singleLine="true"
             android:textColor="@color/text_black" />
@@ -74,7 +74,7 @@
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:gravity="center_vertical|end"
-                android:hint="请填写"
+                android:hint="@string/qingtianxie"
             android:maxLength="40"
                 android:singleLine="true"
                 android:textColor="@color/text_black" />
@@ -106,7 +106,7 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:gravity="center_vertical|end"
-            android:hint="请填写"
+            android:hint="@string/qingtianxie"
             android:maxLength="20"
             android:inputType="phone"
             android:singleLine="true"
@@ -139,7 +139,7 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:gravity="center_vertical|end"
-            android:hint="请填写"
+            android:hint="@string/qingtianxie"
             android:inputType="number"
             android:maxLength="20"
             android:singleLine="true"
@@ -162,7 +162,7 @@
             android:drawableLeft="@drawable/release_icon_weixin"
             android:drawablePadding="@dimen/text_size_px_32"
             android:gravity="center_vertical"
-            android:text="微信"
+            android:text="@string/weixn"
             android:textColor="@color/black" />
 
         <EditText
@@ -172,7 +172,7 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:gravity="center_vertical|end"
-            android:hint="请填写"
+            android:hint="@string/qingtianxie"
             android:digits="@string/mailbox_digits"
             android:maxLength="30"
             android:singleLine="true"
@@ -201,7 +201,7 @@
         android:layout_marginBottom="@dimen/text_size_px_70"
         android:background="@drawable/corners_registered_bg_shape"
         android:gravity="center"
-        android:text="发布"
+        android:text="@string/fabu"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_sp_16" />
 

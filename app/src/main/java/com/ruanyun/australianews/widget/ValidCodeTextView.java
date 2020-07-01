@@ -5,6 +5,8 @@ import android.os.CountDownTimer;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
+import com.ruanyun.australianews.R;
+
 
 /**
  * @ClassName: ValidCodeButton.java
@@ -15,9 +17,11 @@ import android.util.AttributeSet;
 public class ValidCodeTextView extends AppCompatTextView {
     ValidCodeCountDownTimer timer;
 
+    Context context;
 
     public ValidCodeTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.context=context;
         timer = new ValidCodeCountDownTimer(60000, 1000);
     }
 
@@ -31,7 +35,7 @@ public class ValidCodeTextView extends AppCompatTextView {
 
     public void reset() {
         timer.cancel();
-        setText("获取验证码");
+        setText(context.getResources().getString(R.string.huoquyaz));
         setClickable(true);
         setSelected(false);
     }
@@ -44,7 +48,7 @@ public class ValidCodeTextView extends AppCompatTextView {
 
         @Override
         public void onFinish() {
-            setText("获取验证码");
+            setText(context.getResources().getString(R.string.huoquyaz));
             setClickable(true);
             setSelected(false);
         }

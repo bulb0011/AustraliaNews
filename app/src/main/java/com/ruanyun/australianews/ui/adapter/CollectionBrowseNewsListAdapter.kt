@@ -7,11 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.refreshview.impl.RvMuiltItemAdapter
-import com.ruanyun.australianews.ext.*
+import com.ruanyun.australianews.ext.click
+import com.ruanyun.australianews.ext.loadImage
+import com.ruanyun.australianews.ext.toImgUrl
 import com.ruanyun.australianews.model.CollectionBrowseNewsInfo
 import com.ruanyun.australianews.model.NewsInfo
-import com.ruanyun.australianews.util.StringUtil
-import com.ruanyun.australianews.util.StringUtil.getWCount
 import com.ruanyun.australianews.util.WebViewUrlUtil
 import com.zhy.adapter.recyclerview.base.ItemViewDelegate
 import com.zhy.adapter.recyclerview.base.ViewHolder
@@ -43,7 +43,7 @@ class CollectionBrowseNewsListAdapter(context: Context, datas: List<CollectionBr
                 val item = t.newsInfo?:return
                 holder.getView<ImageView>(R.id.iv_photo).loadImage(item.mainPhoto.toImgUrl())
                 holder.setText(R.id.tv_title, item.title)
-                holder.setText(R.id.tv_source, NewsInfo.getSourceStr(item))
+                holder.setText(R.id.tv_source, NewsInfo.getSourceStrtimeStamp2Date(item))
                 holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)View.VISIBLE else View.GONE
                 updateStatusChange(holder, t)
 
@@ -65,7 +65,7 @@ class CollectionBrowseNewsListAdapter(context: Context, datas: List<CollectionBr
             override fun convert(holder: ViewHolder, t: CollectionBrowseNewsInfo, position: Int) {
                 val item = t.newsInfo?:return
                 holder.setText(R.id.tv_title, item.title)
-                holder.setText(R.id.tv_source, NewsInfo.getSourceStr(item))
+                holder.setText(R.id.tv_source, NewsInfo.getSourceStrtimeStamp2Date(item))
                 holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)View.VISIBLE else View.GONE
                 updatePhotoList(holder, item)
                 updateStatusChange(holder, t)
@@ -88,7 +88,7 @@ class CollectionBrowseNewsListAdapter(context: Context, datas: List<CollectionBr
                 val item = t.newsInfo?:return
                 holder.getView<ImageView>(R.id.iv_video_main_photo).loadImage(item.mainPhoto.toImgUrl())
                 holder.setText(R.id.tv_title, item.title)
-                holder.setText(R.id.tv_source, NewsInfo.getSourceStr(item))
+                holder.setText(R.id.tv_source, NewsInfo.getSourceStrtimeStamp2Date(item))
                 holder.getView<TextView>(R.id.tv_hot).visibility = if(item.isHot==1)View.VISIBLE else View.GONE
                 updateStatusChange(holder, t)
 //                holder.convertView.clickWithTrigger {

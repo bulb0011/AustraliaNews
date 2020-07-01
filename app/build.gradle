@@ -75,6 +75,7 @@ android {
                     sortId 1
 //                    appId "wx2d18376dd3c54154"
 //                    appSecret "8c065c2b66d0321a81719858d9fbde8b"
+//                    appId "wxacdd7c584e315282"wx1a7c8088ee160d02
                     appId "wxacdd7c584e315282"
                     appSecret "cde4413637403a6fa74d48be7272e437"
                 }

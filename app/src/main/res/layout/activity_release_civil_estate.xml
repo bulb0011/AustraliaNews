@@ -59,7 +59,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="价格" />
+                    android:text="@string/jiage" />
 
                 <EditText
                     android:id="@+id/et_price"
@@ -68,7 +68,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:inputType="number"
                     android:maxLength="10"
                     android:singleLine="true"
@@ -86,7 +86,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="城市" />
+                    android:text="@string/chengshi" />
 
                 <TextView
                     android:id="@+id/tv_city"
@@ -111,7 +111,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="详细地址" />
+                    android:text="@string/xianqidiz" />
 
                 <EditText
                     android:id="@+id/et_address"
@@ -120,7 +120,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     android:singleLine="true"
                     android:textColor="@color/text_black" />
@@ -137,7 +137,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="销售名字" />
+                    android:text="@string/xiaoshoumim" />
 
                 <EditText
                     android:id="@+id/et_salesName"
@@ -146,7 +146,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     android:singleLine="true"
                     android:textColor="@color/text_black" />
@@ -163,7 +163,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="销售电话" />
+                    android:text="@string/xianghdianhu" />
 
                 <EditText
                     android:id="@+id/et_salesCall"
@@ -172,7 +172,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:inputType="phone"
                     android:maxLength="30"
                     android:singleLine="true"
@@ -190,7 +190,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="销售邮箱" />
+                    android:text="@string/xiaoshouyoujin" />
 
                 <EditText
                     android:id="@+id/et_salesMailbox"
@@ -199,7 +199,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:inputType="textEmailAddress"
                     android:maxLength="30"
                     android:singleLine="true"
@@ -217,7 +217,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="物业状态" />
+                    android:text="@string/wuyezhangtai" />
 
                 <TextView
                     android:id="@+id/tv_propertyStatus"
@@ -283,7 +283,7 @@
                     android:background="@null"
                     android:gravity="start"
                     android:paddingBottom="@dimen/text_size_px_43"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:minLines="5"
                     android:maxLength="500"
                     android:textColor="@color/text_black" />
@@ -322,7 +322,7 @@
                 android:layout_marginBottom="@dimen/text_size_px_70"
                 android:background="@drawable/corners_registered_bg_shape"
                 android:gravity="center"
-                android:text="发布"
+                android:text="@string/fabu"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_sp_16" />
 

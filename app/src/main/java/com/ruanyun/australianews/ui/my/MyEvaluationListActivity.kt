@@ -111,7 +111,7 @@ class MyEvaluationListActivity : BaseActivity(){
     override fun onTopBarRightTextClick() {
         if(topbar.topBarRightTitle.getStr() == "管理"){
             if(adapter.datas.size<=0){
-                showToast("暂无数据")
+                showToast(resources.getString(R.string.zanwushuju))
                 return
             }
             topbar.topBarRightTitle.text = "完成"

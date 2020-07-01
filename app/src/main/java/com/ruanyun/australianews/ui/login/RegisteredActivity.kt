@@ -119,6 +119,16 @@ class RegisteredActivity : BaseActivity(), RegisteredMvpView {
             showActivity(YongHuXieYiActivity::class.java)
         }
         tv_registered.clickWithTrigger {
+
+//            val rule= Regex("""^[0-9a-zA-Z]+${'$'}""")
+//
+//            if(et_password.text.matches(rule)){
+//
+//                showToast("进来")
+//
+//                return@clickWithTrigger
+//            }
+
             if (!tv_read_and_agree.isSelected) {
                 showToast("请阅读《澳洲财经用户注册协议》")
                 return@clickWithTrigger
@@ -139,15 +149,15 @@ class RegisteredActivity : BaseActivity(), RegisteredMvpView {
             rl_phone.visibility = View.VISIBLE
             rl_vcode.visibility = View.VISIBLE
             rl_mailbox.visibility = View.GONE
-            tv_switch_register.text = "邮箱注册"
-            topbar.setTitleText("手机号注册")
+            tv_switch_register.text = resources.getString(R.string.youxiangzhuc)
+            topbar.setTitleText(resources.getString(R.string.shoujihaizhuc))
         } else {
             rl_phone_area.visibility = View.GONE
             rl_phone.visibility = View.GONE
             rl_vcode.visibility = View.GONE
             rl_mailbox.visibility = View.VISIBLE
-            tv_switch_register.text = "手机号注册"
-            topbar.setTitleText("邮箱注册")
+            tv_switch_register.text = resources.getString(R.string.shoujihaizhuc)
+            topbar.setTitleText( resources.getString(R.string.youxiangzhuc))
         }
         updateRegisterBtnEnabled()
     }

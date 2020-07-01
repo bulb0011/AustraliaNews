@@ -14,7 +14,9 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.ruanyun.australianews.R
-import com.ruanyun.australianews.ext.*
+import com.ruanyun.australianews.ext.click
+import com.ruanyun.australianews.ext.clickWithTrigger
+import com.ruanyun.australianews.ext.loadImage
 import com.ruanyun.australianews.model.uimodel.LifeReleaseCommonUiModel
 import com.ruanyun.australianews.util.CommonUtil
 import com.ruanyun.australianews.util.StringUtil
@@ -34,7 +36,12 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
     var isEditMode = false
     var isMyRelease = false
 
+    var ctx:Context
+
     init {
+
+        this.ctx=context
+
         /**
          * 房屋出租
          */
@@ -53,10 +60,10 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
                 holder.setText(R.id.tv_house_type, item.getCommonType())
                 holder.setText(R.id.tv_distance, item.getDistanceStr())
                 holder.setVisible(R.id.tv_distance, CommonUtil.isNotEmpty(item.getDistanceStr()))
-                holder.setText(R.id.tv_reside_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_reside_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 val tvMoney = holder.getView<TextView>(R.id.tv_money)
                 if(isNegotiable(item.getMoneyStr())){
-                    val sp = SpannableString("面议")
+                    val sp = SpannableString(ctx.resources.getString(R.string.mimyi))
                     sp.setSpan(RelativeSizeSpan(1.4f), 0, sp.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                     tvMoney.text = sp
                 }else {
@@ -83,7 +90,7 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
 
             override fun convert(holder: ViewHolder, item: LifeReleaseCommonUiModel, position: Int) {
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 updateStatusChange(holder, item)
             }
         })
@@ -103,10 +110,10 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
             override fun convert(holder: ViewHolder, item: LifeReleaseCommonUiModel, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 val tvMoney = holder.getView<TextView>(R.id.tv_money)
                 if(isNegotiable(item.getMoneyStr())){
-                    val sp = SpannableString("面议")
+                    val sp = SpannableString(ctx.resources.getString(R.string.mimyi))
                     sp.setSpan(RelativeSizeSpan(1.4f), 0, sp.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                     tvMoney.text = sp
                 }else {
@@ -134,10 +141,10 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
                 holder.setText(R.id.tv_title, item.commonTitle)
                 holder.setText(R.id.tv_type, item.getCommonType())
                 holder.setText(R.id.tv_experience_requirements, item.getExperienceRequirementsStr())
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 val tvMoney = holder.getView<TextView>(R.id.tv_money)
                 if(isNegotiable(item.getMoneyStr())){
-                    val sp = SpannableString("面议")
+                    val sp = SpannableString(ctx.resources.getString(R.string.mimyi))
                     sp.setSpan(RelativeSizeSpan(1.4f), 0, sp.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                     tvMoney.text = sp
                 }else {
@@ -165,10 +172,10 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
             override fun convert(holder: ViewHolder, item: LifeReleaseCommonUiModel, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 val tvMoney = holder.getView<TextView>(R.id.tv_money)
                 if(isNegotiable(item.getMoneyStr())){
-                    val sp = SpannableString("面议")
+                    val sp = SpannableString(ctx.resources.getString(R.string.mimyi))
                     sp.setSpan(RelativeSizeSpan(1.4f), 0, sp.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                     tvMoney.text = sp
                 }else {
@@ -195,10 +202,10 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
             override fun convert(holder: ViewHolder, item: LifeReleaseCommonUiModel, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 val tvMoney = holder.getView<TextView>(R.id.tv_money)
                 if(isNegotiable(item.getMoneyStr())){
-                    val sp = SpannableString("面议")
+                    val sp = SpannableString(ctx.resources.getString(R.string.mimyi))
                     sp.setSpan(RelativeSizeSpan(1.4f), 0, sp.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                     tvMoney.text = sp
                 }else {
@@ -225,10 +232,10 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
             override fun convert(holder: ViewHolder, item: LifeReleaseCommonUiModel, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 val tvMoney = holder.getView<TextView>(R.id.tv_money)
                 if(isNegotiable(item.getMoneyStr())){
-                    val sp = SpannableString("面议")
+                    val sp = SpannableString(ctx.resources.getString(R.string.mimyi))
                     sp.setSpan(RelativeSizeSpan(1.4f), 0, sp.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                     tvMoney.text = sp
                 }else {
@@ -255,10 +262,10 @@ open class LifeReleaseCommonAdapter<T>(context: Context, datas: List<LifeRelease
             override fun convert(holder: ViewHolder, item: LifeReleaseCommonUiModel, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 val tvMoney = holder.getView<TextView>(R.id.tv_money)
                 if(isNegotiable(item.getMoneyStr())){
-                    val sp = SpannableString("面议")
+                    val sp = SpannableString(ctx.resources.getString(R.string.mimyi))
                     sp.setSpan(RelativeSizeSpan(1.4f), 0, sp.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                     tvMoney.text = sp
                 }else {

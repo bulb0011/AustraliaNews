@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/topbar"
-        app:topBarTitleText="浏览历史"
+        app:topBarTitleText="@string/browsinghistory"
         app:topBarRightText="@string/guangli"
         app:topBarRightTextEnable="true"
         app:topBarViewLineEnable="false"/>

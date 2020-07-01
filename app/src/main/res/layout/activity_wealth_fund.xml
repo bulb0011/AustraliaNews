@@ -9,7 +9,7 @@
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:topBarTitleText="基金"/>
+        app:topBarTitleText="@string/jijin"/>
 
     <FrameLayout
         android:layout_width="match_parent"

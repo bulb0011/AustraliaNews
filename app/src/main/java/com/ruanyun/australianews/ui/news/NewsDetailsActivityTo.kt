@@ -1,9 +1,13 @@
 package com.ruanyun.australianews.ui.news
 
+import android.Manifest
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
+import android.support.v4.app.ActivityCompat
 import android.view.View
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.ResultBase
@@ -37,6 +41,7 @@ import kotlinx.android.synthetic.main.layout_news_bottom.*
 open class NewsDetailsActivityTo : WebViewActivity() {
 
     companion object {
+
         fun startNewsDetails(context: Context, url: String?, newsInfoOid: String?, type: Int, json: String) {
             val starter = Intent(context, NewsDetailsActivityTo::class.java)
             starter.putExtra(C.IntentKey.WEB_VIEW_URL, url)
@@ -54,6 +59,29 @@ open class NewsDetailsActivityTo : WebViewActivity() {
             starter.putExtra(C.IntentKey.TYPE, type)
             starter.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(starter)
+        }
+
+    }
+
+    internal var PERMISSIONS_STORAGE = arrayOf(
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE
+    )
+
+    internal var REQUEST_EXTERNAL_STORAGE = 1
+
+    fun verifyStoragePermissions(activity: Activity) {
+        // Check if we have write permission
+        val permission = ActivityCompat.checkSelfPermission(
+            activity,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                activity, PERMISSIONS_STORAGE,
+                REQUEST_EXTERNAL_STORAGE
+            )
         }
     }
 
@@ -119,6 +147,8 @@ open class NewsDetailsActivityTo : WebViewActivity() {
         }
         sharePopWindow = SharePopWindow(mContext)
 
+        verifyStoragePermissions(this)
+
         val shareJson = intent.getStringExtra(C.IntentKey.SHARE_INFO_JSON)
         if (shareJson.isNullOrEmpty()) {
 
@@ -163,6 +193,8 @@ open class NewsDetailsActivityTo : WebViewActivity() {
         }
         iv_share.clickWithTrigger {
 //            if(isLoginToActivity) {
+            verifyStoragePermissions(this)
+
                 sharePopWindow.show(iv_share)
 //            }
         }

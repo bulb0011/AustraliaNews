@@ -70,7 +70,7 @@
                     android:background="@null"
                     android:paddingBottom="@dimen/text_size_px_43"
                     android:gravity="start"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="500"
                     android:minLines="5"
                     android:textColor="@color/text_black" />
@@ -131,7 +131,7 @@
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:gravity="center_vertical|end"
-                        android:hint="/小时 面议请填0"
+                        android:hint="@string/minayi"
                         android:inputType="numberDecimal"
                         android:maxLength="9"
                         android:singleLine="true"
@@ -158,7 +158,7 @@
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:gravity="center_vertical|end"
-                        android:hint="请填写"
+                        android:hint="@string/qingtianxie"
                     android:maxLength="50"
                         android:singleLine="true"
                         android:textColor="@color/text_black" />
@@ -175,7 +175,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="公司名称" />
+                    android:text="@string/gongsiminc" />
 
                 <EditText
                     android:id="@+id/et_company_name"
@@ -184,7 +184,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:maxLength="50"
                     android:singleLine="true"
                     android:textColor="@color/text_black" />
@@ -234,7 +234,7 @@
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:gravity="center_vertical|end"
-                        android:hint="请填写"
+                        android:hint="@string/qingtianxie"
                     android:maxLength="6"
                     android:inputType="number"
                         android:singleLine="true"

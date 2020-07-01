@@ -9,8 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:topBarRightImageEnable="true"
-        app:topBarRightImageSrc="@drawable/fabu"
-        app:topBarTitleText="民用地产"/>
+        app:topBarRightText="@string/fabu"
+        app:topBarRightTextColor="@color/theme_color"
+        app:topBarTitleText="@string/mingmin"/>
 
     <LinearLayout
         android:layout_width="match_parent"

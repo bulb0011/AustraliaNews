@@ -1,15 +1,25 @@
 package com.ruanyun.australianews.widget;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
-import android.view.*;
-import android.widget.*;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.mob.MobSDK;
 import com.mob.tools.utils.UIHandler;
@@ -17,12 +27,17 @@ import com.ruanyun.australianews.R;
 import com.ruanyun.australianews.model.IconInfo;
 import com.ruanyun.australianews.util.CommonUtil;
 import com.ruanyun.australianews.util.FileUtil;
+import com.ruanyun.australianews.util.LogX;
 import com.ruanyun.imagepicker.base.CommonAdapter;
 import com.ruanyun.imagepicker.base.CommonViewHolder;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
-import cn.sharesdk.framework.*;
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.PlatformActionListener;
+import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import cn.sharesdk.tencent.qq.QQ;
 import cn.sharesdk.tencent.qzone.QZone;
@@ -41,6 +56,24 @@ public class SharePopWindow extends PopupWindow implements PopupWindow.OnDismiss
             R.drawable.news_icon_qq, R.drawable.news_icon_qqspace};
 
     private GridView grid;
+
+    int REQUEST_EXTERNAL_STORAGE = 1;
+
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE };
+
+        public  void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE,
+                REQUEST_EXTERNAL_STORAGE);
+        }
+    }
+
 
     /**
      * 朋友圈分享对象
@@ -341,6 +374,8 @@ public class SharePopWindow extends PopupWindow implements PopupWindow.OnDismiss
 
     @Override
     public void onError(Platform plat, int action, Throwable t) {
+
+        LogX.e("dengpao","错误"+t.getMessage());
 
         Message msg = new Message();
         msg.arg1 = 2;

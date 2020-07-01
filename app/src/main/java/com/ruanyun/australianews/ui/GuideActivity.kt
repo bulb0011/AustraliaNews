@@ -24,9 +24,12 @@ class GuideActivity : BaseActivity(), ViewPager.OnPageChangeListener {
 
     //引导图片资源
     private val imgs = intArrayOf(
-        R.drawable.bootpage_1_1,
-        R.drawable.bootpage_2,
-        R.drawable.bootpage_3
+        R.drawable.bootpage_1_1_1,
+        R.drawable.bootpage_1_1_2,
+        R.drawable.bootpage_1_1_3,
+        R.drawable.bootpage_1_1_4,
+        R.drawable.bootpage_1_1_5,
+        R.drawable.bootpage_1_1_6
     )
 
     var imageViews = mutableListOf<View>()

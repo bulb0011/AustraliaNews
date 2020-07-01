@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
+import com.ruanyun.australianews.App
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.BaseActivity
 import com.ruanyun.australianews.base.PageInfoBase
@@ -29,10 +30,7 @@ import com.ruanyun.australianews.ui.WebViewActivity
 import com.ruanyun.australianews.ui.life.BusinessTransferListActivity
 import com.ruanyun.australianews.ui.main.SearchActivity
 import com.ruanyun.australianews.ui.wealth.adapter.WealthBrowseCollectionLifeCommonAdapter
-import com.ruanyun.australianews.util.C
-import com.ruanyun.australianews.util.CommonUtil
-import com.ruanyun.australianews.util.PixelSizeUtil
-import com.ruanyun.australianews.util.RxUtil
+import com.ruanyun.australianews.util.*
 import com.ruanyun.australianews.widget.filterpopwindow.FilterInfoUiModel
 import com.ruanyun.australianews.widget.filterpopwindow.FilterListPopupWindow
 import com.ruanyun.australianews.widget.filterpopwindow.OnFilterClickListener
@@ -123,8 +121,17 @@ class WealthActivity : BaseActivity(), OnFilterClickListener {
             }
         })
 
+        val yuyan = SharedPreferencesUtils.getParam(
+            App.context,
+            SharedPreferencesUtils.KEY_SYSTEM_LANGUAGE,
+            ""
+        ) as String
+
         //汇率
-        tv_hunlv.clickWithTrigger { WebViewActivity.startHtml(mContext, "汇率", "file:///android_asset/waihui.html")}
+        tv_hunlv.clickWithTrigger {
+                WebViewActivity.startHtml(mContext, resources.getString(R.string.huilv), "file:///android_asset/waihui.html")
+
+        }
 
         //跳转搜索
         tv_search2.clickWithTrigger { SearchActivity.start(mContext, SearchActivity.HOME_SEARCH) }

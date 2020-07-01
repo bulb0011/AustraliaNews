@@ -23,7 +23,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/text_size_px_43"
         android:layout_marginTop="@dimen/text_size_px_50"
-        android:text="+自定义频道"
+        android:text="@string/zidingyipindao"
         android:textColor="@color/white"
         android:gravity="center"
         android:includeFontPadding="false"

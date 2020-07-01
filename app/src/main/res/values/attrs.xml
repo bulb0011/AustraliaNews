@@ -13,6 +13,7 @@
         <attr name="topBarBgColor" format="reference" />
         <attr name="topBarRightText" format="reference|string" />
         <attr name="topBarRightTextEnable" format="boolean" />
+        <attr name="topBarRightTextColor" format="reference" />
         <attr name="topBarViewLineEnable" format="boolean" />
     </declare-styleable>
 

@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:textColor="@color/color_black_333333"
-            android:text="@string/AboutUs"
+            android:text="@string/yonghuxieyi"
             android:layout_centerInParent="true"
             />
 

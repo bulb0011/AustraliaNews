@@ -35,7 +35,11 @@ open class WealthCommonAdapter<T: WealthCommonUiModel>(context: Context, datas: 
     var isMyRelease = false
     var isShowLabel = false
 
+    var ctx:Context
+
     init {
+
+        this.ctx=context
         /**
          * 基金
          */
@@ -77,7 +81,7 @@ open class WealthCommonAdapter<T: WealthCommonUiModel>(context: Context, datas: 
             override fun convert(holder: ViewHolder, item: T, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 holder.setText(R.id.tv_address, item.getCommonAddress())
                 updateStatusChange(holder, item)
             }
@@ -98,7 +102,7 @@ open class WealthCommonAdapter<T: WealthCommonUiModel>(context: Context, datas: 
             override fun convert(holder: ViewHolder, item: T, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 holder.setText(R.id.tv_address, item.getCommonAddress())
                 updateStatusChange(holder, item)
             }
@@ -119,7 +123,7 @@ open class WealthCommonAdapter<T: WealthCommonUiModel>(context: Context, datas: 
             override fun convert(holder: ViewHolder, item: T, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 holder.setText(R.id.tv_address, item.getCommonAddress())
                 updateStatusChange(holder, item)
             }
@@ -140,7 +144,7 @@ open class WealthCommonAdapter<T: WealthCommonUiModel>(context: Context, datas: 
             override fun convert(holder: ViewHolder, item: T, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 holder.setText(R.id.tv_address, item.getCommonAddress())
                 updateStatusChange(holder, item)
             }
@@ -161,7 +165,7 @@ open class WealthCommonAdapter<T: WealthCommonUiModel>(context: Context, datas: 
             override fun convert(holder: ViewHolder, item: T, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 holder.setText(R.id.tv_address, item.getCommonAddress())
                 updateStatusChange(holder, item)
             }
@@ -182,10 +186,10 @@ open class WealthCommonAdapter<T: WealthCommonUiModel>(context: Context, datas: 
             override fun convert(holder: ViewHolder, item: T, position: Int) {
                 holder.getView<ImageView>(R.id.iv_pic).loadImage(item.commonMainPhoto)
                 holder.setText(R.id.tv_title, item.commonTitle)
-                holder.setText(R.id.tv_update_time, "更新于 ${StringUtil.getLifeTime(item.commonTime)}")
+                holder.setText(R.id.tv_update_time, ctx.resources.getString(R.string.gengxinyu)+" ${StringUtil.getLifeTime(item.commonTime)}")
                 val tvMoney = holder.getView<TextView>(R.id.tv_money)
                 if(isNegotiable(item.getMoneyStr())){
-                    val sp = SpannableString("面议")
+                    val sp = SpannableString(ctx.resources.getString(R.string.mimyi))
                     sp.setSpan(RelativeSizeSpan(1.4f), 0, sp.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                     tvMoney.text = sp
                 }else {

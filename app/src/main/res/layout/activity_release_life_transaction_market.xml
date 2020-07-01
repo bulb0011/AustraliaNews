@@ -33,7 +33,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="身份" />
+                    android:text="@string/shengfen" />
 
                 <TextView
                     android:id="@+id/tv_identity"
@@ -226,7 +226,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="价格" />
+                    android:text="@string/jiage" />
 
                 <EditText
                     android:id="@+id/et_price"
@@ -235,7 +235,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="面议请填0"
+                    android:hint="@string/minayi"
                     android:inputType="numberDecimal"
                     android:maxLength="9"
                     android:singleLine="true"
@@ -261,7 +261,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:inputType="numberDecimal"
                     android:maxLength="9"
                     android:singleLine="true"
@@ -317,7 +317,7 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="start"
-                    android:hint="请填写"
+                    android:hint="@string/qingtianxie"
                     android:minLines="5"
                     android:maxLength="500"
                     android:textColor="@color/text_black" />

@@ -40,7 +40,7 @@ allprojects {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
         jcenter()
-//        maven{ url "http://192.168.1.12:8081/repository/android/" }
+        maven{ url "http://192.168.1.12:8081/repository/android/" }
         maven {
             url "https://oss.sonatype.org/content/repositories/snapshots/"
         }

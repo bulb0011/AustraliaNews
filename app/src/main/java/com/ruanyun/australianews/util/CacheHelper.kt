@@ -161,6 +161,9 @@ class CacheHelper internal constructor() {
      * 获取频道列表
      */
     fun requestChannelList() {
+
+        LogX.e("dengpao","userOid"+App.getInstance().userOid)
+
         apiService.getChannelList(App.getInstance().userOid)
                 .compose(RxUtil.normalSchedulers())
                 .subscribe(object : ApiSuccessAction<ResultBase<ChannelResult>>() {

@@ -110,7 +110,7 @@ class MyFragment : BaseFragment() {
         }
         initNoticeSwitch()
         tv_feedback.clickWithTrigger { if(isLoginToActivity) FeedbackActivity.start(mContext) }
-        tv_clear_cache.clickWithTrigger { tipDialog.show(resources.getString(R.string.wenxin), "是否确认清除缓存?",resources.getString(R.string.queren) ) }
+        tv_clear_cache.clickWithTrigger { tipDialog.show(resources.getString(R.string.wenxin), resources.getString(R.string.shifouqureren),resources.getString(R.string.queren) ) }
         tv_rate_me.clickWithTrigger {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://app.banglebang.net/cx4f")))
         }

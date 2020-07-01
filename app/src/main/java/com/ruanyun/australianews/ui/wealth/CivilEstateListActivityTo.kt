@@ -29,6 +29,7 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
                 v_nongc.visibility=View.INVISIBLE
                 supportFragmentManager.beginTransaction().
                     add(R.id.container,HousingMarketListFragment()).commit()
+                type=CivilEstateInfo.ESTATEINFO_TYPE4
             }
 
             R.id.rl_minshangyongdi ->{
@@ -88,6 +89,8 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
 
     private fun initView() {
 
+        topbar.setRightTitleEnable(true)
+
         topbar.setTopBarClickListener(this)
 //        type = intent.getStringExtra(C.IntentKey.TYPE)
 //        val title = when(type){
@@ -106,7 +109,7 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
 //        }
 
         type=CivilEstateInfo.ESTATEINFO_TYPE4
-        topbar.setTitleText("居民楼")
+        topbar.setTitleText(getResources().getString(R.string.mingmin))
 //        supportFragmentManager.beginTransaction().add(R.id.container, CivilEstateListFragment.newFragment(type)).commit()
         supportFragmentManager.beginTransaction().add(R.id.container,HousingMarketListFragment()).commit()
 
@@ -127,20 +130,23 @@ class CivilEstateListActivityTo : BaseActivity(), View.OnClickListener {
 
     override fun onTopBarRightTextClick() {
         super.onTopBarRightTextClick()
-    }
-
-    override fun onTopBarRightImgClick() {
         if(isLoginToActivityByIsRelease) {
-
             if(type.equals(CivilEstateInfo.ESTATEINFO_TYPE4)){
                 ReleaseHousingMarketActivity.start(mContext)
             }else{
                 ReleaseCivilEstateActivity.start(mContext, type)
             }
-
-
-
-
         }
     }
+
+    override fun onTopBarRightImgClick() {
+        if(isLoginToActivityByIsRelease) {
+            if(type.equals(CivilEstateInfo.ESTATEINFO_TYPE4)){
+                ReleaseHousingMarketActivity.start(mContext)
+            }else{
+                ReleaseCivilEstateActivity.start(mContext, type)
+            }
+        }
+    }
+
 }

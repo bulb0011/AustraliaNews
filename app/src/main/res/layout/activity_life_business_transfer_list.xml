@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:topBarRightImageEnable="true"
         app:topBarRightImageSrc="@drawable/life_btn_add"
-        app:topBarTitleText="生意"
+        app:topBarTitleText="@string/shengyi"
         app:topBarViewLineEnable="false" />
 
     <LinearLayout

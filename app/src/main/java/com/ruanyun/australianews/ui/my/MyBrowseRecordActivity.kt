@@ -90,14 +90,14 @@ class MyBrowseRecordActivity : BaseActivity() {
                     topbar.topBarRightTitle.text = "完成"
                     newsFragment?.setEditMode(true)
                 }else {
-                    showToast("暂无数据")
+                    showToast(resources.getString(R.string.zanwushuju))
                 }
             }else {
                 if(lifeFragment?.adapter?.itemCount?:0 > 0){
                     topbar.topBarRightTitle.text = "完成"
                     lifeFragment?.setEditMode(true)
                 }else {
-                    showToast("暂无数据")
+                    showToast(resources.getString(R.string.zanwushuju))
                 }
             }
         } else {

@@ -42,7 +42,7 @@ class WealthMyBrowseListActivity : BaseActivity() {
             if(fragment.adapter.itemCount > 0){
                 fragment.setEditMode(true)
             }else {
-                showToast("暂无数据")
+                showToast(resources.getString(R.string.zanwushuju))
             }
         } else {
             topbar.topBarRightTitle.text = resources.getString(R.string.guangli)
