@@ -58,7 +58,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="面积" />
+                    android:text="@string/mianji" />
 
                 <EditText
                     android:id="@+id/et_acreage"
@@ -67,7 +67,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical|end"
-                    android:hint="平方米"
+                    android:hint="@string/pingfngmi"
                     android:maxLength="10"
                     android:inputType="number"
                     android:singleLine="true"
@@ -85,7 +85,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="中介名称" />
+                    android:text="@string/zhojie" />
 
                 <EditText
                     android:id="@+id/et_agentName"
@@ -137,7 +137,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="地址" />
+                    android:text="@string/dizih" />
 
                 <TextView
                     android:id="@+id/tv_address"
@@ -189,7 +189,7 @@
 
                 <TextView
                     style="@style/life_release_tip_style"
-                    android:text="邮箱" />
+                    android:text="@string/youxiangdd" />
 
                 <EditText
                     android:id="@+id/et_mailbox"
@@ -218,7 +218,7 @@
                 <TextView
                     style="@style/life_release_tip_style"
                     android:layout_height="@dimen/text_size_px_130"
-                    android:text="详细介绍" />
+                    android:text="@string/qingtinaie" />
 
                 <EditText
                     android:id="@+id/et_introduction"

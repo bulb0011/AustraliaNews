@@ -7,7 +7,7 @@
         android:paddingTop="4dp">
         <shape>
             <corners android:radius="50dp"/>
-            <solid android:color="#999999"/>
+            <solid android:color="#2C5F8C"/>
         </shape>
     </item>
 
@@ -20,8 +20,8 @@
                 <corners android:radius="50dp"/>
                 <gradient
                     android:angle="0"
-                    android:endColor="#09BB07"
-                    android:startColor="#09BB07"/>
+                    android:endColor="#2C5F8C"
+                    android:startColor="#2C5F8C"/>
             </shape>
         </clip>
     </item>

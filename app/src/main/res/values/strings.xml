@@ -49,6 +49,20 @@
     <string name="gonggao">公告</string>
     <string name="sixin">私信</string>
 
+    <string name="zuiduotianjia">添加图片，最多9张</string>
+
+    <string name="mianji">面积</string>
+
+    <string name="youxiangdd">邮箱</string>
+
+    <string name="qingtinaie">详细介绍</string>
+
+    <string name="pingfngmi">平方米</string>
+
+    <string name="zhojie">中介名称</string>
+
+    <string name="dizih">地址</string>
+
     <string name="language">语言设置</string>
 
     <string name="shuaxin">刷新</string>

@@ -67,8 +67,8 @@ open class WebViewUrlUtil {
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
 
-                    val url_zh=url+"&language=zh"
-                    val url_en=url+"&language=en"
+                    val url_zh=url+"&language=zh"+"&fa=android"
+                    val url_en=url+"&language=en"+"&fa=android"
 
                     LogX.e("dengpao","url_zh="+url_zh)
                     LogX.e("dengpao","url_en="+url_en)
@@ -82,8 +82,8 @@ open class WebViewUrlUtil {
 
                     val url = info.outUrl
 
-                    val url_zh=url+"&language=zh"
-                    val url_en=url+"&language=en"
+                    val url_zh=url+"&language=zh"+"&fa=android"
+                    val url_en=url+"&language=en"+"&fa=android"
 
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
@@ -105,8 +105,8 @@ open class WebViewUrlUtil {
                 1-> {
                     val url = FileUtil.getWebViewUrl(NEWS_DETAILS, App.getInstance().cityName, info.oid, App.getInstance().userOid)
 
-                    val url_zh=url+"&language=zh"
-                    val url_en=url+"&language=en"
+                    val url_zh=url+"&language=zh"+"&fa=android"
+                    val url_en=url+"&language=en"+"&fa=android"
 
                     shareJsonInfo.share_url = url
                     val json = GsonUtil.toJson(shareJsonInfo)
@@ -119,8 +119,8 @@ open class WebViewUrlUtil {
                     val url = info.outUrl
                     shareJsonInfo.share_url = url
 
-                    val url_zh=url+"&language=zh"
-                    val url_en=url+"&language=en"
+                    val url_zh=url+"&language=zh"+"&fa=android"
+                    val url_en=url+"&language=en"+"&fa=android"
 
                     val json = GsonUtil.toJson(shareJsonInfo)
                     NewsDetailsActivity.startNewsDetailsNewTask(context, url_zh, info.oid, NewsCommentParams.NEWS, json,info.commentCount,info.watchCount,info.baseWebsite,info.commonTime,url_en)

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.view.View
+import android.widget.SeekBar
 import com.ruanyun.australianews.R
 import com.ruanyun.australianews.base.ResultBase
 import com.ruanyun.australianews.data.ApiFailAction
@@ -21,15 +22,14 @@ import com.ruanyun.australianews.ui.main.NewsFragment
 import com.ruanyun.australianews.util.*
 import com.ruanyun.australianews.widget.LeaveMessageDialogFragment
 import com.ruanyun.australianews.widget.SharePopWindow
+import com.ruanyun.australianews.widget.SlideDialog
 import com.tencent.smtt.export.external.interfaces.WebResourceError
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
 import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
+import jiguang.chat.utils.ToastUtil
 import kotlinx.android.synthetic.main.activity_news_web_view.*
 import kotlinx.android.synthetic.main.layout_news_bottom.*
-
-
-
 
 
 /**
@@ -41,8 +41,18 @@ open class NewsDetailsActivity : WebViewActivity() {
 
     companion object {
 
-        fun startNewsDetails(context: Context, url: String?, newsInfoOid: String?,
-                             type: Int, json: String,commentCount: Int,watchCount: Int,baseWebsite : String?,commonTime: String?,url_en: String?) {
+        fun startNewsDetails(
+            context: Context,
+            url: String?,
+            newsInfoOid: String?,
+            type: Int,
+            json: String,
+            commentCount: Int,
+            watchCount: Int,
+            baseWebsite: String?,
+            commonTime: String?,
+            url_en: String?
+        ) {
             val starter = Intent(context, NewsDetailsActivity::class.java)
             starter.putExtra(C.IntentKey.WEB_VIEW_URL, url)
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
@@ -56,8 +66,18 @@ open class NewsDetailsActivity : WebViewActivity() {
             context.startActivity(starter)
         }
 
-        fun startNewsDetailsNewTask(context: Context, url: String?, newsInfoOid: String?,
-                                    type: Int, json:String,commentCount: Int,watchCount: Int,baseWebsite : String?,commonTime: String?,url_en: String?) {
+        fun startNewsDetailsNewTask(
+            context: Context,
+            url: String?,
+            newsInfoOid: String?,
+            type: Int,
+            json: String,
+            commentCount: Int,
+            watchCount: Int,
+            baseWebsite: String?,
+            commonTime: String?,
+            url_en: String?
+        ) {
             val starter = Intent(context, NewsDetailsActivity::class.java)
             starter.putExtra(C.IntentKey.WEB_VIEW_URL, url)
             starter.putExtra(C.IntentKey.NEWS_INFO_OID, newsInfoOid)
@@ -73,34 +93,38 @@ open class NewsDetailsActivity : WebViewActivity() {
         }
     }
 
-    var newsCommentCountInfo: NewsCommentCountInfo?=null
+    var newsCommentCountInfo: NewsCommentCountInfo? = null
 
     lateinit var leaveMessageDialogFragment: LeaveMessageDialogFragment
     lateinit var sharePopWindow: SharePopWindow
 
-    var isChina=true
+    var isChina = true
 
-    var title=""
+    var title = ""
 
 
-    lateinit var ttsholder : TtsHolder
+    lateinit var ttsholder: TtsHolder
 
-    var English=""
+    var English = ""
 
-     var text=""
+    var text = ""
 
     var isXinWen = true
 
-    var url_zh=""
+    var url_zh = ""
 
-    var url_en=""
+    var url_en = ""
 
 
     override fun initView() {
         super.initView()
 
-        if ("English".equals(DbHelper.getInstance().getSubscribedList(app.isLogin).get(NewsFragment.itemHead).title)){
-            ll_en_zhong.visibility=View.INVISIBLE
+        if ("English".equals(
+                DbHelper.getInstance().getSubscribedList(app.isLogin)
+                    .get(NewsFragment.itemHead).title
+            )
+        ) {
+            ll_en_zhong.visibility = View.INVISIBLE
         }
 
         val oid = intent.getStringExtra(C.IntentKey.NEWS_INFO_OID)
@@ -121,46 +145,48 @@ open class NewsDetailsActivity : WebViewActivity() {
 
 
 
-        if (tv_liulan !=null ) {
-            if (watchCount.isNullOrEmpty()){
-                tv_liulan.text="0"+"浏览"
-            }else{
-                tv_liulan.text=watchCount
+        if (tv_liulan != null) {
+            if (watchCount.isNullOrEmpty()) {
+                tv_liulan.text = "0" + "浏览"
+            } else {
+                tv_liulan.text = watchCount
             }
 
-            if (commentCount.isNullOrEmpty()){
-                tv_pinglun.text="0"+"评论"
-            }else{
-                tv_pinglun.text=commentCount+"评论"
+            if (commentCount.isNullOrEmpty()) {
+                tv_pinglun.text = "0" + "评论"
+            } else {
+                tv_pinglun.text = commentCount + "评论"
             }
 
-            if (baseWebsite.isNullOrEmpty()){
-                tv_laoyuan.text=""
-            }else{
-                tv_laoyuan.text=baseWebsite
+            if (baseWebsite.isNullOrEmpty()) {
+                tv_laoyuan.text = ""
+            } else {
+                tv_laoyuan.text = baseWebsite
             }
 
-            tv_shijian.text=StringUtil.getLifeTime(commonTime)
+            tv_shijian.text = StringUtil.getLifeTime(commonTime)
         }
 
 
         if (oid.isNullOrEmpty()) {
-
+            LogX.e("dengpao","aaaaaa"+oid)
         } else {
             ApiManger.getApiService().getNewsDetails(oid)
                 .compose(RxUtil.normalSchedulers())
-                .subscribe(object : ApiSuccessAction<ResultBase<NewParticularsBean>>(){
+                .subscribe(object : ApiSuccessAction<ResultBase<NewParticularsBean>>() {
                     override fun onSuccess(result: ResultBase<NewParticularsBean>) {
 
-                        LogX.e("dengpao","result.data.commentCount"+result.data.contentText)
-                        LogX.e("dengpao","result.data.contentEn"+result.data.contentEn)
+                        LogX.e("dengpao", "result.data.commentCount" + result.data.contentText)
+                        LogX.e("dengpao", "result.data.contentEn" + result.data.contentEn)
 
                         text = result.data.contentText
                         English = result.data.contentEn
 
-                        ttsholder=TtsHolder(context,text)
+                        ttsholder = TtsHolder(context, text)
 
-                        if (zhong!=null) {
+                        LogX.e("dengpao","aaaaaa"+text)
+
+                        if (zhong != null) {
                             isXinWen()
                         }
 
@@ -173,14 +199,14 @@ open class NewsDetailsActivity : WebViewActivity() {
                     override fun onFail(msg: String) {
                         showToast(msg)
                     }
-                } )
+                })
         }
 
 
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(webview: WebView?, url: String?): Boolean {
 
-                 if (url!!.startsWith("http:") || url.startsWith("https:")) {
+                if (url!!.startsWith("http:") || url.startsWith("https:")) {
                     webview!!.loadUrl(url)
                 } else {
                     try {
@@ -201,9 +227,18 @@ open class NewsDetailsActivity : WebViewActivity() {
                     rl_bofang.visibility = View.GONE
                     rl_xuanfu.visibility = View.GONE
                 }
-                if(isLoadError){
+                if (isLoadError) {
                     emptyview.showLoadFail()
                 }
+//                textile()
+
+
+//                webView.evaluateJavascript("getffont(2)",object : ValueCallback<String>{
+//                    override fun onReceiveValue(p0: String?) {
+//
+//                    }
+//
+//                })
             }
 
             override fun onReceivedError(p0: WebView?, p1: Int, p2: String?, p3: String?) {
@@ -213,21 +248,31 @@ open class NewsDetailsActivity : WebViewActivity() {
                 }
                 isLoadError = true
                 // 在这里显示自定义错误页
-                LogX.e("retrofit", "onReceivedError() : p0 = [$p0], p1 = [$p1], p2 = [$p2], p3 = [$p3]")
+                LogX.e(
+                    "retrofit",
+                    "onReceivedError() : p0 = [$p0], p1 = [$p1], p2 = [$p2], p3 = [$p3]"
+                )
             }
 
-            override fun onReceivedError(p0: WebView?, request: WebResourceRequest?, p2: WebResourceError?) {
+            override fun onReceivedError(
+                p0: WebView?,
+                request: WebResourceRequest?,
+                p2: WebResourceError?
+            ) {
                 super.onReceivedError(p0, request, p2)
-                LogX.e("retrofit", "onReceivedError2() : p0 = [$p0], request = [$request], p2 = [$p2]")
-                isLoadError = request?.isForMainFrame?:false
+                LogX.e(
+                    "retrofit",
+                    "onReceivedError2() : p0 = [$p0], request = [$request], p2 = [$p2]"
+                )
+                isLoadError = request?.isForMainFrame ?: false
             }
         }
 
         leaveMessageDialogFragment = LeaveMessageDialogFragment.newInstance()
         leaveMessageDialogFragment.block = {
-            if(presenter.newsInfoType?:1>0 && presenter.newsInfoType != LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO){
+            if (presenter.newsInfoType ?: 1 > 0 && presenter.newsInfoType != LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO) {
                 addComment(it)
-            }else {
+            } else {
                 addWealthComment(it)
             }
         }
@@ -239,10 +284,10 @@ open class NewsDetailsActivity : WebViewActivity() {
         } else {
             val newsInfo = GsonUtil.parseJson(shareJson, ShareJsonInfo::class.java)
             sharePopWindow.share_title = newsInfo.share_title
-            title=newsInfo.share_title
+            title = newsInfo.share_title
 
-            if(title_txt!=null){
-                title_txt.text=title
+            if (title_txt != null) {
+                title_txt.text = title
             }
 
             val shareText = newsInfo.share_text
@@ -257,7 +302,7 @@ open class NewsDetailsActivity : WebViewActivity() {
             goBack()
         }
         tv_comment.clickWithTrigger {
-            if(isLoginToActivity) {
+            if (isLoginToActivity) {
                 leaveMessageDialogFragment.show(supportFragmentManager, mContext)
             }
         }
@@ -265,17 +310,17 @@ open class NewsDetailsActivity : WebViewActivity() {
             NewsCommentActivity.start(mContext, presenter.newsInfoOid, presenter.newsInfoType)
         }
         iv_collect.clickWithTrigger {
-            if(isLoginToActivity) {
+            if (isLoginToActivity) {
                 if (newsCommentCountInfo?.mark == true) {
-                    if(presenter.newsInfoType?:1>0 && presenter.newsInfoType != LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO){
+                    if (presenter.newsInfoType ?: 1 > 0 && presenter.newsInfoType != LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO) {
                         deleteFavorites()
-                    }else {
+                    } else {
                         deleteWealthFavorites()
                     }
                 } else {
-                    if(presenter.newsInfoType?:1>0 && presenter.newsInfoType != LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO){
+                    if (presenter.newsInfoType ?: 1 > 0 && presenter.newsInfoType != LifeReleaseCommonUiModel.LIFE_BUSINESS_TRANSFER_INFO) {
                         addFavorites()
-                    }else {
+                    } else {
                         addWealthFavorites()
                     }
                 }
@@ -283,10 +328,10 @@ open class NewsDetailsActivity : WebViewActivity() {
         }
         iv_share.clickWithTrigger {
 //            if(isLoginToActivity) {
-                sharePopWindow.show(iv_share)
+            sharePopWindow.show(iv_share)
 //            }
         }
-        if(presenter.newsInfoType== LifeReleaseCommonUiModel.LIFE_REPAST_INFO){
+        if (presenter.newsInfoType == LifeReleaseCommonUiModel.LIFE_REPAST_INFO) {
             iv_back.visibility = View.GONE
             tv_comment.visibility = View.GONE
             iv_comment.visibility = View.GONE
@@ -294,8 +339,8 @@ open class NewsDetailsActivity : WebViewActivity() {
         }
         presenter.getNewsCommentCount()
 
-        if (image_return!=null) {
-            image_return.setOnClickListener(object :View.OnClickListener{
+        if (image_return != null) {
+            image_return.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     finish()
                 }
@@ -324,8 +369,6 @@ open class NewsDetailsActivity : WebViewActivity() {
     }
 
     private fun initEvent() {
-
-
         /**
          * 点击上面中英文切换
          */
@@ -342,16 +385,16 @@ open class NewsDetailsActivity : WebViewActivity() {
                 ttsholder.stopSpeaking()
 
                 if (isChina) {
-                    ttsholder=TtsHolder(context,text)
+                    ttsholder = TtsHolder(context, text)
 
                     zhong.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.theme_color))
                     en.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.text_black))
 
-                    webview.loadUrl(url_zh)
+                    webview.loadUrl(url_zh)//TODO
 
                     isChina = false
                 } else {
-                    ttsholder=TtsHolder(context,English)
+                    ttsholder = TtsHolder(context, English)
 
                     zhong.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.text_black))
                     en.setTextColor(resources.getColor(com.ruanyun.australianews.R.color.theme_color))
@@ -469,6 +512,53 @@ open class NewsDetailsActivity : WebViewActivity() {
 
             }
         })
+        /**
+         *改变文字
+         */
+        wenz_size.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                var shuzhi=0
+
+                var slidedailog = SlideDialog(this@NewsDetailsActivity)
+
+                slidedailog.setOnSeekBarChangeListener(object : SlideDialog.OnSlideSeekBarChangeListener{
+                    override fun onProgressChanged(
+                        seekBar: SeekBar?,
+                        progress: Int,
+                        fromUser: Boolean
+                    ) {
+
+                        shuzhi=progress
+
+                    }
+
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    }
+
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                        var s= 0
+                        if (shuzhi<45){
+                            seekBar?.progress=0
+                            s=0
+                        }else if(shuzhi<55)  {
+                            seekBar?.progress=50
+                            s=1
+                        }else{
+                            seekBar?.progress=100
+                            s=2
+                        }
+
+                        javascript("getffont("+s+")")
+
+                    }
+
+                })
+
+            }
+
+        })
+
+
 
         setPercent()
 
@@ -491,14 +581,14 @@ open class NewsDetailsActivity : WebViewActivity() {
     override fun updateNewsInfo(info: NewsCommentCountInfo) {
         super.updateNewsInfo(info)
         newsCommentCountInfo = info
-        if(info.commentQuantity>0){
+        if (info.commentQuantity > 0) {
             tv_comment_count.visibility = View.VISIBLE
-            if(info.commentQuantity>999){
+            if (info.commentQuantity > 999) {
                 tv_comment_count.text = "999+"
-            }else {
+            } else {
                 tv_comment_count.text = "${info.commentQuantity}"
             }
-        }else {
+        } else {
             tv_comment_count.visibility = View.GONE
         }
         iv_collect.isSelected = info.mark
@@ -509,28 +599,29 @@ open class NewsDetailsActivity : WebViewActivity() {
      */
     private fun addFavorites() {
         showLoadingView(com.ruanyun.australianews.R.string.in_load)
-        val disposable = ApiManger.getApiService().addFavorites(app.userOid, presenter.newsInfoOid, "${presenter.newsInfoType}")
-                .compose(RxUtil.normalSchedulers<ResultBase<CollectionBrowseNewsInfo>>())
-                .subscribe(object : ApiSuccessAction<ResultBase<CollectionBrowseNewsInfo>>() {
-                    override fun onSuccess(result: ResultBase<CollectionBrowseNewsInfo>) {
-                        disMissLoading()
-                        showToast("收藏成功")
-                        iv_collect.isSelected = true
-                        newsCommentCountInfo?.collectionInfo = result.data.oid
-                    }
+        val disposable = ApiManger.getApiService()
+            .addFavorites(app.userOid, presenter.newsInfoOid, "${presenter.newsInfoType}")
+            .compose(RxUtil.normalSchedulers<ResultBase<CollectionBrowseNewsInfo>>())
+            .subscribe(object : ApiSuccessAction<ResultBase<CollectionBrowseNewsInfo>>() {
+                override fun onSuccess(result: ResultBase<CollectionBrowseNewsInfo>) {
+                    disMissLoading()
+                    showToast("收藏成功")
+                    iv_collect.isSelected = true
+                    newsCommentCountInfo?.collectionInfo = result.data.oid
+                }
 
-                    override fun onError(errorCode: Int, errorMsg: String) {
-                        super.onError(errorCode, errorMsg)
-                        disMissLoading()
-                        showToast(errorMsg)
-                    }
-                }, object : ApiFailAction() {
-                    override fun onFail(msg: String) {
-                        super.onFail(msg)
-                        disMissLoading()
-                        showToast(msg)
-                    }
-                })
+                override fun onError(errorCode: Int, errorMsg: String) {
+                    super.onError(errorCode, errorMsg)
+                    disMissLoading()
+                    showToast(errorMsg)
+                }
+            }, object : ApiFailAction() {
+                override fun onFail(msg: String) {
+                    super.onFail(msg)
+                    disMissLoading()
+                    showToast(msg)
+                }
+            })
         addSubscrebe(disposable)
     }
 
@@ -544,27 +635,27 @@ open class NewsDetailsActivity : WebViewActivity() {
         params.collectionInfoOids = newsCommentCountInfo?.collectionInfo
         showLoadingView(com.ruanyun.australianews.R.string.in_load)
         val subscription = ApiManger.getApiService().deleteCollectionInfo(params)
-                .compose(RxUtil.normalSchedulers<ResultBase<*>>())
-                .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
-                    override fun onSuccess(result: ResultBase<*>) {
-                        disMissLoadingView()
-                        showToast("取消收藏成功")
-                        iv_collect.isSelected = false
-                        newsCommentCountInfo?.collectionInfo = null
-                    }
+            .compose(RxUtil.normalSchedulers<ResultBase<*>>())
+            .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
+                override fun onSuccess(result: ResultBase<*>) {
+                    disMissLoadingView()
+                    showToast("取消收藏成功")
+                    iv_collect.isSelected = false
+                    newsCommentCountInfo?.collectionInfo = null
+                }
 
-                    override fun onError(erroCode: Int, erroMsg: String) {
-                        super.onError(erroCode, erroMsg)
-                        disMissLoadingView()
-                        showToast(erroMsg)
-                    }
-                }, object : ApiFailAction() {
-                    override fun onFail(msg: String) {
-                        super.onFail(msg)
-                        disMissLoadingView()
-                        showToast(msg)
-                    }
-                })
+                override fun onError(erroCode: Int, erroMsg: String) {
+                    super.onError(erroCode, erroMsg)
+                    disMissLoadingView()
+                    showToast(erroMsg)
+                }
+            }, object : ApiFailAction() {
+                override fun onFail(msg: String) {
+                    super.onFail(msg)
+                    disMissLoadingView()
+                    showToast(msg)
+                }
+            })
         addSubscrebe(subscription)
     }
 
@@ -572,7 +663,7 @@ open class NewsDetailsActivity : WebViewActivity() {
      * 添加财富收藏
      */
     private fun addWealthFavorites() {
-        val type = when(presenter.newsInfoType){
+        val type = when (presenter.newsInfoType) {
             LifeReleaseCommonUiModel.WEALTH_ACTIVITYS -> 1
             LifeReleaseCommonUiModel.WEALTH_FUND -> 2
             LifeReleaseCommonUiModel.WEALTH_CIVIL_ESTATE -> 3
@@ -583,7 +674,8 @@ open class NewsDetailsActivity : WebViewActivity() {
             else -> 0
         }
         showLoadingView(com.ruanyun.australianews.R.string.in_load)
-        val disposable = ApiManger.getApiService().addWealthFavorites(app.userOid, presenter.newsInfoOid, type)
+        val disposable =
+            ApiManger.getApiService().addWealthFavorites(app.userOid, presenter.newsInfoOid, type)
                 .compose(RxUtil.normalSchedulers<ResultBase<*>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
                     override fun onSuccess(result: ResultBase<*>) {
@@ -612,7 +704,7 @@ open class NewsDetailsActivity : WebViewActivity() {
      * 删除财富收藏
      */
     private fun deleteWealthFavorites() {
-        val type = when(presenter.newsInfoType){
+        val type = when (presenter.newsInfoType) {
             LifeReleaseCommonUiModel.WEALTH_ACTIVITYS -> 1
             LifeReleaseCommonUiModel.WEALTH_FUND -> 2
             LifeReleaseCommonUiModel.WEALTH_CIVIL_ESTATE -> 3
@@ -623,28 +715,29 @@ open class NewsDetailsActivity : WebViewActivity() {
             else -> 0
         }
         showLoadingView(com.ruanyun.australianews.R.string.in_load)
-        val subscription = ApiManger.getApiService().deleteWealthFavorites(app.userOid, presenter.newsInfoOid, type)
-                .compose(RxUtil.normalSchedulers<ResultBase<*>>())
-                .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
-                    override fun onSuccess(result: ResultBase<*>) {
-                        disMissLoadingView()
-                        showToast("取消收藏成功")
-                        iv_collect.isSelected = false
-                        newsCommentCountInfo?.mark = false
-                    }
+        val subscription = ApiManger.getApiService()
+            .deleteWealthFavorites(app.userOid, presenter.newsInfoOid, type)
+            .compose(RxUtil.normalSchedulers<ResultBase<*>>())
+            .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
+                override fun onSuccess(result: ResultBase<*>) {
+                    disMissLoadingView()
+                    showToast("取消收藏成功")
+                    iv_collect.isSelected = false
+                    newsCommentCountInfo?.mark = false
+                }
 
-                    override fun onError(erroCode: Int, erroMsg: String) {
-                        super.onError(erroCode, erroMsg)
-                        disMissLoadingView()
-                        showToast(erroMsg)
-                    }
-                }, object : ApiFailAction() {
-                    override fun onFail(msg: String) {
-                        super.onFail(msg)
-                        disMissLoadingView()
-                        showToast(msg)
-                    }
-                })
+                override fun onError(erroCode: Int, erroMsg: String) {
+                    super.onError(erroCode, erroMsg)
+                    disMissLoadingView()
+                    showToast(erroMsg)
+                }
+            }, object : ApiFailAction() {
+                override fun onFail(msg: String) {
+                    super.onFail(msg)
+                    disMissLoadingView()
+                    showToast(msg)
+                }
+            })
         addSubscrebe(subscription)
     }
 
@@ -653,32 +746,33 @@ open class NewsDetailsActivity : WebViewActivity() {
      */
     private fun addComment(s: String) {
         showLoadingView(com.ruanyun.australianews.R.string.in_load)
-        val subscription = ApiManger.getApiService().addComment(presenter.newsInfoOid, app.userOid, s, "${presenter.newsInfoType}")
-                .compose(RxUtil.normalSchedulers<ResultBase<*>>())
-                .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
-                    override fun onSuccess(result: ResultBase<*>) {
-                        disMissLoadingView()
-                        showToast("评论成功")
-                        newsCommentCountInfo?.let {
-                            it.commentQuantity++
-                            updateNewsInfo(it)
-                        }
-                        leaveMessageDialogFragment.addSuccess()
-                        EventNotifier.getInstance().addSuccessSuccess()
+        val subscription = ApiManger.getApiService()
+            .addComment(presenter.newsInfoOid, app.userOid, s, "${presenter.newsInfoType}")
+            .compose(RxUtil.normalSchedulers<ResultBase<*>>())
+            .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
+                override fun onSuccess(result: ResultBase<*>) {
+                    disMissLoadingView()
+                    showToast("评论成功")
+                    newsCommentCountInfo?.let {
+                        it.commentQuantity++
+                        updateNewsInfo(it)
                     }
+                    leaveMessageDialogFragment.addSuccess()
+                    EventNotifier.getInstance().addSuccessSuccess()
+                }
 
-                    override fun onError(erroCode: Int, erroMsg: String) {
-                        super.onError(erroCode, erroMsg)
-                        disMissLoadingView()
-                        showToast(erroMsg)
-                    }
-                }, object : ApiFailAction() {
-                    override fun onFail(msg: String) {
-                        super.onFail(msg)
-                        disMissLoadingView()
-                        showToast(msg)
-                    }
-                })
+                override fun onError(erroCode: Int, erroMsg: String) {
+                    super.onError(erroCode, erroMsg)
+                    disMissLoadingView()
+                    showToast(erroMsg)
+                }
+            }, object : ApiFailAction() {
+                override fun onFail(msg: String) {
+                    super.onFail(msg)
+                    disMissLoadingView()
+                    showToast(msg)
+                }
+            })
         addSubscrebe(subscription)
     }
 
@@ -686,7 +780,7 @@ open class NewsDetailsActivity : WebViewActivity() {
      * 添加财富评论
      */
     private fun addWealthComment(s: String) {
-        val type = when(presenter.newsInfoType){
+        val type = when (presenter.newsInfoType) {
             LifeReleaseCommonUiModel.WEALTH_ACTIVITYS -> 1
             LifeReleaseCommonUiModel.WEALTH_FUND -> 2
             LifeReleaseCommonUiModel.WEALTH_CIVIL_ESTATE -> 3
@@ -697,7 +791,8 @@ open class NewsDetailsActivity : WebViewActivity() {
             else -> 0
         }
         showLoadingView(com.ruanyun.australianews.R.string.in_load)
-        val subscription = ApiManger.getApiService().addWealthComment(presenter.newsInfoOid, app.userOid, s, type)
+        val subscription =
+            ApiManger.getApiService().addWealthComment(presenter.newsInfoOid, app.userOid, s, type)
                 .compose(RxUtil.normalSchedulers<ResultBase<*>>())
                 .subscribe(object : ApiSuccessAction<ResultBase<*>>() {
                     override fun onSuccess(result: ResultBase<*>) {
@@ -741,13 +836,13 @@ open class NewsDetailsActivity : WebViewActivity() {
     override fun addCommentSuccess(event: Event<String>) {
         if (C.EventKey.ADD_COMMENT_SUCCESS == event.key) {
             presenter.getNewsCommentCount()
-            if(presenter.newsInfoType == NewsCommentParams.NEWS){
+            if (presenter.newsInfoType == NewsCommentParams.NEWS) {
                 javascript("newsCommentLoadMore('${presenter.newsInfoOid}')")
-            }else {
-                val type = if(presenter.newsInfoType?:0>0){
+            } else {
+                val type = if (presenter.newsInfoType ?: 0 > 0) {
                     presenter.newsInfoType
-                }else {
-                    when(presenter.newsInfoType){
+                } else {
+                    when (presenter.newsInfoType) {
                         LifeReleaseCommonUiModel.WEALTH_ACTIVITYS -> 1
                         LifeReleaseCommonUiModel.WEALTH_FUND -> 2
                         LifeReleaseCommonUiModel.WEALTH_CIVIL_ESTATE -> 3
@@ -765,7 +860,7 @@ open class NewsDetailsActivity : WebViewActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if(::ttsholder.isInitialized){
+        if (::ttsholder.isInitialized) {
             ttsholder.stopSpeaking()
         }
 
